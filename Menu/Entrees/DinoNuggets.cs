@@ -33,6 +33,7 @@ namespace DinoDiner.Menu.Entrees
             {
                 this.nuggetNum += x;
                 this.Calories += (uint)(59 * x);
+                this.Price += .25 * x;
             }
         }
     }
