@@ -22,12 +22,14 @@ namespace DinoDiner.Menu.Entrees
         {
             get
             {
-                List<string> ingredients = new List<string>() { "3 Steakburger Patties" };
-                if (bun) ingredients.Add("Bread");
+                List<string> ingredients = new List<string>() { "Steakburger Pattie" };
+                ingredients.Add("Steakburger Pattie");
+                ingredients.Add("Steakburger Pattie");
+                if (bun) ingredients.Add("Whole Wheat Bun");
                 if (lettuce) ingredients.Add("Lettuce");
                 if (tomato) ingredients.Add("Tomato");
                 if (onion) ingredients.Add("Onion");
-                if (pickle) ingredients.Add("Pickles");
+                if (pickle) ingredients.Add("Pickle");
                 if (ketchup) ingredients.Add("Ketchup");
                 if (mustard) ingredients.Add("Mustard");
                 if (mayo) ingredients.Add("Mayo");
@@ -38,7 +40,7 @@ namespace DinoDiner.Menu.Entrees
         public TRexKingBurger()
         {
             this.Price = 8.45;
-            this.Calories = 621;
+            this.Calories = 728;
         }
 
         public void HoldBun()
