@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Menu.Sides
+namespace DinoDiner.Menu.Sides
 {
-    class MezzorellaSticks
+    public class MezzorellaSticks
     {
     }
 }

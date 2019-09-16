@@ -2,9 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Menu.Sides
+namespace DinoDiner.Menu.Sides
 {
-    class MeteorMacAndCheese
+    public class MeteorMacAndCheese
     {
+        public MeteorMacAndCheese()
+        {
+
+        }
+
     }
 }

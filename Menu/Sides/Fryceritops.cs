@@ -2,9 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Menu.Sides
+namespace DinoDiner.Menu.Sides
 {
-    class Fryceritops
+    public class Fryceritops
     {
+        private Side fries;
+        public Fryceritops()
+        {
+            
+        }
     }
 }
