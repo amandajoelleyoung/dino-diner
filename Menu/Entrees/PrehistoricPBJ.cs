@@ -2,15 +2,56 @@
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class PrehistoricPBJ
+    /// <summary>
+    /// Prehistoric PBJ class.
+    /// </summary>
+    public class PrehistoricPBJ : Entrees
     {
+        /// <summary>
+        /// Keeps track of whether the ingredients include peanut butter or not.
+        /// </summary>
         private bool peanutButter = true;
+
+        /// <summary>
+        /// Keeps track whether the ingredients include jelly or not.
+        /// </summary>
         private bool jelly = true;
 
-        public double Price { get; set; }
-        public uint Calories { get; set; }
+       
+        /// <summary>
+        /// Sets and returns price.
+        /// </summary>
+        public override double Price
+        {
+            get
+            {
+                return Price;
+            }
+            set
+            {
+                this.Price = value;
+            }
+        }
 
-        public List<string> Ingredients
+        /// <summary>
+        /// Sets and returns calories.
+        /// </summary>
+        public override uint Calories
+        {
+            get
+            {
+                return Calories;
+            }
+            set
+            {
+                this.Calories = value;
+            }
+        }
+
+        /// <summary>
+        /// Returns list of ingredients
+        /// </summary>
+        public override List<string> Ingredients
         {
             get
             {
@@ -21,17 +62,26 @@ namespace DinoDiner.Menu.Entrees
             }
         }
 
+        /// <summary>
+        /// Sets price and calories.
+        /// </summary>
         public PrehistoricPBJ()
         {
-            this.Price = 6.52;
+            this.Price = 6.25;
             this.Calories = 483;
         }
 
+        /// <summary>
+        /// Does not include peanut butter.
+        /// </summary>
         public void HoldPeanutButter()
         {
             this.peanutButter = false;
         }
 
+        /// <summary>
+        /// Does not include jelly.
+        /// </summary>
         public void HoldJelly()
         {
             this.jelly = false;

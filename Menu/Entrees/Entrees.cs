@@ -4,12 +4,6 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-        public enum Size
-        {
-            Small,
-            Medium,
-            Large
-        }
 
         public abstract class Entrees
         {
@@ -28,11 +22,7 @@ namespace DinoDiner.Menu.Entrees
             /// </summary>
             public abstract List<string> Ingredients { get; }
 
-            /// <summary>
-            /// Gets or sets the size
-            /// </summary>
-            public abstract Size Size { get; set; }
 
         }
     }
-}
+

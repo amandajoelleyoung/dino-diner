@@ -4,14 +4,61 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class DinoNuggets
+    /// <summary>
+    /// DinoNuggets class.
+    /// </summary>
+    public class DinoNuggets : Entrees
     {
-        private int nuggetNum = 6;
-        List<string> ingredients;
 
-        public double Price { get; set; }
-        public uint Calories { get; set; }
+        /// <summary>
+        /// list of ingredients.
+        /// </summary>
+        private List<string> ingredients;
 
+        /// <summary>
+        /// returns list of Ingredients.
+        /// </summary>
+        public override List<string> Ingredients
+        {
+            get
+            {
+                return ingredients;
+            }
+        }
+
+        /// <summary>
+        /// Sets and returns price.
+        /// </summary>
+        public override double Price
+        {
+            get
+            {
+                return Price;
+            }
+            set
+            {
+                this.Price = value;
+            }
+        }
+
+        /// <summary>
+        /// Sets and returns calories.
+        /// </summary>
+        public override uint Calories
+        {
+            get
+            {
+                return Calories;
+            }
+            set
+            {
+                this.Calories = value;
+            }
+        }
+
+        /// <summary>
+        /// initializes price and calories and chicken nuggets in ingredients.
+        /// </summary>
         public DinoNuggets()
         {
             this.Price = 4.25;
@@ -25,14 +72,10 @@ namespace DinoDiner.Menu.Entrees
             ingredients.Add("Chicken Nugget");
         }
 
-        public List<string> Ingredients
-        {
-            get
-            {
-                return ingredients;
-            }
-        }
 
+        /// <summary>
+        /// Adds one chicken nugget and increases price and calories
+        /// </summary>
         public void AddNugget()
         {
             ingredients.Add("Chicken Nugget");

@@ -4,16 +4,49 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class VelociWrap
+    /// <summary>
+    /// Velociwrap class.
+    /// </summary>
+    public class VelociWrap : Entrees
     {
         private bool lettuce = true;
         private bool dressing = true;
         private bool cheese = true;
 
-        public double Price { get; set; }
-        public uint Calories { get; set; }
+        /// <summary>
+        /// Sets and returns price.
+        /// </summary>
+        public override double Price
+        {
+            get
+            {
+                return Price;
+            }
+            set
+            {
+                this.Price = value;
+            }
+        }
 
-        public List<string> Ingredients
+        /// <summary>
+        /// Sets and returns calories.
+        /// </summary>
+        public override uint Calories
+        {
+            get
+            {
+                return Calories;
+            }
+            set
+            {
+                this.Calories = value;
+            }
+        }
+
+        /// <summary>
+        /// Returns list of ingredients.
+        /// </summary>
+        public override List<string> Ingredients
         {
             get
             {
@@ -26,22 +59,35 @@ namespace DinoDiner.Menu.Entrees
             }
         }
 
+        /// <summary>
+        /// Initializes price and calories.
+        /// </summary>
         public VelociWrap()
         {
             this.Price = 6.86;
             this.Calories = 356;
         }
 
+        /// <summary>
+        /// Removes lettuce from ingredients.
+        /// </summary>
         public void HoldLettuce()
         {
             this.lettuce = false;
         }
 
+        /// <summary>
+        /// removes dressing from ingredients.
+        /// </summary>
         public void HoldDressing()
         {
             this.dressing = false;
         }
 
+
+        /// <summary>
+        /// removes cheese from ingredients.
+        /// </summary>
         public void HoldCheese()
         {
             this.cheese = false;

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class TRexKingBurger
+    public class TRexKingBurger : Entrees
     {
         private bool bun = true;
         private bool lettuce = true;
@@ -15,10 +15,40 @@ namespace DinoDiner.Menu.Entrees
         private bool mustard = true;
         private bool mayo = true;
 
-        public double Price { get; set; }
-        public uint Calories { get; set; }
+        /// <summary>
+        /// Sets and returns price.
+        /// </summary>
+        public override double Price
+        {
+            get
+            {
+                return Price;
+            }
+            set
+            {
+                this.Price = value;
+            }
+        }
 
-        public List<string> Ingredients
+        /// <summary>
+        /// Sets and returns calories.
+        /// </summary>
+        public override uint Calories
+        {
+            get
+            {
+                return Calories;
+            }
+            set
+            {
+                this.Calories = value;
+            }
+        }
+
+        /// <summary>
+        /// Returns list of ingredients.
+        /// </summary>
+        public override List<string> Ingredients
         {
             get
             {
@@ -37,47 +67,74 @@ namespace DinoDiner.Menu.Entrees
             }
         }
 
+        /// <summary>
+        /// Initializes price and calories
+        /// </summary>
         public TRexKingBurger()
         {
             this.Price = 8.45;
             this.Calories = 728;
         }
-
+         
+        /// <summary>
+        /// Removes bun from ingredients.
+        /// </summary>
         public void HoldBun()
         {
             this.bun = false;
         }
 
+        /// <summary>
+        /// Removes Lettuce from ingredients.
+        /// </summary>
         public void HoldLettuce()
         {
             this.lettuce = false;
         }
 
+        /// <summary>
+        /// removes tomato from ingredients.
+        /// </summary>
         public void HoldTomato()
         {
             this.tomato = false;
         }
 
+        /// <summary>
+        /// removes onion from ingredients.
+        /// </summary>
         public void HoldOnion()
         {
             this.onion = false;
         }
 
+        /// <summary>
+        /// removes pickles from ingredients.
+        /// </summary>
         public void HoldPickle()
         {
             this.pickle = false;
         }
 
+        /// <summary>
+        /// removes ketchup from ingredients.
+        /// </summary>
         public void HoldKetchup()
         {
             this.ketchup = false;
         }
 
+        /// <summary>
+        /// removes mustard from ingredients.
+        /// </summary>
         public void HoldMustard()
         {
             this.mustard = false;
         }
 
+        /// <summary>
+        /// removes mayo from ingredients.
+        /// </summary>
         public void HoldMayo()
         {
             this.mayo = false;

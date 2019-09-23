@@ -4,13 +4,46 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class PterodactylWings
+    /// <summary>
+    /// Pterodactyl wings class.
+    /// </summary>
+    public class PterodactylWings : Entrees
     {
-        
-        public double Price { get; set; }
-        public uint Calories { get; set; }
 
-        public List<string> Ingredients
+        /// <summary>
+        /// Sets and returns price.
+        /// </summary>
+        public override double Price
+        {
+            get
+            {
+                return Price;
+            }
+            set
+            {
+                this.Price = value;
+            }
+        }
+
+        /// <summary>
+        /// Sets and returns calories.
+        /// </summary>
+        public override uint Calories
+        {
+            get
+            {
+                return Calories;
+            }
+            set
+            {
+                this.Calories = value;
+            }
+        }
+
+        /// <summary>
+        /// Returns list of ingredients.
+        /// </summary>
+       public override List<string> Ingredients
         {
             get
             {
@@ -20,6 +53,9 @@ namespace DinoDiner.Menu.Entrees
             }
         }
 
+        /// <summary>
+        /// Initializes price and calories.
+        /// </summary>
         public PterodactylWings()
         {
             this.Price = 7.21;
