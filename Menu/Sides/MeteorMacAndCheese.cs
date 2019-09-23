@@ -4,8 +4,14 @@ using System.Text;
 
 namespace DinoDiner.Menu.Sides
 {
+    /// <summary>
+    /// Meteor Mac And Cheese class.
+    /// </summary>
     public class MeteorMacAndCheese : Side
     {
+        /// <summary>
+        /// Returns list of ingredients.
+        /// </summary>
         public override List<string> Ingredients
         {
             get
@@ -13,7 +19,15 @@ namespace DinoDiner.Menu.Sides
                 return this.Ingredients;
             }
         }
+
+        /// <summary>
+        /// temporary variable to set size.
+        /// </summary>
         private Size size;
+
+        /// <summary>
+        /// sets price, calories, size, and returns size.
+        /// </summary>
         public override Size Size
         {
             get
@@ -41,6 +55,9 @@ namespace DinoDiner.Menu.Sides
             }
         }
 
+        /// <summary>
+        /// sets and returns price.
+        /// </summary>
         public override double Price
         {
             get
@@ -53,6 +70,9 @@ namespace DinoDiner.Menu.Sides
             }
         }
 
+        /// <summary>
+        /// sets and returns calories.
+        /// </summary>
         public override uint Calories
         {
             get
@@ -65,6 +85,9 @@ namespace DinoDiner.Menu.Sides
             }
         }
 
+        /// <summary>
+        /// Sets size to small and adds ingredients.
+        /// </summary>
         public MeteorMacAndCheese()
         {
             this.Size = Size.Small;

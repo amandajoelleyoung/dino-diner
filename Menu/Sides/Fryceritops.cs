@@ -6,13 +6,24 @@ namespace DinoDiner.Menu.Sides
 {
     public class Fryceritops : Side
     {
+        /// <summary>
+        /// returns list of Ingredients.
+        /// </summary>
         public override List<string> Ingredients { 
             get
             {
                 return this.Ingredients;
             }
         } 
+
+        /// <summary>
+        /// Temporary variable to set size.
+        /// </summary>
         private Size size;
+
+        /// <summary>
+        /// Sets price, calories, size, and returns size.
+        /// </summary>
         public override Size Size
         {
             get
@@ -40,6 +51,9 @@ namespace DinoDiner.Menu.Sides
             }
         }
 
+        /// <summary>
+        /// Sets and returns price.
+        /// </summary>
         public override double Price
         {
             get
@@ -52,6 +66,9 @@ namespace DinoDiner.Menu.Sides
             }
         }
 
+        /// <summary>
+        /// Sets and returns calories.
+        /// </summary>
         public override uint Calories
         {
             get
@@ -64,6 +81,9 @@ namespace DinoDiner.Menu.Sides
             }
         }
 
+        /// <summary>
+        /// Sets size to small and adds ingredients.
+        /// </summary>
         public Fryceritops()
         {
             this.Size = Size.Small;
