@@ -36,7 +36,6 @@ namespace MenuTest.Entrees
             Assert.Equal<int>(6, ingredients.Count);
         }
 
-
         [Fact]
         public void AddingNuggetsShouldAddIngredients()
         {
@@ -68,11 +67,11 @@ namespace MenuTest.Entrees
         {
             DinoNuggets dn = new DinoNuggets();
             dn.AddNugget();
-            Assert.Equal(4.50, dn.Price, 2);
+            Assert.Equal(dn.Price, 4.50, 2);
             dn.AddNugget();
-            Assert.Equal(4.75, dn.Price, 2);
+            Assert.Equal(dn.Price, 4.75, 2);
             dn.AddNugget();
-            Assert.Equal(5.0, dn.Price, 2);
+            Assert.Equal(dn.Price, 5.0, 2);
         }
 
         [Fact]
