@@ -9,6 +9,8 @@ namespace DinoDiner.Menu.Sides
     /// </summary>
     public class MeteorMacAndCheese : Side
     {
+        private List<string> ingredients;
+
         /// <summary>
         /// Returns list of ingredients.
         /// </summary>
@@ -16,7 +18,7 @@ namespace DinoDiner.Menu.Sides
         {
             get
             {
-                return this.Ingredients;
+                return ingredients;
             }
         }
 
@@ -32,7 +34,7 @@ namespace DinoDiner.Menu.Sides
         {
             get
             {
-                return this.Size;
+                return size;
             }
             set
             {
@@ -55,33 +57,35 @@ namespace DinoDiner.Menu.Sides
             }
         }
 
+        private double price;
         /// <summary>
-        /// sets and returns price.
+        /// Sets and returns price.
         /// </summary>
         public override double Price
         {
             get
             {
-                return Price;
+                return price;
             }
             set
             {
-                this.Price = value;
+                price = value;
             }
         }
 
+        private uint calories;
         /// <summary>
-        /// sets and returns calories.
+        /// Sets and returns calories.
         /// </summary>
         public override uint Calories
         {
             get
             {
-                return Calories;
+                return calories;
             }
             set
             {
-                this.Calories = value;
+                calories = value;
             }
         }
 
@@ -91,9 +95,10 @@ namespace DinoDiner.Menu.Sides
         public MeteorMacAndCheese()
         {
             this.Size = Size.Small;
-            Ingredients.Add("Macaroni Noodles");
-            Ingredients.Add("Cheese Product");
-            Ingredients.Add("Pork Sausage");
+            ingredients = new List<string>();
+            ingredients.Add("Macaroni Noodles");
+            ingredients.Add("Cheese Product");
+            ingredients.Add("Pork Sausage");
         }
 
     }

@@ -6,13 +6,15 @@ namespace DinoDiner.Menu.Sides
 {
     public class Fryceritops : Side
     {
+        private List<string> ingredients;
+
         /// <summary>
         /// returns list of Ingredients.
         /// </summary>
         public override List<string> Ingredients { 
             get
             {
-                return this.Ingredients;
+                return ingredients;
             }
         } 
 
@@ -28,7 +30,7 @@ namespace DinoDiner.Menu.Sides
         {
             get
             {
-                return this.Size;
+                return size;
             }
             set
             {
@@ -51,6 +53,7 @@ namespace DinoDiner.Menu.Sides
             }
         }
 
+        private double price;
         /// <summary>
         /// Sets and returns price.
         /// </summary>
@@ -58,14 +61,15 @@ namespace DinoDiner.Menu.Sides
         {
             get
             {
-                return Price;
+                return price;
             }
             set
             {
-                this.Price = value;
+                price = value;
             }
         }
 
+        private uint calories;
         /// <summary>
         /// Sets and returns calories.
         /// </summary>
@@ -73,11 +77,11 @@ namespace DinoDiner.Menu.Sides
         {
             get
             {
-                return Calories;
+                return calories;
             }
             set
             {
-                this.Calories = value;
+                calories = value;
             }
         }
 
@@ -87,9 +91,10 @@ namespace DinoDiner.Menu.Sides
         public Fryceritops()
         {
             this.Size = Size.Small;
-            Ingredients.Add("Potato");
-            Ingredients.Add("Salt");
-            Ingredients.Add("Vegetable Oil");
+            ingredients = new List<string>();
+            ingredients.Add("Potato");
+            ingredients.Add("Salt");
+            ingredients.Add("Vegetable Oil");
         }
     }
 }

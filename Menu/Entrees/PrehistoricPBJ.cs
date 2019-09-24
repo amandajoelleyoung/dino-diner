@@ -17,7 +17,8 @@ namespace DinoDiner.Menu.Entrees
         /// </summary>
         private bool jelly = true;
 
-       
+
+        private double price;
         /// <summary>
         /// Sets and returns price.
         /// </summary>
@@ -25,14 +26,15 @@ namespace DinoDiner.Menu.Entrees
         {
             get
             {
-                return Price;
+                return price;
             }
             set
             {
-                this.Price = value;
+                price = value;
             }
         }
 
+        private uint calories;
         /// <summary>
         /// Sets and returns calories.
         /// </summary>
@@ -40,11 +42,11 @@ namespace DinoDiner.Menu.Entrees
         {
             get
             {
-                return Calories;
+                return calories;
             }
             set
             {
-                this.Calories = value;
+                calories = value;
             }
         }
 
@@ -67,7 +69,7 @@ namespace DinoDiner.Menu.Entrees
         /// </summary>
         public PrehistoricPBJ()
         {
-            this.Price = 6.25;
+            this.Price = 6.52;
             this.Calories = 483;
         }
 

@@ -9,6 +9,8 @@ namespace DinoDiner.Menu.Sides
     /// </summary>
     public class Triceritots : Side
     {
+        private List<string> ingredients;
+
         /// <summary>
         /// Returns the list of ingredients.
         /// </summary>
@@ -16,7 +18,7 @@ namespace DinoDiner.Menu.Sides
         {
             get
             {
-                return this.Ingredients;
+                return ingredients;
             }
         }
         
@@ -32,7 +34,7 @@ namespace DinoDiner.Menu.Sides
         {
             get
             {
-                return this.Size;
+                return size;
             }
             set
             {
@@ -49,12 +51,13 @@ namespace DinoDiner.Menu.Sides
                         break;
                     case Size.Small:
                         Price = .99;
-                        Calories = 590;
+                        Calories = 352;
                         break;
                 }
             }
         }
 
+        private double price;
         /// <summary>
         /// Sets and returns price.
         /// </summary>
@@ -62,14 +65,15 @@ namespace DinoDiner.Menu.Sides
         {
             get
             {
-                return Price;
+                return price;
             }
             set
             {
-                this.Price = value;
+                price = value;
             }
         }
 
+        private uint calories;
         /// <summary>
         /// Sets and returns calories.
         /// </summary>
@@ -77,11 +81,11 @@ namespace DinoDiner.Menu.Sides
         {
             get
             {
-                return Calories;
+                return calories;
             }
             set
             {
-                this.Calories = value;
+                calories = value;
             }
         }
 
@@ -91,9 +95,10 @@ namespace DinoDiner.Menu.Sides
         public Triceritots()
         {
             this.Size = Size.Small;
-            Ingredients.Add("Potato");
-            Ingredients.Add("Salt");
-            Ingredients.Add("Vegetable Oil");
+            ingredients = new List<string>();
+            ingredients.Add("Potato");
+            ingredients.Add("Salt");
+            ingredients.Add("Vegetable Oil");
         }
     }
 }

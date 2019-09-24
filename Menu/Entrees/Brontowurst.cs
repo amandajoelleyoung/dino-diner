@@ -13,6 +13,7 @@ namespace DinoDiner.Menu.Entrees
         private bool peppers = true;
         private bool onions = true;
 
+        private double price;
         /// <summary>
         /// Sets and returns price.
         /// </summary>
@@ -20,14 +21,15 @@ namespace DinoDiner.Menu.Entrees
         {
             get
             {
-                return Price;
+                return price;
             }
             set
             {
-                this.Price = value;
+                price = value;
             }
         }
 
+        private uint calories;
         /// <summary>
         /// Sets and returns calories.
         /// </summary>
@@ -35,11 +37,11 @@ namespace DinoDiner.Menu.Entrees
         {
             get
             {
-                return Calories;
+                return calories;
             }
             set
             {
-                this.Calories = value;
+                calories = value;
             }
         }
 
