@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using System.Collections.Generic;
+using Xunit;
 using DinoDiner.Menu.Sides;
 
 namespace MenuTest.Sides
