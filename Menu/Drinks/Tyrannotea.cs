@@ -67,8 +67,8 @@ namespace DinoDiner.Menu.Drinks
                 List<string> ingredients = new List<string>();
                 ingredients.Add("Water");
                 ingredients.Add("Tea");
-                ingredients.Add("Lemon");
-                ingredients.Add("Cane Sugar");
+                if (lemon) ingredients.Add("Lemon");
+                if (sweet) ingredients.Add("Cane Sugar");
                 return ingredients;
             }
         }
