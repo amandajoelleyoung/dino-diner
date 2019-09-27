@@ -7,7 +7,7 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// Pterodactyl wings class.
     /// </summary>
-    public class PterodactylWings : Entrees
+    public class PterodactylWings : Entree
     {
 
         private double price;

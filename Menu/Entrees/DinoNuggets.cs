@@ -7,7 +7,7 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// DinoNuggets class.
     /// </summary>
-    public class DinoNuggets : Entrees
+    public class DinoNuggets : Entree
     {
 
         /// <summary>

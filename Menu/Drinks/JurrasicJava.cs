@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
-    public class JurrasicJava : Drinks
+    public class JurrasicJava : Drink
     {
     }
 }
