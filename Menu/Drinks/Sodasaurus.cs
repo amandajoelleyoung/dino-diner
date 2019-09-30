@@ -126,7 +126,7 @@ namespace DinoDiner.Menu.Drinks
         /// <summary>
         /// Holds ice.
         /// </summary>
-        public override void HoldIce()
+        public void HoldIce()
         {
             this.ice = false;
         }
