@@ -5,7 +5,7 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// Prehistoric PBJ class.
     /// </summary>
-    public class PrehistoricPBJ : Entrees
+    public class PrehistoricPBJ : Entree
     {
         /// <summary>
         /// Keeps track of whether the ingredients include peanut butter or not.

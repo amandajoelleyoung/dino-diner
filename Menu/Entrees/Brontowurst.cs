@@ -7,7 +7,7 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// A brautwurst wih a whole wheat bun, onions, and peppers.
     /// </summary>
-    public class Brontowurst : Entrees
+    public class Brontowurst : Entree
     {
         private bool bun = true;
         private bool peppers = true;
