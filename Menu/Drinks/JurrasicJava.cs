@@ -7,6 +7,9 @@ namespace DinoDiner.Menu.Drinks
     public class JurrasicJava : Drink
     {
         private bool cream = false;
+        /// <summary>
+        /// Returns whether there is room for cream or not.
+        /// </summary>
         public bool RoomForCream
         {
             get
@@ -16,6 +19,9 @@ namespace DinoDiner.Menu.Drinks
         }
 
         private bool decaf = false;
+        /// <summary>
+        /// Returns whether it is decaf or not.
+        /// </summary>
         public bool Decaf
         {
             get
@@ -138,11 +144,17 @@ namespace DinoDiner.Menu.Drinks
             this.ice = true;
         }
 
+        /// <summary>
+        /// Leaves room for cream.
+        /// </summary>
         public void LeaveRoomForCream()
         {
             this.cream = true;
         }
 
+        /// <summary>
+        /// Makes decaf.
+        /// </summary>
         public void MakeDecaf()
         {
             this.decaf = true;

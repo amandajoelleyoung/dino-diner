@@ -7,6 +7,9 @@ namespace DinoDiner.Menu.Drinks
     public class Water : Drink
     {
         private bool lemon = false;
+        /// <summary>
+        /// Returns whether lemon is present or not.
+        /// </summary>
         public bool Lemon
         {
             get

@@ -7,6 +7,9 @@ namespace DinoDiner.Menu.Drinks
     public class Tyrannotea : Drink
     {
         private bool lemon = false;
+        /// <summary>
+        /// Returns whether lemon is present or not.
+        /// </summary>
         public bool Lemon
         {
             get
@@ -16,6 +19,9 @@ namespace DinoDiner.Menu.Drinks
         }
 
         private bool sugar = false;
+        /// <summary>
+        /// Returns whether tea is sweetened or not.
+        /// </summary>
         public bool Sugar
         {
             get
@@ -161,6 +167,9 @@ namespace DinoDiner.Menu.Drinks
             this.Calories *= 2;
         }
 
+        /// <summary>
+        /// Holds Sugar.
+        /// </summary>
         public void HoldSugar()
         {
             this.sugar = false;
