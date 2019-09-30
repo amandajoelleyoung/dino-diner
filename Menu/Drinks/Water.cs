@@ -6,7 +6,14 @@ namespace DinoDiner.Menu.Drinks
 {
     public class Water : Drink
     {
-        private bool lemon = true;
+        private bool lemon = false;
+        public bool Lemon
+        {
+            get
+            {
+                return lemon; 
+            }
+        }
 
         private double price;
         /// <summary>
@@ -120,9 +127,9 @@ namespace DinoDiner.Menu.Drinks
         /// <summary>
         /// Holds Lemon.
         /// </summary>
-        public void HoldLemon()
+        public void AddLemon()
         {
-            this.lemon = false;
+            this.lemon = true;
         }
     }
 }

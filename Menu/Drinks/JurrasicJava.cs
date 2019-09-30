@@ -142,5 +142,10 @@ namespace DinoDiner.Menu.Drinks
         {
             this.cream = true;
         }
+
+        public void MakeDecaf()
+        {
+            this.decaf = true;
+        }
     }
 }

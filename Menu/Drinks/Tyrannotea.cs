@@ -6,8 +6,23 @@ namespace DinoDiner.Menu.Drinks
 {
     public class Tyrannotea : Drink
     {
-        private bool lemon = true;
-        private bool sweet = true;
+        private bool lemon = false;
+        public bool Lemon
+        {
+            get
+            {
+                return lemon;
+            }
+        }
+
+        private bool sugar = false;
+        public bool Sugar
+        {
+            get
+            {
+                return sugar;
+            }
+        }
 
         private SodasaurusFlavor flavor;
         /// <summary>
@@ -68,7 +83,7 @@ namespace DinoDiner.Menu.Drinks
                 ingredients.Add("Water");
                 ingredients.Add("Tea");
                 if (lemon) ingredients.Add("Lemon");
-                if (sweet) ingredients.Add("Cane Sugar");
+                if (sugar) ingredients.Add("Cane Sugar");
                 return ingredients;
             }
         }
@@ -132,17 +147,24 @@ namespace DinoDiner.Menu.Drinks
         /// <summary>
         /// Holds Lemon.
         /// </summary>
-        public void HoldLemon()
+        public void AddLemon()
         {
-            this.lemon = false;
+            this.lemon = true;
         }
 
         /// <summary>
-        /// Holds sugar.
+        /// Adds sugar.
         /// </summary>
+        public void AddSugar()
+        {
+            this.sugar = true;
+            this.Calories *= 2;
+        }
+
         public void HoldSugar()
         {
-            this.sweet = false;
+            this.sugar = false;
+            this.Calories /= 2;
         }
 
         /// <summary>
