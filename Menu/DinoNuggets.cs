@@ -1,20 +1,18 @@
-﻿using System;
+﻿/* CIS 500
+ * Amanda Young
+ */
+ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// DinoNuggets class.
     /// </summary>
-    public class DinoNuggets : Entree
+    public class DinoNuggets : Entree, IMenuItem
     {
-
-        /// <summary>
-        /// list of ingredients.
-        /// </summary>
-        private List<string> ingredients;
-
+        private int extraNuggets=0;
         /// <summary>
         /// returns list of Ingredients.
         /// </summary>
@@ -22,6 +20,15 @@ namespace DinoDiner.Menu.Entrees
         {
             get
             {
+                List<string> ingredients = new List<string>();
+                ingredients.Add("Chicken Nugget");
+                ingredients.Add("Chicken Nugget");
+                ingredients.Add("Chicken Nugget");
+                ingredients.Add("Chicken Nugget");
+                ingredients.Add("Chicken Nugget");
+                ingredients.Add("Chicken Nugget");
+                for (int i = 1; i > extraNuggets; i++)
+                    ingredients.Add("Chicken Nugget");
                 return ingredients;
             }
         }
@@ -65,22 +72,23 @@ namespace DinoDiner.Menu.Entrees
         {
             this.Price = 4.25;
             this.Calories = 59 * 6;
-            ingredients = new List<string>();
-            ingredients.Add("Chicken Nugget");
-            ingredients.Add("Chicken Nugget");
-            ingredients.Add("Chicken Nugget");
-            ingredients.Add("Chicken Nugget");
-            ingredients.Add("Chicken Nugget");
-            ingredients.Add("Chicken Nugget");
         }
 
+        /// <summary>
+        /// Returns a string of the class name.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return $"Dino-Nuggets";
+        }
 
         /// <summary>
         /// Adds one chicken nugget and increases price and calories
         /// </summary>
         public void AddNugget()
         {
-            ingredients.Add("Chicken Nugget");
+            extraNuggets++;
             this.Calories += 59;
             this.Price += .25;
         }

@@ -1,10 +1,13 @@
-﻿using System;
+﻿/* CIS 500
+ * Amanda Young
+ */
+ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
-    public class Water : Drink
+    public class Water : Drink, IMenuItem
     {
         private bool lemon = false;
         /// <summary>
@@ -117,6 +120,15 @@ namespace DinoDiner.Menu.Drinks
         public Water()
         {
             this.Size = Size.Small;
+        }
+
+        /// <summary>
+        /// Returns a string of the class name.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return $"{this.size} Water";
         }
 
         /// <summary>

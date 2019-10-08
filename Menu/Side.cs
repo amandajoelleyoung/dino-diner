@@ -1,12 +1,15 @@
-﻿using System;
+﻿/* CIS 500
+ * Amanda Young
+ */
+ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu
 {
 
 
-    public abstract class Side
+    public abstract class Side : IMenuItem
     {
         /// <summary>
         /// Gets and sets the price

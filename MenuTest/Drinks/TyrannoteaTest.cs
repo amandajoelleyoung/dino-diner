@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 using DinoDiner.Menu;
-using DinoDiner.Menu.Drinks;
 using Xunit;
 
 namespace MenuTest.Drinks
@@ -49,7 +48,7 @@ namespace MenuTest.Drinks
         public void ShouldHaveDefaultSweet()
         {
             Tyrannotea tea = new Tyrannotea();
-            Assert.False(tea.Sugar);
+            Assert.False(tea.Sweet);
         }
 
         //The correct price and calories after changing to small, medium, and large sizes.

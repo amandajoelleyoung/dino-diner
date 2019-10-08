@@ -1,23 +1,39 @@
-﻿using System;
+﻿/* CIS 500
+ * Amanda Young
+ */
+ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
-    public class Sodasaurus : Drink
+    public class JurassicJava : Drink, IMenuItem
     {
-        private SodasaurusFlavor flavor;
+        private bool cream = false;
         /// <summary>
-        /// Gets and sets flavor of Sodasaurus.
+        /// Returns whether there is room for cream or not.
         /// </summary>
-        public SodasaurusFlavor Flavor {
+        public bool RoomForCream
+        {
             get
             {
-                return flavor;
+                return cream;
+            }
+        }
+
+        private bool decaf = false;
+        /// <summary>
+        /// Returns whether it is decaf or not.
+        /// </summary>
+        public bool Decaf
+        {
+            get
+            {
+                return decaf;
             }
             set
             {
-                flavor = value;
+                decaf = value;
             }
         }
 
@@ -62,8 +78,7 @@ namespace DinoDiner.Menu.Drinks
             {
                 List<string> ingredients = new List<string>();
                 ingredients.Add("Water");
-                ingredients.Add("Natural Flavors");
-                ingredients.Add("Cane Sugar");
+                ingredients.Add("Coffee");
                 return ingredients;
             }
         }
@@ -88,22 +103,22 @@ namespace DinoDiner.Menu.Drinks
                 switch (size)
                 {
                     case Size.Large:
-                        Price = 2.50;
-                        Calories = 208;
+                        Price = 1.49;
+                        Calories = 8;
                         break;
                     case Size.Medium:
-                        Price = 2.00;
-                        Calories = 156;
+                        Price = .99;
+                        Calories = 4;
                         break;
                     case Size.Small:
-                        Price = 1.50;
-                        Calories = 112;
+                        Price = .49;
+                        Calories = 2;
                         break;
                 }
             }
         }
 
-        private bool ice = true;
+        private bool ice = false;
         /// <summary>
         /// Returns whether there is ice or not.
         /// </summary>
@@ -115,20 +130,47 @@ namespace DinoDiner.Menu.Drinks
             }
         }
 
+
         /// <summary>
-        /// Initializes Sodasaurus class and sets size to small.
+        /// Initializes JurassicJava class and sets size to small.
         /// </summary>
-        public Sodasaurus()
+        public JurassicJava()
         {
             this.Size = Size.Small;
         }
 
         /// <summary>
+        /// Returns a string of the class name.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            if (decaf) return $"{this.size} Decaf Jurassic Java";
+            else return $"{this.size} Jurassic Java";
+        }
+
+        /// <summary>
         /// Holds ice.
         /// </summary>
-        public void HoldIce()
+        public void AddIce()
         {
-            this.ice = false;
+            this.ice = true;
+        }
+
+        /// <summary>
+        /// Leaves room for cream.
+        /// </summary>
+        public void LeaveRoomForCream()
+        {
+            this.cream = true;
+        }
+
+        /// <summary>
+        /// Makes decaf.
+        /// </summary>
+        public void MakeDecaf()
+        {
+            this.decaf = true;
         }
     }
 }

@@ -1,13 +1,16 @@
-﻿using System;
+﻿/* CIS 500
+ * Amanda Young
+ */
+ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Mezzorella Sticks side class.
     /// </summary>
-    public class MezzorellaSticks : Side
+    public class MezzorellaSticks : Side, IMenuItem
     {
         private List<string> ingredients;
 
@@ -99,6 +102,15 @@ namespace DinoDiner.Menu.Sides
             ingredients.Add("Cheese Product");
             ingredients.Add("Breading");
             ingredients.Add("Vegetable Oil");
+        }
+
+        /// <summary>
+        /// Returns a string of the class name.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return $"{this.size} Mezzorella Sticks";
         }
     }
 }

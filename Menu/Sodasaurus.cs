@@ -1,41 +1,19 @@
-﻿using System;
+﻿/* CIS 500
+ * Amanda Young
+ */
+ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
-    public class Tyrannotea : Drink
+    public class Sodasaurus : Drink, IMenuItem
     {
-        private bool lemon = false;
-        /// <summary>
-        /// Returns whether lemon is present or not.
-        /// </summary>
-        public bool Lemon
-        {
-            get
-            {
-                return lemon;
-            }
-        }
-
-        private bool sugar = false;
-        /// <summary>
-        /// Returns whether tea is sweetened or not.
-        /// </summary>
-        public bool Sugar
-        {
-            get
-            {
-                return sugar;
-            }
-        }
-
         private SodasaurusFlavor flavor;
         /// <summary>
         /// Gets and sets flavor of Sodasaurus.
         /// </summary>
-        public SodasaurusFlavor Flavor
-        {
+        public SodasaurusFlavor Flavor {
             get
             {
                 return flavor;
@@ -87,9 +65,8 @@ namespace DinoDiner.Menu.Drinks
             {
                 List<string> ingredients = new List<string>();
                 ingredients.Add("Water");
-                ingredients.Add("Tea");
-                if (lemon) ingredients.Add("Lemon");
-                if (sugar) ingredients.Add("Cane Sugar");
+                ingredients.Add("Natural Flavors");
+                ingredients.Add("Cane Sugar");
                 return ingredients;
             }
         }
@@ -114,16 +91,16 @@ namespace DinoDiner.Menu.Drinks
                 switch (size)
                 {
                     case Size.Large:
-                        Price = 1.99;
-                        Calories = 32;
+                        Price = 2.50;
+                        Calories = 208;
                         break;
                     case Size.Medium:
-                        Price = 1.49;
-                        Calories = 16;
+                        Price = 2.00;
+                        Calories = 156;
                         break;
                     case Size.Small:
-                        Price = .99;
-                        Calories = 8;
+                        Price = 1.50;
+                        Calories = 112;
                         break;
                 }
             }
@@ -141,39 +118,21 @@ namespace DinoDiner.Menu.Drinks
             }
         }
 
-
         /// <summary>
         /// Initializes Sodasaurus class and sets size to small.
         /// </summary>
-        public Tyrannotea()
+        public Sodasaurus()
         {
             this.Size = Size.Small;
         }
 
         /// <summary>
-        /// Holds Lemon.
+        /// Returns a string of the class name.
         /// </summary>
-        public void AddLemon()
+        /// <returns></returns>
+        public override string ToString()
         {
-            this.lemon = true;
-        }
-
-        /// <summary>
-        /// Adds sugar.
-        /// </summary>
-        public void AddSugar()
-        {
-            this.sugar = true;
-            this.Calories *= 2;
-        }
-
-        /// <summary>
-        /// Holds Sugar.
-        /// </summary>
-        public void HoldSugar()
-        {
-            this.sugar = false;
-            this.Calories /= 2;
+            return $"{this.size} {this.flavor} Sodasaurus";
         }
 
         /// <summary>

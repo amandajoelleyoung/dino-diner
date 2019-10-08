@@ -1,30 +1,37 @@
-﻿using System;
+﻿/* CIS 500
+ * Amanda Young
+ */
+ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu
 {
-    public class Fryceritops : Side
+    /// <summary>
+    /// Meteor Mac And Cheese class.
+    /// </summary>
+    public class MeteorMacAndCheese : Side, IMenuItem
     {
         private List<string> ingredients;
 
         /// <summary>
-        /// returns list of Ingredients.
+        /// Returns list of ingredients.
         /// </summary>
-        public override List<string> Ingredients { 
+        public override List<string> Ingredients
+        {
             get
             {
                 return ingredients;
             }
-        } 
+        }
 
         /// <summary>
-        /// Temporary variable to set size.
+        /// temporary variable to set size.
         /// </summary>
         private Size size;
 
         /// <summary>
-        /// Sets price, calories, size, and returns size.
+        /// sets price, calories, size, and returns size.
         /// </summary>
         public override Size Size
         {
@@ -39,15 +46,15 @@ namespace DinoDiner.Menu.Sides
                 {
                     case Size.Large:
                         Price = 1.95;
-                        Calories = 480;
+                        Calories = 520;
                         break;
                     case Size.Medium:
                         Price = 1.45;
-                        Calories = 365;
+                        Calories = 490;
                         break;
                     case Size.Small:
                         Price = .99;
-                        Calories = 222;
+                        Calories = 420;
                         break;
                 }
             }
@@ -88,13 +95,23 @@ namespace DinoDiner.Menu.Sides
         /// <summary>
         /// Sets size to small and adds ingredients.
         /// </summary>
-        public Fryceritops()
+        public MeteorMacAndCheese()
         {
             this.Size = Size.Small;
             ingredients = new List<string>();
-            ingredients.Add("Potato");
-            ingredients.Add("Salt");
-            ingredients.Add("Vegetable Oil");
+            ingredients.Add("Macaroni Noodles");
+            ingredients.Add("Cheese Product");
+            ingredients.Add("Pork Sausage");
         }
+
+        /// <summary>
+        /// Returns a string of the class name.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return $"{this.size} Meteor Mac and Cheese";
+        }
+
     }
 }

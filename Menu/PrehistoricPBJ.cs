@@ -1,11 +1,14 @@
-﻿using System.Collections.Generic;
+﻿/* CIS 500
+ * Amanda Young
+ */
+ using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Prehistoric PBJ class.
     /// </summary>
-    public class PrehistoricPBJ : Entree
+    public class PrehistoricPBJ : Entree, IMenuItem
     {
         /// <summary>
         /// Keeps track of whether the ingredients include peanut butter or not.
@@ -72,6 +75,15 @@ namespace DinoDiner.Menu.Entrees
             this.Price = 6.52;
             this.Calories = 483;
         }
+
+        /// <summary>
+        /// Returns a string of the class name.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return $"Prehistoric PB&J";
+        } 
 
         /// <summary>
         /// Does not include peanut butter.

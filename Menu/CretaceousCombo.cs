@@ -1,13 +1,14 @@
-﻿using System;
+﻿/* CIS 500
+ * Amanda Young
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
-using DinoDiner.Menu.Entrees;
-using DinoDiner.Menu.Drinks;
-using DinoDiner.Menu.Sides;
+using DinoDiner.Menu;
 
 namespace DinoDiner.Menu
 {
-    public class CretaceousCombo
+    public class CretaceousCombo : IMenuItem
     {
         public Entree Entree { get; set; }
         public Drink Drink { get; set; }
@@ -57,7 +58,7 @@ namespace DinoDiner.Menu
 
         public override string ToString()
         {
-            return $"";
+            return $"{Entree.ToString()} Combo";
         }
 
         private CretaceousCombo() { }

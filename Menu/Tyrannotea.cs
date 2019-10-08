@@ -1,36 +1,55 @@
-﻿using System;
+﻿/* CIS 500
+ * Amanda Young
+ */
+ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
-    public class JurrasicJava : Drink
+    public class Tyrannotea : Drink, IMenuItem
     {
-        private bool cream = false;
+        private bool lemon = false;
         /// <summary>
-        /// Returns whether there is room for cream or not.
+        /// Returns whether lemon is present or not.
         /// </summary>
-        public bool RoomForCream
+        public bool Lemon
         {
             get
             {
-                return cream;
+                return lemon;
             }
         }
 
-        private bool decaf = false;
+        private bool sugar = false;
         /// <summary>
-        /// Returns whether it is decaf or not.
+        /// Returns whether tea is sweetened or not.
         /// </summary>
-        public bool Decaf
+        public bool Sweet
         {
             get
             {
-                return decaf;
+                return sugar;
             }
             set
             {
-                decaf = value;
+                sugar = value;
+            }
+        }
+
+        private SodasaurusFlavor flavor;
+        /// <summary>
+        /// Gets and sets flavor of Sodasaurus.
+        /// </summary>
+        public SodasaurusFlavor Flavor
+        {
+            get
+            {
+                return flavor;
+            }
+            set
+            {
+                flavor = value;
             }
         }
 
@@ -75,7 +94,9 @@ namespace DinoDiner.Menu.Drinks
             {
                 List<string> ingredients = new List<string>();
                 ingredients.Add("Water");
-                ingredients.Add("Coffee");
+                ingredients.Add("Tea");
+                if (lemon) ingredients.Add("Lemon");
+                if (sugar) ingredients.Add("Cane Sugar");
                 return ingredients;
             }
         }
@@ -100,22 +121,22 @@ namespace DinoDiner.Menu.Drinks
                 switch (size)
                 {
                     case Size.Large:
-                        Price = 1.49;
-                        Calories = 8;
+                        Price = 1.99;
+                        Calories = 32;
                         break;
                     case Size.Medium:
-                        Price = .99;
-                        Calories = 4;
+                        Price = 1.49;
+                        Calories = 16;
                         break;
                     case Size.Small:
-                        Price = .49;
-                        Calories = 2;
+                        Price = .99;
+                        Calories = 8;
                         break;
                 }
             }
         }
 
-        private bool ice = false;
+        private bool ice = true;
         /// <summary>
         /// Returns whether there is ice or not.
         /// </summary>
@@ -129,35 +150,55 @@ namespace DinoDiner.Menu.Drinks
 
 
         /// <summary>
-        /// Initializes JurassicJava class and sets size to small.
+        /// Initializes Sodasaurus class and sets size to small.
         /// </summary>
-        public JurrasicJava()
+        public Tyrannotea()
         {
             this.Size = Size.Small;
         }
 
         /// <summary>
+        /// Returns a string of the class name.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            if (sugar) return $"{this.size} Sweet Tyrannotea";
+            else return $"{this.size} Tyrannotea";
+        }
+
+        /// <summary>
+        /// Holds Lemon.
+        /// </summary>
+        public void AddLemon()
+        {
+            this.lemon = true;
+        }
+
+        /// <summary>
+        /// Adds sugar.
+        /// </summary>
+        public void AddSugar()
+        {
+            this.sugar = true;
+            this.Calories *= 2;
+        }
+
+        /// <summary>
+        /// Holds Sugar.
+        /// </summary>
+        public void HoldSugar()
+        {
+            this.sugar = false;
+            this.Calories /= 2;
+        }
+
+        /// <summary>
         /// Holds ice.
         /// </summary>
-        public void AddIce()
+        public void HoldIce()
         {
-            this.ice = true;
-        }
-
-        /// <summary>
-        /// Leaves room for cream.
-        /// </summary>
-        public void LeaveRoomForCream()
-        {
-            this.cream = true;
-        }
-
-        /// <summary>
-        /// Makes decaf.
-        /// </summary>
-        public void MakeDecaf()
-        {
-            this.decaf = true;
+            this.ice = false;
         }
     }
 }

@@ -1,18 +1,22 @@
-﻿using System;
+﻿/* CIS 500
+ * Amanda Young
+ */
+ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
-    /// <summary>
-    /// Steakosaurus burger class
-    /// </summary>
-    public class SteakosaurusBurger : Entree
+    public class TRexKingBurger : Entree, IMenuItem
     {
         private bool bun = true;
+        private bool lettuce = true;
+        private bool tomato = true;
+        private bool onion = true;
         private bool pickle = true;
         private bool ketchup = true;
         private bool mustard = true;
+        private bool mayo = true;
 
         private double price;
         /// <summary>
@@ -54,21 +58,36 @@ namespace DinoDiner.Menu.Entrees
             get
             {
                 List<string> ingredients = new List<string>() { "Steakburger Pattie" };
+                ingredients.Add("Steakburger Pattie");
+                ingredients.Add("Steakburger Pattie");
                 if (bun) ingredients.Add("Whole Wheat Bun");
+                if (lettuce) ingredients.Add("Lettuce");
+                if (tomato) ingredients.Add("Tomato");
+                if (onion) ingredients.Add("Onion");
                 if (pickle) ingredients.Add("Pickle");
                 if (ketchup) ingredients.Add("Ketchup");
                 if (mustard) ingredients.Add("Mustard");
+                if (mayo) ingredients.Add("Mayo");
                 return ingredients;
             }
         }
 
         /// <summary>
-        /// Initializes price and calories.
+        /// Initializes price and calories
         /// </summary>
-        public SteakosaurusBurger()
+        public TRexKingBurger()
         {
-            this.Price = 5.15;
-            this.Calories = 621;
+            this.Price = 8.45;
+            this.Calories = 728;
+        }
+
+        /// <summary>
+        /// Returns a string of the class name.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return $"T-Rex King Burger";
         }
 
         /// <summary>
@@ -80,7 +99,31 @@ namespace DinoDiner.Menu.Entrees
         }
 
         /// <summary>
-        /// Removes pickles from ingredients.
+        /// Removes Lettuce from ingredients.
+        /// </summary>
+        public void HoldLettuce()
+        {
+            this.lettuce = false;
+        }
+
+        /// <summary>
+        /// removes tomato from ingredients.
+        /// </summary>
+        public void HoldTomato()
+        {
+            this.tomato = false;
+        }
+
+        /// <summary>
+        /// removes onion from ingredients.
+        /// </summary>
+        public void HoldOnion()
+        {
+            this.onion = false;
+        }
+
+        /// <summary>
+        /// removes pickles from ingredients.
         /// </summary>
         public void HoldPickle()
         {
@@ -88,7 +131,7 @@ namespace DinoDiner.Menu.Entrees
         }
 
         /// <summary>
-        /// Removes ketchup from ingredients.
+        /// removes ketchup from ingredients.
         /// </summary>
         public void HoldKetchup()
         {
@@ -96,11 +139,19 @@ namespace DinoDiner.Menu.Entrees
         }
 
         /// <summary>
-        /// Removes mustard from ingredients.
+        /// removes mustard from ingredients.
         /// </summary>
         public void HoldMustard()
         {
             this.mustard = false;
+        }
+
+        /// <summary>
+        /// removes mayo from ingredients.
+        /// </summary>
+        public void HoldMayo()
+        {
+            this.mayo = false;
         }
     }
 }

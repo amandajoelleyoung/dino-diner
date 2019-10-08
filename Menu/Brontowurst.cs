@@ -1,8 +1,11 @@
-﻿using System;
+﻿/* CIS 500
+ * Amanda Young
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// A brautwurst wih a whole wheat bun, onions, and peppers.
@@ -69,6 +72,15 @@ namespace DinoDiner.Menu.Entrees
             this.Price = 5.36;
             this.Calories = 498;
         }
+
+        /// <summary>
+        /// Returns a string of the class name.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return $"Brontowurst";
+        }   
 
         /// <summary>
         /// Does not include the bun.
