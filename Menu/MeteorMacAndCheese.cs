@@ -12,8 +12,6 @@ namespace DinoDiner.Menu
     /// </summary>
     public class MeteorMacAndCheese : Side, IMenuItem
     {
-        private List<string> ingredients;
-
         /// <summary>
         /// Returns list of ingredients.
         /// </summary>
@@ -21,6 +19,10 @@ namespace DinoDiner.Menu
         {
             get
             {
+                List<string> ingredients = new List<string>();
+                ingredients.Add("Macaroni Noodles");
+                ingredients.Add("Cheese Product");
+                ingredients.Add("Pork Sausage");
                 return ingredients;
             }
         }
@@ -98,10 +100,7 @@ namespace DinoDiner.Menu
         public MeteorMacAndCheese()
         {
             this.Size = Size.Small;
-            ingredients = new List<string>();
-            ingredients.Add("Macaroni Noodles");
-            ingredients.Add("Cheese Product");
-            ingredients.Add("Pork Sausage");
+            
         }
 
         /// <summary>

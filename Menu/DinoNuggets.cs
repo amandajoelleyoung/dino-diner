@@ -27,8 +27,12 @@ namespace DinoDiner.Menu
                 ingredients.Add("Chicken Nugget");
                 ingredients.Add("Chicken Nugget");
                 ingredients.Add("Chicken Nugget");
-                for (int i = 1; i > extraNuggets; i++)
+                int x = extraNuggets;
+                while (x != 0)
+                {
                     ingredients.Add("Chicken Nugget");
+                    x--;
+                }
                 return ingredients;
             }
         }

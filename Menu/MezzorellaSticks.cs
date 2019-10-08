@@ -12,8 +12,6 @@ namespace DinoDiner.Menu
     /// </summary>
     public class MezzorellaSticks : Side, IMenuItem
     {
-        private List<string> ingredients;
-
         /// <summary>
         /// Returns list of ingredients.
         /// </summary>
@@ -21,6 +19,10 @@ namespace DinoDiner.Menu
         {
             get
             {
+                List<string> ingredients = new List<string>();
+                ingredients.Add("Cheese Product");
+                ingredients.Add("Breading");
+                ingredients.Add("Vegetable Oil");
                 return ingredients;
             }
         }
@@ -98,10 +100,7 @@ namespace DinoDiner.Menu
         public MezzorellaSticks()
         {
             this.Size = Size.Small;
-            ingredients = new List<string>();
-            ingredients.Add("Cheese Product");
-            ingredients.Add("Breading");
-            ingredients.Add("Vegetable Oil");
+            
         }
 
         /// <summary>

@@ -9,14 +9,16 @@ namespace DinoDiner.Menu
 {
     public class Fryceritops : Side, IMenuItem
     {
-        private List<string> ingredients;
-
         /// <summary>
         /// returns list of Ingredients.
         /// </summary>
         public override List<string> Ingredients { 
             get
             {
+                List<string> ingredients = new List<string>();
+                ingredients.Add("Potato");
+                ingredients.Add("Salt");
+                ingredients.Add("Vegetable Oil");
                 return ingredients;
             }
         } 
@@ -94,10 +96,7 @@ namespace DinoDiner.Menu
         public Fryceritops()
         {
             this.Size = Size.Small;
-            ingredients = new List<string>();
-            ingredients.Add("Potato");
-            ingredients.Add("Salt");
-            ingredients.Add("Vegetable Oil");
+            
         }
 
         /// <summary>
