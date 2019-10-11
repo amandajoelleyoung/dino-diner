@@ -17,9 +17,25 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Click="SelectCombo" Grid.Row="0" Grid.Column="0">Combos</Button>
-        <Button Grid.Row="0" Grid.Column="1">Entrees</Button>
-        <Button Grid.Row="1" Grid.Column="0">Drinks</Button>
-        <Button Grid.Row="1" Grid.Column="1">Sides</Button>
+        <Button Click="SelectCombo" Grid.Row="0" Grid.Column="0">
+            <DockPanel Height="200">
+                <TextBlock FontFamily="Segoe UI Black" FontSize="27">Combos</TextBlock>
+            </DockPanel>
+        </Button>
+        <Button Click="SelectEntree" Grid.Row="0" Grid.Column="1">
+            <DockPanel Height="200">
+                <TextBlock FontFamily="Segoe UI Black" FontSize="27">Entrees</TextBlock>
+            </DockPanel>
+        </Button>
+        <Button Click="SelectDrink" Grid.Row="1" Grid.Column="0">
+            <DockPanel Height="200">
+                <TextBlock FontFamily="Segoe UI Black" FontSize="27">Drinks</TextBlock>
+            </DockPanel>
+        </Button>
+        <Button Click="SelectSide" Grid.Row="1" Grid.Column="1">
+            <DockPanel Height="200">
+                <TextBlock FontFamily="Segoe UI Black" FontSize="27">Sides</TextBlock>
+            </DockPanel>
+        </Button>
     </Grid>
 </Page>
