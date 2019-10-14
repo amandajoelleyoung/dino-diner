@@ -54,13 +54,26 @@
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Compile Include="CustomizeCombo.xaml.cs">
+      <DependentUpon>CustomizeCombo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DrinkSelection.xaml.cs">
       <DependentUpon>DrinkSelection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FlavorSelection.xaml.cs">
+      <DependentUpon>FlavorSelection.xaml</DependentUpon>
     </Compile>
     <Compile Include="SideSelection.xaml.cs">
       <DependentUpon>SideSelection.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SizeSelection.xaml.cs">
+      <DependentUpon>SizeSelection.xaml</DependentUpon>
+    </Compile>
     <Page Include="ComboSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomizeCombo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -69,6 +82,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="EntreeSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FlavorSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -95,6 +112,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SideSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SizeSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -144,6 +165,19 @@
     <Resource Include="Images\DinoDiner-13.png" />
     <Resource Include="Images\DinoDiner-14.png" />
     <Resource Include="Images\DinoDiner-15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Cherry.png" />
+    <Resource Include="Images\Lemon.png" />
+    <Resource Include="Images\Sugar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Chocolate.png" />
+    <Resource Include="Images\Cola.png" />
+    <Resource Include="Images\Lime.png" />
+    <Resource Include="Images\OrangeSlice.png" />
+    <Resource Include="Images\RootBeer.png" />
+    <Resource Include="Images\Vanilla.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
