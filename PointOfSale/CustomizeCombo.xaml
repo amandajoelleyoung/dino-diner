@@ -11,117 +11,38 @@
     <WrapPanel>
         <WrapPanel.Resources>
             <Style TargetType="Button">
-                <Setter Property="Width" Value="180"></Setter>
-                <Setter Property="Height" Value="130"></Setter>
+                <Setter Property="Width" Value="250"></Setter>
+                <Setter Property="Height" Value="250"></Setter>
             </Style>
         </WrapPanel.Resources>
-        <Button>
+        <Button Click="SelectDrink">
             <Button.Background>
                 <ImageBrush ImageSource="Images/DinoDiner-13.png"></ImageBrush>
             </Button.Background>
-            <TextBlock Height="220">
-                <TextBlock DockPanel.Dock="Bottom" FontSize="18" FontFamily="Segoe UI Black">Jurassic Java</TextBlock>
+            <TextBlock Height="280">
+                <TextBlock DockPanel.Dock="Bottom" FontSize="40" FontFamily="Segoe UI Black">Drinks</TextBlock>
             </TextBlock>
         </Button>
-        <Button>
-            <Button.Background>
-                <ImageBrush ImageSource="Images/DinoDiner-14.png"></ImageBrush>
-            </Button.Background>
-            <TextBlock Height="220">
-                <TextBlock DockPanel.Dock="Bottom" FontSize="18" FontFamily="Segoe UI Black">Sodasaurus</TextBlock>
-            </TextBlock>
-        </Button>
-        <Button>
-            <Button.Background>
-                <ImageBrush ImageSource="Images/DinoDiner-12.png"></ImageBrush>
-            </Button.Background>
-            <DockPanel Height="220">
-                <TextBlock DockPanel.Dock="Bottom" FontSize="18" FontFamily="Segoe UI Black">Tyrannotea</TextBlock>
-            </DockPanel>
-        </Button>
-        <Button>
-            <Button.Background>
-                <ImageBrush ImageSource="Images/DinoDiner-15.png" ></ImageBrush>
-            </Button.Background>
-            <DockPanel Height="220">
-                <TextBlock DockPanel.Dock="Bottom" FontSize="18" FontFamily="Segoe UI Black">Water</TextBlock>
-            </DockPanel>
-        </Button>
-        <Button>
-            <Button.Background>
-                <ImageBrush ImageSource="Images/Lemon.png" ></ImageBrush>
-            </Button.Background>
-            <DockPanel Height="220">
-                <TextBlock DockPanel.Dock="Bottom" FontSize="18" FontFamily="Segoe UI Black">Lemon</TextBlock>
-            </DockPanel>
-        </Button>
-        <Button Click="SelectFlavor">
-            <Button.Background>
-                <ImageBrush ImageSource="Images/Cherry.png" ></ImageBrush>
-            </Button.Background>
-            <DockPanel Height="220">
-                <TextBlock DockPanel.Dock="Bottom" FontSize="18" FontFamily="Segoe UI Black">Flavor</TextBlock>
-            </DockPanel>
-        </Button>
-        <Button>
-            <Button.Background>
-                <ImageBrush ImageSource="Images/DinoDiner-13.png" ></ImageBrush>
-            </Button.Background>
-            <DockPanel Height="220">
-                <TextBlock DockPanel.Dock="Bottom" FontSize="18" FontFamily="Segoe UI Black">Decaf</TextBlock>
-            </DockPanel>
-        </Button>
-        <Button>
-            <Button.Background>
-                <ImageBrush ImageSource="Images/Sugar.png" ></ImageBrush>
-            </Button.Background>
-            <DockPanel Height="220">
-                <TextBlock DockPanel.Dock="Bottom" FontSize="18" FontFamily="Segoe UI Black">Sweet</TextBlock>
-            </DockPanel>
-        </Button>
-        <Button>
+        <Button Click="SelectSide">
             <Button.Background>
                 <ImageBrush ImageSource="Images/DinoDiner-08.png"></ImageBrush>
             </Button.Background>
-            <TextBlock Height="220">
-                <TextBlock DockPanel.Dock="Bottom" FontSize="18" FontFamily="Segoe UI Black">Fryceritops</TextBlock>
+            <TextBlock Height="280">
+                <TextBlock DockPanel.Dock="Bottom" FontSize="40" FontFamily="Segoe UI Black">Sides</TextBlock>
             </TextBlock>
         </Button>
-        <Button>
-            <Button.Background>
-                <ImageBrush ImageSource="Images/DinoDiner-09.png"></ImageBrush>
-            </Button.Background>
-            <TextBlock Height="220">
-                <TextBlock DockPanel.Dock="Bottom" FontSize="18" FontFamily="Segoe UI Black">Meteor Mac and Cheese</TextBlock>
-            </TextBlock>
-        </Button>
-        <Button>
-            <Button.Background>
-                <ImageBrush ImageSource="Images/DinoDiner-10.png"></ImageBrush>
-            </Button.Background>
-            <DockPanel Height="220">
-                <TextBlock DockPanel.Dock="Bottom" FontSize="18" FontFamily="Segoe UI Black">Mezzorella Sticks</TextBlock>
-            </DockPanel>
-        </Button>
-        <Button>
-            <Button.Background>
-                <ImageBrush ImageSource="Images/DinoDiner-11.png" ></ImageBrush>
-            </Button.Background>
-            <DockPanel Height="220">
-                <TextBlock DockPanel.Dock="Bottom" FontSize="18" FontFamily="Segoe UI Black">Triceri-tots</TextBlock>
-            </DockPanel>
-        </Button>
-        <Button Height="50">
+        
+        <Button Height="50" Width="150">
             <TextBlock>
                 <TextBlock DockPanel.Dock="Bottom" FontSize="25" FontFamily="Segoe UI Black">Small</TextBlock>
             </TextBlock>
         </Button>
-        <Button Height="50">
+        <Button Height="50" Width="150">
             <TextBlock>
                 <TextBlock DockPanel.Dock="Bottom" FontSize="25" FontFamily="Segoe UI Black">Medium</TextBlock>
             </TextBlock>
         </Button>
-        <Button Height="50">
+        <Button Height="50" Width="150">
             <DockPanel>
                 <TextBlock DockPanel.Dock="Bottom" FontSize="25" FontFamily="Segoe UI Black">Large</TextBlock>
             </DockPanel>

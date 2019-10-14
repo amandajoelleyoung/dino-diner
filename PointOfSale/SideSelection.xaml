@@ -8,16 +8,14 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="SideSelection">
 
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Button Grid.Row="0" Grid.Column="0">
+    <WrapPanel>
+        <WrapPanel.Resources>
+            <Style TargetType="Button">
+                <Setter Property="Width" Value="220"></Setter>
+                <Setter Property="Height" Value="150"></Setter>
+            </Style>
+        </WrapPanel.Resources>
+        <Button>
             <Button.Background>
                 <ImageBrush ImageSource="Images/DinoDiner-08.png"></ImageBrush>
             </Button.Background>
@@ -25,7 +23,7 @@
                 <TextBlock DockPanel.Dock="Bottom" FontSize="18" FontFamily="Segoe UI Black">Fryceritops</TextBlock>
             </TextBlock>
         </Button>
-        <Button Grid.Row="0" Grid.Column="1">
+        <Button>
             <Button.Background>
                 <ImageBrush ImageSource="Images/DinoDiner-09.png"></ImageBrush>
             </Button.Background>
@@ -33,7 +31,7 @@
                 <TextBlock DockPanel.Dock="Bottom" FontSize="18" FontFamily="Segoe UI Black">Meteor Mac and Cheese</TextBlock>
             </TextBlock>
         </Button>
-        <Button Grid.Row="1" Grid.Column="0">
+        <Button>
             <Button.Background>
                 <ImageBrush ImageSource="Images/DinoDiner-10.png"></ImageBrush>
             </Button.Background>
@@ -41,7 +39,7 @@
                 <TextBlock DockPanel.Dock="Bottom" FontSize="18" FontFamily="Segoe UI Black">Mezzorella Sticks</TextBlock>
             </DockPanel>
         </Button>
-        <Button Grid.Row="1" Grid.Column="1">
+        <Button>
             <Button.Background>
                 <ImageBrush ImageSource="Images/DinoDiner-11.png" ></ImageBrush>
             </Button.Background>
@@ -49,5 +47,20 @@
                 <TextBlock DockPanel.Dock="Bottom" FontSize="18" FontFamily="Segoe UI Black">Triceri-tots</TextBlock>
             </DockPanel>
         </Button>
-    </Grid>
+        <Button Height="50" Width="150">
+            <TextBlock>
+                <TextBlock DockPanel.Dock="Bottom" FontSize="25" FontFamily="Segoe UI Black">Small</TextBlock>
+            </TextBlock>
+        </Button>
+        <Button Height="50" Width="150">
+            <TextBlock>
+                <TextBlock DockPanel.Dock="Bottom" FontSize="25" FontFamily="Segoe UI Black">Medium</TextBlock>
+            </TextBlock>
+        </Button>
+        <Button Height="50" Width="150">
+            <DockPanel>
+                <TextBlock DockPanel.Dock="Bottom" FontSize="25" FontFamily="Segoe UI Black">Large</TextBlock>
+            </DockPanel>
+        </Button>
+    </WrapPanel>
 </Page>

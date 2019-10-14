@@ -11,8 +11,8 @@
     <WrapPanel>
         <WrapPanel.Resources>
             <Style TargetType="Button">
-                <Setter Property="Width" Value="180"></Setter>
-                <Setter Property="Height" Value="140"></Setter>
+                <Setter Property="Width" Value="130"></Setter>
+                <Setter Property="Height" Value="130"></Setter>
             </Style>
         </WrapPanel.Resources>
         <Button>
@@ -77,6 +77,21 @@
             </Button.Background>
             <DockPanel Height="220">
                 <TextBlock DockPanel.Dock="Bottom" FontSize="18" FontFamily="Segoe UI Black">Sweet</TextBlock>
+            </DockPanel>
+        </Button>
+        <Button Height="50">
+            <TextBlock>
+                <TextBlock DockPanel.Dock="Bottom" FontSize="25" FontFamily="Segoe UI Black">Small</TextBlock>
+            </TextBlock>
+        </Button>
+        <Button Height="50">
+            <TextBlock>
+                <TextBlock DockPanel.Dock="Bottom" FontSize="25" FontFamily="Segoe UI Black">Medium</TextBlock>
+            </TextBlock>
+        </Button>
+        <Button Height="50">
+            <DockPanel>
+                <TextBlock DockPanel.Dock="Bottom" FontSize="25" FontFamily="Segoe UI Black">Large</TextBlock>
             </DockPanel>
         </Button>
     </WrapPanel>
