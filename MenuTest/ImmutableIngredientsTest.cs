@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* CIS 400
+ * Amanda Young
+ */
+ using System;
 using Xunit;
 using DinoDiner.Menu;
 

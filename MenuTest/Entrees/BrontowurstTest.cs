@@ -1,4 +1,7 @@
-using System.Collections.Generic;
+/* CIS 400
+ * Amanda Young
+ */
+ using System.Collections.Generic;
 using Xunit;
 using DinoDiner.Menu;
 

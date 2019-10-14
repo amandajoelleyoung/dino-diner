@@ -1,7 +1,7 @@
-﻿/* CIS 500
+﻿/* CIS 400
  * Amanda Young
  */
- using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace DinoDiner.Menu
 {
