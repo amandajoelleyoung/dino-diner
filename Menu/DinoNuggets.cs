@@ -3,6 +3,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu
@@ -10,9 +11,44 @@ namespace DinoDiner.Menu
     /// <summary>
     /// DinoNuggets class.
     /// </summary>
-    public class DinoNuggets : Entree, IMenuItem
+    public class DinoNuggets : Entree, INotifyPropertyChanged
     {
         private int extraNuggets=0;
+
+        /// <summary>
+        /// The PropertyChanged event handler; notifies of changes
+        /// to the Price, Description, and Special properties.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// Returns description of entree item.
+        /// </summary>
+        public string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        /// <summary>
+        /// Gets any special preparation instructions.
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (extraNuggets > 0) special.Add(extraNuggets + " Extra Nuggets");
+                return special.ToArray();
+            }
+        }
+
         /// <summary>
         /// returns list of Ingredients.
         /// </summary>
@@ -34,38 +70,6 @@ namespace DinoDiner.Menu
                     x--;
                 }
                 return ingredients;
-            }
-        }
-
-        private double price;
-        /// <summary>
-        /// Sets and returns price.
-        /// </summary>
-        public override double Price
-        {
-            get
-            {
-                return price;
-            }
-            set
-            {
-                price = value;
-            }
-        }
-
-        private uint calories;
-        /// <summary>
-        /// Sets and returns calories.
-        /// </summary>
-        public override uint Calories
-        {
-            get
-            {
-                return calories;
-            }
-            set
-            {
-                calories = value;
             }
         }
 
@@ -95,6 +99,10 @@ namespace DinoDiner.Menu
             extraNuggets++;
             this.Calories += 59;
             this.Price += .25;
+            NotifyOfPropertyChange("Price");
+            NotifyOfPropertyChange("Calories");
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
     }
 }

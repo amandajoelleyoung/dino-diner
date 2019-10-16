@@ -3,6 +3,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu
@@ -10,41 +11,45 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Velociwrap class.
     /// </summary>
-    public class VelociWrap : Entree, IMenuItem
+    public class VelociWrap : Entree, INotifyPropertyChanged
     {
         private bool lettuce = true;
         private bool dressing = true;
         private bool cheese = true;
 
-        private double price;
         /// <summary>
-        /// Sets and returns price.
+        /// The PropertyChanged event handler; notifies of changes
+        /// to the Price, Description, and Special properties.
         /// </summary>
-        public override double Price
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// Returns description of entree item.
+        /// </summary>
+        public string Description
         {
             get
             {
-                return price;
-            }
-            set
-            {
-                price = value;
+                return this.ToString();
             }
         }
 
-        private uint calories;
         /// <summary>
-        /// Sets and returns calories.
+        /// Gets any special preparation instructions.
         /// </summary>
-        public override uint Calories
+        public override string[] Special
         {
             get
             {
-                return calories;
-            }
-            set
-            {
-                calories = value;
+                List<string> special = new List<string>();
+                if (!lettuce) special.Add("Hold Romaine Lettuce");
+                if (!dressing) special.Add("Hold Ceasar Dressing");
+                if (!cheese) special.Add("Hold Parmesan Cheese");
+                return special.ToArray();
             }
         }
 
@@ -88,6 +93,8 @@ namespace DinoDiner.Menu
         public void HoldLettuce()
         {
             this.lettuce = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
         /// <summary>
@@ -96,6 +103,8 @@ namespace DinoDiner.Menu
         public void HoldDressing()
         {
             this.dressing = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
 
@@ -105,6 +114,8 @@ namespace DinoDiner.Menu
         public void HoldCheese()
         {
             this.cheese = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
     }
 }

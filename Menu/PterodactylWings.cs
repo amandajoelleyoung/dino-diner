@@ -3,6 +3,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu
@@ -10,38 +11,26 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Pterodactyl wings class.
     /// </summary>
-    public class PterodactylWings : Entree, IMenuItem
+    public class PterodactylWings : Entree, INotifyPropertyChanged
     {
-
-        private double price;
         /// <summary>
-        /// Sets and returns price.
+        /// The PropertyChanged event handler; notifies of changes
+        /// to the Price, Description, and Special properties.
         /// </summary>
-        public override double Price
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void NotifyOfPropertyChange(string propertyName)
         {
-            get
-            {
-                return price;
-            }
-            set
-            {
-                price = value;
-            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private uint calories;
         /// <summary>
-        /// Sets and returns calories.
+        /// Returns description of entree item.
         /// </summary>
-        public override uint Calories
+        public string Description
         {
             get
             {
-                return calories;
-            }
-            set
-            {
-                calories = value;
+                return this.ToString();
             }
         }
 

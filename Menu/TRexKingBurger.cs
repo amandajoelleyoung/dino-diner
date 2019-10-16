@@ -3,11 +3,12 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu
 {
-    public class TRexKingBurger : Entree, IMenuItem
+    public class TRexKingBurger : Entree, INotifyPropertyChanged
     {
         private bool bun = true;
         private bool lettuce = true;
@@ -18,35 +19,44 @@ namespace DinoDiner.Menu
         private bool mustard = true;
         private bool mayo = true;
 
-        private double price;
         /// <summary>
-        /// Sets and returns price.
+        /// The PropertyChanged event handler; notifies of changes
+        /// to the Price, Description, and Special properties.
         /// </summary>
-        public override double Price
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// Returns description of entree item.
+        /// </summary>
+        public string Description
         {
             get
             {
-                return price;
-            }
-            set
-            {
-                price = value;
+                return this.ToString();
             }
         }
 
-        private uint calories;
         /// <summary>
-        /// Sets and returns calories.
+        /// Gets any special preparation instructions.
         /// </summary>
-        public override uint Calories
+        public override string[] Special
         {
             get
             {
-                return calories;
-            }
-            set
-            {
-                calories = value;
+                List<string> special = new List<string>();
+                if (!bun) special.Add("Hold Whole Wheat Bun");
+                if (!lettuce) special.Add("Hold Lettuce");
+                if (!tomato) special.Add("Hold Tomato");
+                if (!onion) special.Add("Hold Onion");
+                if (!pickle) special.Add("Hold Pickle");
+                if (!ketchup) special.Add("Hold Ketchup");
+                if (!mustard) special.Add("Hold Mustard");
+                if (!mayo) special.Add("Hold Mayo");
+                return special.ToArray();
             }
         }
 
@@ -96,6 +106,8 @@ namespace DinoDiner.Menu
         public void HoldBun()
         {
             this.bun = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
         /// <summary>
@@ -104,6 +116,8 @@ namespace DinoDiner.Menu
         public void HoldLettuce()
         {
             this.lettuce = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
         /// <summary>
@@ -112,6 +126,8 @@ namespace DinoDiner.Menu
         public void HoldTomato()
         {
             this.tomato = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
         /// <summary>
@@ -120,6 +136,8 @@ namespace DinoDiner.Menu
         public void HoldOnion()
         {
             this.onion = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
         /// <summary>
@@ -128,6 +146,8 @@ namespace DinoDiner.Menu
         public void HoldPickle()
         {
             this.pickle = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
         /// <summary>
@@ -136,6 +156,8 @@ namespace DinoDiner.Menu
         public void HoldKetchup()
         {
             this.ketchup = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
         /// <summary>
@@ -144,6 +166,8 @@ namespace DinoDiner.Menu
         public void HoldMustard()
         {
             this.mustard = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
         /// <summary>
@@ -152,6 +176,8 @@ namespace DinoDiner.Menu
         public void HoldMayo()
         {
             this.mayo = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
     }
 }

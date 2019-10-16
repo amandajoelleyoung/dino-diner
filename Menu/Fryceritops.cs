@@ -3,12 +3,34 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu
 {
-    public class Fryceritops : Side, IMenuItem
+    public class Fryceritops : Side, INotifyPropertyChanged
     {
+        /// <summary>
+        /// The PropertyChanged event handler; notifies of changes
+        /// to the Price, Description, and Special properties.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// Returns description of entree item.
+        /// </summary>
+        public string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
         /// <summary>
         /// returns list of Ingredients.
         /// </summary>
@@ -58,38 +80,6 @@ namespace DinoDiner.Menu
             }
         }
 
-        private double price;
-        /// <summary>
-        /// Sets and returns price.
-        /// </summary>
-        public override double Price
-        {
-            get
-            {
-                return price;
-            }
-            set
-            {
-                price = value;
-            }
-        }
-
-        private uint calories;
-        /// <summary>
-        /// Sets and returns calories.
-        /// </summary>
-        public override uint Calories
-        {
-            get
-            {
-                return calories;
-            }
-            set
-            {
-                calories = value;
-            }
-        }
-
         /// <summary>
         /// Sets size to small and adds ingredients.
         /// </summary>
@@ -105,7 +95,7 @@ namespace DinoDiner.Menu
         /// <returns></returns>
         public override string ToString()
         {
-            return $"{this.size} Friceritops";
+            return $"{this.size} Fryceritops";
         }
     }
 }

@@ -2,54 +2,51 @@
  * Amanda Young
  */
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// Prehistoric PBJ class.
     /// </summary>
-    public class PrehistoricPBJ : Entree, IMenuItem
+    public class PrehistoricPBJ : Entree, INotifyPropertyChanged
     {
-        /// <summary>
-        /// Keeps track of whether the ingredients include peanut butter or not.
-        /// </summary>
         private bool peanutButter = true;
-
-        /// <summary>
-        /// Keeps track whether the ingredients include jelly or not.
-        /// </summary>
         private bool jelly = true;
 
-
-        private double price;
         /// <summary>
-        /// Sets and returns price.
+        /// The PropertyChanged event handler; notifies of changes
+        /// to the Price, Description, and Special properties.
         /// </summary>
-        public override double Price
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// Returns description of entree item.
+        /// </summary>
+        public string Description
         {
             get
             {
-                return price;
-            }
-            set
-            {
-                price = value;
+                return this.ToString();
             }
         }
 
-        private uint calories;
         /// <summary>
-        /// Sets and returns calories.
+        /// Gets any special preparation instructions.
         /// </summary>
-        public override uint Calories
+        public override string[] Special
         {
             get
             {
-                return calories;
-            }
-            set
-            {
-                calories = value;
+                List<string> special = new List<string>();
+                if (!peanutButter) special.Add("Hold Peanut Butter");
+                if (!jelly) special.Add("Hold Jelly");
+                return special.ToArray();
             }
         }
 
@@ -91,6 +88,8 @@ namespace DinoDiner.Menu
         public void HoldPeanutButter()
         {
             this.peanutButter = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
         /// <summary>
@@ -99,6 +98,8 @@ namespace DinoDiner.Menu
         public void HoldJelly()
         {
             this.jelly = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
     }
 }

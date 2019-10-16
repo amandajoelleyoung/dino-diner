@@ -3,6 +3,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu
@@ -10,8 +11,29 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Meteor Mac And Cheese class.
     /// </summary>
-    public class MeteorMacAndCheese : Side, IMenuItem
+    public class MeteorMacAndCheese : Side, INotifyPropertyChanged
     {
+        /// <summary>
+        /// The PropertyChanged event handler; notifies of changes
+        /// to the Price, Description, and Special properties.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// Returns description of entree item.
+        /// </summary>
+        public string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
         /// <summary>
         /// Returns list of ingredients.
         /// </summary>
@@ -27,11 +49,7 @@ namespace DinoDiner.Menu
             }
         }
 
-        /// <summary>
-        /// temporary variable to set size.
-        /// </summary>
         private Size size;
-
         /// <summary>
         /// sets price, calories, size, and returns size.
         /// </summary>
@@ -59,38 +77,6 @@ namespace DinoDiner.Menu
                         Calories = 420;
                         break;
                 }
-            }
-        }
-
-        private double price;
-        /// <summary>
-        /// Sets and returns price.
-        /// </summary>
-        public override double Price
-        {
-            get
-            {
-                return price;
-            }
-            set
-            {
-                price = value;
-            }
-        }
-
-        private uint calories;
-        /// <summary>
-        /// Sets and returns calories.
-        /// </summary>
-        public override uint Calories
-        {
-            get
-            {
-                return calories;
-            }
-            set
-            {
-                calories = value;
             }
         }
 

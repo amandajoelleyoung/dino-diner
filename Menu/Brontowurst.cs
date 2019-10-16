@@ -3,6 +3,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu
@@ -10,41 +11,45 @@ namespace DinoDiner.Menu
     /// <summary>
     /// A brautwurst wih a whole wheat bun, onions, and peppers.
     /// </summary>
-    public class Brontowurst : Entree
+    public class Brontowurst : Entree, INotifyPropertyChanged
     {
         private bool bun = true;
         private bool peppers = true;
         private bool onions = true;
 
-        private double price;
         /// <summary>
-        /// Sets and returns price.
+        /// The PropertyChanged event handler; notifies of changes
+        /// to the Price, Description, and Special properties.
         /// </summary>
-        public override double Price
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// Returns description of entree item.
+        /// </summary>
+        public string Description
         {
             get
             {
-                return price;
-            }
-            set
-            {
-                price = value;
+                return this.ToString();
             }
         }
 
-        private uint calories;
         /// <summary>
-        /// Sets and returns calories.
+        /// Gets any special preparation instructions.
         /// </summary>
-        public override uint Calories
+        public override string[] Special
         {
             get
             {
-                return calories;
-            }
-            set
-            {
-                calories = value;
+                List<string> special = new List<string>();
+                if (!bun) special.Add("Hold Whole Wheat Bun");
+                if (!peppers) special.Add("Hold Peppers");
+                if (!onions) special.Add("Hold Onion");
+                return special.ToArray();
             }
         }
 
@@ -88,6 +93,8 @@ namespace DinoDiner.Menu
         public void HoldBun()
         {
             this.bun = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
         /// <summary>
@@ -96,6 +103,8 @@ namespace DinoDiner.Menu
         public void HoldPeppers()
         {
             this.peppers = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
         /// <summary>
@@ -104,6 +113,8 @@ namespace DinoDiner.Menu
         public void HoldOnion()
         {
             this.onions = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
     }
 }

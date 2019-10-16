@@ -76,5 +76,27 @@ namespace DinoDiner.Menu
             this.Side = side;
             this.Drink = drink;
         }
+
+        public string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+        
+        public string[] Special
+        {
+            get
+            {
+                List<string> specials = new List<string>();
+                specials.AddRange(Entree.Special);
+                specials.Add(Side.ToString());
+                specials.AddRange(Side.Special);
+                specials.Add(Drink.ToString());
+                specials.AddRange(Drink.Special);
+                return specials.ToArray();
+            }
+        }
     }
 }

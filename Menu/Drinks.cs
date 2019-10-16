@@ -13,12 +13,12 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets and sets the price
         /// </summary>
-        public abstract double Price { get; set; }
+        public virtual double Price { get; set; }
 
         /// <summary>
         /// Gets and sets the calories
         /// </summary>
-        public abstract uint Calories { get; set; }
+        public virtual uint Calories { get; set; }
 
         /// <summary>
         /// Gets the ingredients list
@@ -33,8 +33,11 @@ namespace DinoDiner.Menu
         /// <summary>
         /// States whether drink has ice or not.
         /// </summary>
-        public abstract bool Ice { get; }
+        public virtual bool Ice { get; set; }
 
-        
+        /// <summary>
+        /// Gets any special preparation instructions.
+        /// </summary>
+        public virtual string[] Special { get; }
     }
 }

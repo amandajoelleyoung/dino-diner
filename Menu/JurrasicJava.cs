@@ -3,13 +3,51 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu
 {
-    public class JurassicJava : Drink, IMenuItem
+    public class JurassicJava : Drink, INotifyPropertyChanged
     {
         private bool cream = false;
+        private bool decaf = false;
+        
+        /// <summary>
+        /// The PropertyChanged event handler; notifies of changes
+        /// to the Price, Description, and Special properties.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// Returns description of entree item.
+        /// </summary>
+        public string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        /// <summary>
+        /// Gets any special preparation instructions.
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (cream) special.Add("Add Room for Cream");
+                if (decaf) special.Add("Make Decaf");
+                return special.ToArray();
+            }
+        }
+
         /// <summary>
         /// Returns whether there is room for cream or not.
         /// </summary>
@@ -21,7 +59,6 @@ namespace DinoDiner.Menu
             }
         }
 
-        private bool decaf = false;
         /// <summary>
         /// Returns whether it is decaf or not.
         /// </summary>
@@ -37,37 +74,6 @@ namespace DinoDiner.Menu
             }
         }
 
-        private double price;
-        /// <summary>
-        /// Sets and returns price.
-        /// </summary>
-        public override double Price
-        {
-            get
-            {
-                return price;
-            }
-            set
-            {
-                price = value;
-            }
-        }
-
-        private uint calories;
-        /// <summary>
-        /// Sets and returns calories.
-        /// </summary>
-        public override uint Calories
-        {
-            get
-            {
-                return calories;
-            }
-            set
-            {
-                calories = value;
-            }
-        }
 
         /// <summary>
         /// The list of ingredients included in Sodasaurus.
@@ -118,19 +124,6 @@ namespace DinoDiner.Menu
             }
         }
 
-        private bool ice = false;
-        /// <summary>
-        /// Returns whether there is ice or not.
-        /// </summary>
-        public override bool Ice
-        {
-            get
-            {
-                return ice;
-            }
-        }
-
-
         /// <summary>
         /// Initializes JurassicJava class and sets size to small.
         /// </summary>
@@ -154,7 +147,8 @@ namespace DinoDiner.Menu
         /// </summary>
         public void AddIce()
         {
-            this.ice = true;
+            this.Ice = true;
+            NotifyOfPropertyChange("Ice");
         }
 
         /// <summary>
@@ -163,6 +157,8 @@ namespace DinoDiner.Menu
         public void LeaveRoomForCream()
         {
             this.cream = true;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
         /// <summary>
@@ -171,6 +167,7 @@ namespace DinoDiner.Menu
         public void MakeDecaf()
         {
             this.decaf = true;
+            NotifyOfPropertyChange("Special");
         }
     }
 }

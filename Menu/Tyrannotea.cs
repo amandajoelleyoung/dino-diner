@@ -3,13 +3,52 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu
 {
-    public class Tyrannotea : Drink, IMenuItem
+    public class Tyrannotea : Drink, INotifyPropertyChanged
     {
         private bool lemon = false;
+        private bool sugar = false;
+
+        /// <summary>
+        /// The PropertyChanged event handler; notifies of changes
+        /// to the Price, Description, and Special properties.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// Returns description of entree item.
+        /// </summary>
+        public string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        /// <summary>
+        /// Gets any special preparation instructions.
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (sugar) special.Add("Add Sweet");
+                if (lemon) special.Add("Add Lemon");
+                if (!Ice) special.Add("Hold Ice");
+                return special.ToArray();
+            }
+        }
+
         /// <summary>
         /// Returns whether lemon is present or not.
         /// </summary>
@@ -21,7 +60,6 @@ namespace DinoDiner.Menu
             }
         }
 
-        private bool sugar = false;
         /// <summary>
         /// Returns whether tea is sweetened or not.
         /// </summary>
@@ -34,54 +72,6 @@ namespace DinoDiner.Menu
             set
             {
                 sugar = value;
-            }
-        }
-
-        private SodasaurusFlavor flavor;
-        /// <summary>
-        /// Gets and sets flavor of Sodasaurus.
-        /// </summary>
-        public SodasaurusFlavor Flavor
-        {
-            get
-            {
-                return flavor;
-            }
-            set
-            {
-                flavor = value;
-            }
-        }
-
-        private double price;
-        /// <summary>
-        /// Sets and returns price.
-        /// </summary>
-        public override double Price
-        {
-            get
-            {
-                return price;
-            }
-            set
-            {
-                price = value;
-            }
-        }
-
-        private uint calories;
-        /// <summary>
-        /// Sets and returns calories.
-        /// </summary>
-        public override uint Calories
-        {
-            get
-            {
-                return calories;
-            }
-            set
-            {
-                calories = value;
             }
         }
 
@@ -136,18 +126,6 @@ namespace DinoDiner.Menu
             }
         }
 
-        private bool ice = true;
-        /// <summary>
-        /// Returns whether there is ice or not.
-        /// </summary>
-        public override bool Ice
-        {
-            get
-            {
-                return ice;
-            }
-        }
-
 
         /// <summary>
         /// Initializes Sodasaurus class and sets size to small.
@@ -173,6 +151,8 @@ namespace DinoDiner.Menu
         public void AddLemon()
         {
             this.lemon = true;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
         /// <summary>
@@ -182,6 +162,9 @@ namespace DinoDiner.Menu
         {
             this.sugar = true;
             this.Calories *= 2;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Calories");
         }
 
         /// <summary>
@@ -191,6 +174,9 @@ namespace DinoDiner.Menu
         {
             this.sugar = false;
             this.Calories /= 2;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Calories");
         }
 
         /// <summary>
@@ -198,7 +184,8 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldIce()
         {
-            this.ice = false;
+            this.Ice = false;
+            NotifyOfPropertyChange("Ice");
         }
     }
 }

@@ -14,12 +14,12 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets and sets the price
         /// </summary>
-        public abstract double Price { get; set; }
+        public virtual double Price { get; set; }
 
         /// <summary>
         /// Gets and sets the calories
         /// </summary>
-        public abstract uint Calories { get; set; }
+        public virtual uint Calories { get; set; }
 
         /// <summary>
         /// Gets the ingredients list
@@ -30,6 +30,8 @@ namespace DinoDiner.Menu
         /// Gets or sets the size
         /// </summary>
         public abstract Size Size { get; set; }
+
+        public virtual string[] Special { get; }
 
     }
 }

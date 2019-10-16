@@ -3,12 +3,48 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu
 {
-    public class Water : Drink, IMenuItem
+    public class Water : Drink, INotifyPropertyChanged
     {
+        /// <summary>
+        /// The PropertyChanged event handler; notifies of changes
+        /// to the Price, Description, and Special properties.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// Returns description of entree item.
+        /// </summary>
+        public string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        /// <summary>
+        /// Gets any special preparation instructions.
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!this.Ice) special.Add("Hold Ice");
+                if (lemon) special.Add("Add Lemon");
+                return special.ToArray();
+            }
+        }
+
         private bool lemon = false;
         /// <summary>
         /// Returns whether lemon is present or not.
@@ -18,38 +54,6 @@ namespace DinoDiner.Menu
             get
             {
                 return lemon; 
-            }
-        }
-
-        private double price;
-        /// <summary>
-        /// Sets and returns price.
-        /// </summary>
-        public override double Price
-        {
-            get
-            {
-                return price;
-            }
-            set
-            {
-                price = value;
-            }
-        }
-
-        private uint calories;
-        /// <summary>
-        /// Sets and returns calories.
-        /// </summary>
-        public override uint Calories
-        {
-            get
-            {
-                return calories;
-            }
-            set
-            {
-                calories = value;
             }
         }
 
@@ -67,11 +71,7 @@ namespace DinoDiner.Menu
             }
         }
 
-        /// <summary>
-        /// Temporary variable to set size.
-        /// </summary>
         private Size size;
-
         /// <summary>
         /// Sets price, calories, size, and returns size.
         /// </summary>
@@ -102,18 +102,6 @@ namespace DinoDiner.Menu
             }
         }
 
-        private bool ice = true;
-        /// <summary>
-        /// Returns whether there is ice or not.
-        /// </summary>
-        public override bool Ice
-        {
-            get
-            {
-                return ice;
-            }
-        }
-
         /// <summary>
         /// Initializes Sodasaurus class and sets size to small.
         /// </summary>
@@ -136,7 +124,9 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldIce()
         {
-            this.ice = false;
+            this.Ice = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ice");
         }
 
         /// <summary>
@@ -145,6 +135,8 @@ namespace DinoDiner.Menu
         public void AddLemon()
         {
             this.lemon = true;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
     }
 }
