@@ -15,7 +15,7 @@
                 <Setter Property="Height" Value="150"></Setter>
             </Style>
         </WrapPanel.Resources>
-        <Button>
+        <Button Name="BtnAddFryceritops" Click="AddFryceritops">
             <Button.Background>
                 <ImageBrush ImageSource="Images/DinoDiner-08.png"></ImageBrush>
             </Button.Background>
@@ -23,7 +23,7 @@
                 <TextBlock DockPanel.Dock="Bottom" FontSize="18" FontFamily="Segoe UI Black">Fryceritops</TextBlock>
             </TextBlock>
         </Button>
-        <Button>
+        <Button Name="BtnAddMeteorMacAndCheese" Click="AddMeteorMacAndCheese">
             <Button.Background>
                 <ImageBrush ImageSource="Images/DinoDiner-09.png"></ImageBrush>
             </Button.Background>
@@ -31,7 +31,7 @@
                 <TextBlock DockPanel.Dock="Bottom" FontSize="18" FontFamily="Segoe UI Black">Meteor Mac and Cheese</TextBlock>
             </TextBlock>
         </Button>
-        <Button>
+        <Button Name="BtnAddMezzorellaSticks" Click="AddMezzorellaSticks">
             <Button.Background>
                 <ImageBrush ImageSource="Images/DinoDiner-10.png"></ImageBrush>
             </Button.Background>
@@ -39,7 +39,7 @@
                 <TextBlock DockPanel.Dock="Bottom" FontSize="18" FontFamily="Segoe UI Black">Mezzorella Sticks</TextBlock>
             </DockPanel>
         </Button>
-        <Button>
+        <Button Name="BtnAddTriceritots" Click="AddTriceritots">
             <Button.Background>
                 <ImageBrush ImageSource="Images/DinoDiner-11.png" ></ImageBrush>
             </Button.Background>
@@ -47,17 +47,17 @@
                 <TextBlock DockPanel.Dock="Bottom" FontSize="18" FontFamily="Segoe UI Black">Triceri-tots</TextBlock>
             </DockPanel>
         </Button>
-        <Button Height="50" Width="150">
+        <Button Height="50" Width="150" Name="BtnPickSmall" IsEnabled="False">
             <TextBlock>
                 <TextBlock DockPanel.Dock="Bottom" FontSize="25" FontFamily="Segoe UI Black">Small</TextBlock>
             </TextBlock>
         </Button>
-        <Button Height="50" Width="150">
+        <Button Height="50" Width="150" Name="BtnPickMedium" IsEnabled="False">
             <TextBlock>
                 <TextBlock DockPanel.Dock="Bottom" FontSize="25" FontFamily="Segoe UI Black">Medium</TextBlock>
             </TextBlock>
         </Button>
-        <Button Height="50" Width="150">
+        <Button Height="50" Width="150" Name="BtnPickLarge" IsEnabled="False">
             <DockPanel>
                 <TextBlock DockPanel.Dock="Bottom" FontSize="25" FontFamily="Segoe UI Black">Large</TextBlock>
             </DockPanel>
