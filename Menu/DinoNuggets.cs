@@ -102,7 +102,7 @@ namespace DinoDiner.Menu
             NotifyOfPropertyChange("Price");
             NotifyOfPropertyChange("Calories");
             NotifyOfPropertyChange("Special");
-            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Description");
         }
     }
 }

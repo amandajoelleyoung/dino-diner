@@ -94,7 +94,7 @@ namespace DinoDiner.Menu
         {
             this.bun = false;
             NotifyOfPropertyChange("Special");
-            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Description");
         }
 
         /// <summary>
@@ -104,7 +104,7 @@ namespace DinoDiner.Menu
         {
             this.peppers = false;
             NotifyOfPropertyChange("Special");
-            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Description");
         }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace DinoDiner.Menu
         {
             this.onions = false;
             NotifyOfPropertyChange("Special");
-            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Description");
         }
     }
 }

@@ -17,92 +17,110 @@ namespace MenuTest.NotifyPropertyChange
         public void JurassicJavaNotifyPropertyChangeSpecial()
         {
             JurassicJava java = new JurassicJava();
-            java.LeaveRoomForCream();
-            Assert.PropertyChanged(java.PropertyChanged, "Special", java.LeaveRoomForCream);
+            Assert.PropertyChanged(java, "Special", () =>
+            {
+                java.LeaveRoomForCream();
+            });
+        }
+
+        [Fact]
+        public void JurassicJavaNotifyPropertyChangeDescription()
+        {
+            JurassicJava java = new JurassicJava();
+            Assert.PropertyChanged(java, "Description", () =>
+            {
+                java.LeaveRoomForCream();
+            });
+        }
+
+        [Fact]
+        public void JurassicJavaNotifyPropertyChangePrice()
+        {
+            JurassicJava java = new JurassicJava();
+            Assert.PropertyChanged(java, "Price", () =>
+            {
+                java.Size = Size.Large;
+            });
         }
 
         //TyrannoTea
 
         [Fact]
-        public void TyrannoteaSpecialContainsJustLemon()
+        public void TyrannoteaPropertyChangeSpecial()
         {
             Tyrannotea tea = new Tyrannotea();
-            tea.AddLemon();
-            Assert.Contains("Add Lemon", tea.Special);
-            Assert.Single(tea.Special);
+            Assert.PropertyChanged(tea, "Special", () => 
+            {
+                tea.AddSugar();
+            });
         }
 
         [Fact]
-        public void TyrannoteaSpecialContainsJustSweet()
+        public void TyrannoteaPropertyChangeDescription()
         {
             Tyrannotea tea = new Tyrannotea();
-            tea.AddSugar();
-            Assert.Contains("Add Sweet", tea.Special);
-            Assert.Single(tea.Special);
+            Assert.PropertyChanged(tea, "Description", () =>
+            {
+                tea.AddSugar();
+            });
+
         }
 
         [Fact]
-        public void TyrannoteaSpecialContainsNoIce()
+        public void TyrannoteaPropertyChangePrice()
         {
             Tyrannotea tea = new Tyrannotea();
-            tea.HoldIce();
-            Assert.Contains("Hold Ice", tea.Special);
-            Assert.Single(tea.Special);
-        }
+            Assert.PropertyChanged(tea, "Price", () =>
+            {
+                tea.Size = Size.Large;
+            });
 
-        [Fact]
-        public void TyrannoteaSpecialContainsAllThree()
-        {
-            Tyrannotea tea = new Tyrannotea();
-            tea.AddLemon();
-            tea.AddSugar();
-            tea.HoldIce();
-            Assert.Contains("Hold Ice", tea.Special);
-            Assert.Contains("Add Sweet", tea.Special);
-            Assert.Contains("Add Lemon", tea.Special);
-            Assert.Equal<int>(3, tea.Special.Length);
         }
 
         //Sodasaurus
 
         [Fact]
-        public void SodasaurusSpecialContainsNoIce()
+        public void SodasaurusPropertyChangeSpecial()
         {
             Sodasaurus soda = new Sodasaurus();
-            soda.HoldIce();
-            Assert.Contains("Hold Ice", soda.Special);
-            Assert.Single(soda.Special);
+            Assert.PropertyChanged(soda, "Special", () =>
+            {
+                soda.HoldIce();
+            });
+
+        }
+
+        [Fact]
+        public void SodasaurusPropertyChangePrice()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            Assert.PropertyChanged(soda, "Price", () =>
+            {
+                soda.Size = Size.Large;
+            });
+
         }
 
         //Water
 
         [Fact]
-        public void WaterSpecialContainsJustLemon()
+        public void WaterPropertyChangeSpecial()
         {
             Water water = new Water();
-            water.AddLemon();
-            Assert.Contains("Add Lemon", water.Special);
-            Assert.Single(water.Special);
+            Assert.PropertyChanged(water, "Special", () =>
+            {
+                water.AddLemon();
+            });
         }
 
         [Fact]
-        public void WaterSpecialContainsNoIce()
+        public void WaterPropertyChangeDescription()
         {
             Water water = new Water();
-            water.HoldIce();
-            Assert.Contains("Hold Ice", water.Special);
-            Assert.Single(water.Special);
-        }
-
-        [Fact]
-        public void WaterSpecialContainsAllTwo()
-        {
-            Water water = new Water();
-            water.AddLemon();
-            water.HoldIce();
-            Assert.Contains("Hold Ice", water.Special);
-            Assert.Contains("Add Lemon", water.Special);
-            Assert.Equal<int>(2, water.Special.Length);
+            Assert.PropertyChanged(water, "Description", () =>
+            {
+                water.AddLemon();
+            });
         }
     }
 }

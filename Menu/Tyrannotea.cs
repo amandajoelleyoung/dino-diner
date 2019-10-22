@@ -156,7 +156,7 @@ namespace DinoDiner.Menu
         {
             this.lemon = true;
             NotifyOfPropertyChange("Special");
-            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Description");
         }
 
         /// <summary>
@@ -167,7 +167,7 @@ namespace DinoDiner.Menu
             this.sugar = true;
             this.Calories *= 2;
             NotifyOfPropertyChange("Special");
-            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Description");
             NotifyOfPropertyChange("Calories");
         }
 
@@ -179,7 +179,7 @@ namespace DinoDiner.Menu
             this.sugar = false;
             this.Calories /= 2;
             NotifyOfPropertyChange("Special");
-            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Description");
             NotifyOfPropertyChange("Calories");
         }
 

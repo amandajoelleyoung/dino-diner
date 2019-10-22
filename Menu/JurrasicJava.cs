@@ -160,7 +160,7 @@ namespace DinoDiner.Menu
         {
             this.cream = true;
             NotifyOfPropertyChange("Special");
-            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Description");
         }
 
         /// <summary>

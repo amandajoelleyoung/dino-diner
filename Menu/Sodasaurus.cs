@@ -145,6 +145,7 @@ namespace DinoDiner.Menu
         public void HoldIce()
         {
             this.ice = false;
+            NotifyOfPropertyChange("Special");
         }
     }
 }

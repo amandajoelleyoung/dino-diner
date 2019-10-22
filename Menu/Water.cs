@@ -129,7 +129,7 @@ namespace DinoDiner.Menu
         {
             this.Ice = false;
             NotifyOfPropertyChange("Special");
-            NotifyOfPropertyChange("Ice");
+            NotifyOfPropertyChange("Description");
         }
 
         /// <summary>
@@ -139,7 +139,7 @@ namespace DinoDiner.Menu
         {
             this.lemon = true;
             NotifyOfPropertyChange("Special");
-            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Description");
         }
     }
 }
