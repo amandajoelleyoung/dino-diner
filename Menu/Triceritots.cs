@@ -26,7 +26,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Returns description of entree item.
         /// </summary>
-        public string Description
+        public override string Description
         {
             get
             {

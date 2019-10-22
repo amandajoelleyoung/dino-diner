@@ -26,7 +26,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Returns description of entree item.
         /// </summary>
-        public string Description
+        public override string Description
         {
             get
             {
@@ -43,7 +43,6 @@ namespace DinoDiner.Menu
             {
                 List<string> special = new List<string>();
                 if (cream) special.Add("Add Room for Cream");
-                if (decaf) special.Add("Make Decaf");
                 return special.ToArray();
             }
         }
