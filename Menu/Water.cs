@@ -99,6 +99,7 @@ namespace DinoDiner.Menu
                         Calories = 0;
                         break;
                 }
+                NotifyOfPropertyChange("Description");
             }
         }
 
@@ -108,6 +109,8 @@ namespace DinoDiner.Menu
         public Water()
         {
             this.Size = Size.Small;
+
+            this.Ice = true;
         }
 
         /// <summary>

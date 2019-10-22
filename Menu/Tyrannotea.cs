@@ -123,6 +123,9 @@ namespace DinoDiner.Menu
                         Calories = 8;
                         break;
                 }
+                NotifyOfPropertyChange("Price");
+                NotifyOfPropertyChange("Calories");
+                NotifyOfPropertyChange("Description");
             }
         }
 
@@ -133,6 +136,7 @@ namespace DinoDiner.Menu
         public Tyrannotea()
         {
             this.Size = Size.Small;
+            this.Ice = true;
         }
 
         /// <summary>

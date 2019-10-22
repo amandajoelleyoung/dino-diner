@@ -35,6 +35,17 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
+        /// Gets the special preparation instructions
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                return new string[0];
+            }
+        }
+
+        /// <summary>
         /// Returns list of ingredients.
         /// </summary>
         public override List<string> Ingredients

@@ -49,7 +49,7 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> special = new List<string>();
-                if (!bun) special.Add("Hold Whole Wheat Bun");
+                if (!bun) special.Add("Hold Bun");
                 if (!pickle) special.Add("Hold Pickle");
                 if (!ketchup) special.Add("Hold Ketchup");
                 if (!mustard) special.Add("Hold Mustard");

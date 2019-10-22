@@ -7,29 +7,18 @@ using System.Text;
 using Xunit;
 using DinoDiner.Menu;
 
-namespace MenuTest.IOrderItem
+namespace MenuTest.NotifyPropertyChange
 {
-    public class DrinkSpecialTest
+    public class NotifyPropertyChangeDrinkTest
     {
-        [Theory]
-        [InlineData(typeof(Tyrannotea))]
-        [InlineData(typeof(Sodasaurus))]
-        [InlineData(typeof(JurassicJava))]
-        [InlineData(typeof(Water))]
-        public void IngredientsShouldBeImmutable(Type type)
-        {
-            Drink item = (Drink)Activator.CreateInstance(type);
-            Assert.Empty(item.Special);
-        }
-
         //JurassicJava
 
         [Fact]
-        public void JurassicJavaSpecialContainsAddRoomForCream()
+        public void JurassicJavaNotifyPropertyChangeSpecial()
         {
             JurassicJava java = new JurassicJava();
             java.LeaveRoomForCream();
-            Assert.Contains("Add Room for Cream", java.Special);
+            Assert.PropertyChanged(java.PropertyChanged, "Special", java.LeaveRoomForCream);
         }
 
         //TyrannoTea

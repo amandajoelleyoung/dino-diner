@@ -120,6 +120,9 @@ namespace DinoDiner.Menu
                         Calories = 2;
                         break;
                 }
+                NotifyOfPropertyChange("Price");
+                NotifyOfPropertyChange("Calories");
+                NotifyOfPropertyChange("Description");
             }
         }
 

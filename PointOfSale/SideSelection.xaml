@@ -23,7 +23,7 @@
                 <TextBlock DockPanel.Dock="Bottom" FontSize="18" FontFamily="Segoe UI Black">Fryceritops</TextBlock>
             </TextBlock>
         </Button>
-        <Button Name="BtnAddMeteorMacAndCheese" Click="AddMeteorMacAndCheese">
+        <Button Name="BtnAddMeteorMacAndCheese">
             <Button.Background>
                 <ImageBrush ImageSource="Images/DinoDiner-09.png"></ImageBrush>
             </Button.Background>
@@ -31,7 +31,7 @@
                 <TextBlock DockPanel.Dock="Bottom" FontSize="18" FontFamily="Segoe UI Black">Meteor Mac and Cheese</TextBlock>
             </TextBlock>
         </Button>
-        <Button Name="BtnAddMezzorellaSticks" Click="AddMezzorellaSticks">
+        <Button Name="BtnAddMezzorellaSticks">
             <Button.Background>
                 <ImageBrush ImageSource="Images/DinoDiner-10.png"></ImageBrush>
             </Button.Background>
@@ -39,7 +39,7 @@
                 <TextBlock DockPanel.Dock="Bottom" FontSize="18" FontFamily="Segoe UI Black">Mezzorella Sticks</TextBlock>
             </DockPanel>
         </Button>
-        <Button Name="BtnAddTriceritots" Click="AddTriceritots">
+        <Button Name="BtnAddTriceritots">
             <Button.Background>
                 <ImageBrush ImageSource="Images/DinoDiner-11.png" ></ImageBrush>
             </Button.Background>
