@@ -26,6 +26,7 @@ namespace PointOfSale
         public MenuCategorySelection()
         {
             InitializeComponent();
+            OrderControl.Na
         }
 
         private void SelectCombo(object sender, RoutedEventArgs args)

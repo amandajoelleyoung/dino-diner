@@ -15,7 +15,9 @@
         </Grid.RowDefinitions>
         <TextBox Text="Order" Grid.Row="0"/>
         <ListBox Grid.Row="1"
-                 ItemsSource="{Binding Path=Items}">
+                 Name="OrderItems"
+                 ItemsSource="{Binding Path=Items, UpdateSourceTrigger=PropertyChanged}"
+                 >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>

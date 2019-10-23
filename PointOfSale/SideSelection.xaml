@@ -47,17 +47,17 @@
                 <TextBlock DockPanel.Dock="Bottom" FontSize="18" FontFamily="Segoe UI Black">Triceri-tots</TextBlock>
             </DockPanel>
         </Button>
-        <Button Height="50" Width="150" Name="BtnPickSmall" IsEnabled="False">
+        <Button Height="50" Width="150" Name="BtnPickSmall" IsEnabled="False" Click="SelectSmall">
             <TextBlock>
                 <TextBlock DockPanel.Dock="Bottom" FontSize="25" FontFamily="Segoe UI Black">Small</TextBlock>
             </TextBlock>
         </Button>
-        <Button Height="50" Width="150" Name="BtnPickMedium" IsEnabled="False">
+        <Button Height="50" Width="150" Name="BtnPickMedium" IsEnabled="False" Click="SelectMedium">
             <TextBlock>
                 <TextBlock DockPanel.Dock="Bottom" FontSize="25" FontFamily="Segoe UI Black">Medium</TextBlock>
             </TextBlock>
         </Button>
-        <Button Height="50" Width="150" Name="BtnPickLarge" IsEnabled="False">
+        <Button Height="50" Width="150" Name="BtnPickLarge" IsEnabled="False" Click="SelectLarge">
             <DockPanel>
                 <TextBlock DockPanel.Dock="Bottom" FontSize="25" FontFamily="Segoe UI Black">Large</TextBlock>
             </DockPanel>
