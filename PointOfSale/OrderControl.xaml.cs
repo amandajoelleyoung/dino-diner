@@ -25,6 +25,7 @@ namespace PointOfSale
         public OrderControl()
         {
             InitializeComponent();
+            
         }
 
         private void OnSelectionChanged(object sender, SelectionChangedEventArgs args)
@@ -32,6 +33,41 @@ namespace PointOfSale
             if (OrderItems.SelectedItem is Side side)
             {
                 NavigationService?.Navigate(new SideSelection(side));
+            }
+            if (OrderItems.SelectedItem is Entree entree)
+            {
+                NavigationService?.Navigate(new EntreeSelection(entree));
+            }
+            if (OrderItems.SelectedItem is Drink drink)
+            {
+                NavigationService?.Navigate(new DrinkSelection(drink));
+            }
+        }
+        /*
+        public void OnDataContextchanged(object sender, DependencyPropertyChangedEventArgs args)
+        {
+            MountItemListener();
+        }
+
+        private void MountItemListener()
+        {
+            if (DataContext is Order order)
+            {
+                order.Items.CollectionChanged += OnCollectionChanged;
+            }
+        }
+        */
+        private void OnRemoveItem(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                if (sender is FrameworkElement element)
+                {
+                    if (element is IOrderItem item)
+                    {
+                        order.Items.Remove(item);
+                    }
+                }
             }
         }
     }

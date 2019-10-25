@@ -41,7 +41,7 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                order.Items.Add(side);
+                order.Add(side);
                 Side = side;
                 BtnAddFryceritops.IsEnabled = false;
                 BtnAddMeteorMacAndCheese.IsEnabled = false;

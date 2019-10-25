@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using DinoDiner.Menu;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -13,6 +14,8 @@ namespace DinoDiner.Menu
     /// </summary>
     public class CretaceousCombo : IMenuItem, IOrderItem
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Gets or sets any specified entree
         /// </summary>

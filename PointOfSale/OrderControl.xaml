@@ -11,28 +11,62 @@
             <RowDefinition Height="20"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <TextBox Text="Order" Grid.Row="0"/>
         <ListBox Grid.Row="1"
                  Name="OrderItems"
                  ItemsSource="{Binding Path=Items, UpdateSourceTrigger=PropertyChanged}"
+                 IsSynchronizedWithCurrentItem="True"
+                 SelectionChanged="OnSelectionChanged"
                  >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <TextBlock Text="{Binding Path=Description}"/>
-                        <ListBox ItemsSource="{Binding Path=Special}"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="20"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding Path=Description}"/>
+                            <Button Click="OnRemoveItem"
+                                    Background="Red"
+                                    Foreground="White"
+                                    Grid.Column="1">
+                                X
+                            </Button>
+                            
+                        </Grid>
+                        <ListBox ItemsSource="{Binding Path=Special}" BorderBrush="White"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
         <Border Grid.Row="2">
-            <StackPanel Orientation="Horizontal">
-                <TextBox Text="Price:"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox Text="Subtotal Cost:"/>
                 <TextBox Text="$___"/>
             </StackPanel>
         </Border>
-        <TextBox Text="Buttons go here" Grid.Row="3"/>
+        <Border Grid.Row="3">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox Text="Sales Tax:"/>
+                <TextBox Text="$___"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="4">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox Text="Total Cost:"/>
+                <TextBox Text="$___"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="5">
+            <StackPanel Orientation="Horizontal">
+                <TextBox Text="buttons"/>
+                
+            </StackPanel>
+        </Border>
     </Grid>
 </UserControl>

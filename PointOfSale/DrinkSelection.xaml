@@ -15,7 +15,7 @@
                 <Setter Property="Height" Value="130"></Setter>
             </Style>
         </WrapPanel.Resources>
-        <Button>
+        <Button Click="AddJurassicJava" Name="BtnSelectJurassicJava">
             <Button.Background>
                 <ImageBrush ImageSource="Images/DinoDiner-13.png"></ImageBrush>
             </Button.Background>
@@ -23,7 +23,7 @@
                 <TextBlock DockPanel.Dock="Bottom" FontSize="18" FontFamily="Segoe UI Black">Jurassic Java</TextBlock>
             </TextBlock>
         </Button>
-        <Button>
+        <Button Click="AddSodasaurus" Name="BtnSelectSodaSaurus">
             <Button.Background>
                 <ImageBrush ImageSource="Images/DinoDiner-14.png"></ImageBrush>
             </Button.Background>
@@ -31,7 +31,7 @@
                 <TextBlock DockPanel.Dock="Bottom" FontSize="18" FontFamily="Segoe UI Black">Sodasaurus</TextBlock>
             </TextBlock>
         </Button>
-        <Button>
+        <Button Click="AddTyrannotea" Name="BtnSelectTyrannotea">
             <Button.Background>
                 <ImageBrush ImageSource="Images/DinoDiner-12.png"></ImageBrush>
             </Button.Background>
@@ -39,7 +39,7 @@
                 <TextBlock DockPanel.Dock="Bottom" FontSize="18" FontFamily="Segoe UI Black">Tyrannotea</TextBlock>
             </DockPanel>
         </Button>
-        <Button>
+        <Button Click="AddWater" Name="BtnSelectWater">
             <Button.Background>
                 <ImageBrush ImageSource="Images/DinoDiner-15.png" ></ImageBrush>
             </Button.Background>
@@ -47,7 +47,7 @@
                 <TextBlock DockPanel.Dock="Bottom" FontSize="18" FontFamily="Segoe UI Black">Water</TextBlock>
             </DockPanel>
         </Button>
-        <Button>
+        <Button Click="AddLemon" Name="BtnSelectLemon">
             <Button.Background>
                 <ImageBrush ImageSource="Images/Lemon.png" ></ImageBrush>
             </Button.Background>
@@ -55,7 +55,7 @@
                 <TextBlock DockPanel.Dock="Bottom" FontSize="18" FontFamily="Segoe UI Black">Lemon</TextBlock>
             </DockPanel>
         </Button>
-        <Button Click="SelectFlavor">
+        <Button Click="SelectFlavor" Name="BtnSelectFlavor">
             <Button.Background>
                 <ImageBrush ImageSource="Images/Cherry.png" ></ImageBrush>
             </Button.Background>
@@ -63,7 +63,7 @@
                 <TextBlock DockPanel.Dock="Bottom" FontSize="18" FontFamily="Segoe UI Black">Flavor</TextBlock>
             </DockPanel>
         </Button>
-        <Button>
+        <Button Click="AddDecaf" Name="BtnSelectDecaf">
             <Button.Background>
                 <ImageBrush ImageSource="Images/DinoDiner-13.png" ></ImageBrush>
             </Button.Background>
@@ -71,7 +71,7 @@
                 <TextBlock DockPanel.Dock="Bottom" FontSize="18" FontFamily="Segoe UI Black">Decaf</TextBlock>
             </DockPanel>
         </Button>
-        <Button>
+        <Button Click="AddSweet" Name="BtnSelectSweet">
             <Button.Background>
                 <ImageBrush ImageSource="Images/Sugar.png" ></ImageBrush>
             </Button.Background>
@@ -79,17 +79,17 @@
                 <TextBlock DockPanel.Dock="Bottom" FontSize="18" FontFamily="Segoe UI Black">Sweet</TextBlock>
             </DockPanel>
         </Button>
-        <Button Height="50">
+        <Button Height="50" Click="SelectLarge" Name="BtnPickLarge">
             <TextBlock>
                 <TextBlock DockPanel.Dock="Bottom" FontSize="25" FontFamily="Segoe UI Black">Small</TextBlock>
             </TextBlock>
         </Button>
-        <Button Height="50">
+        <Button Height="50" Click="SelectMedium" Name="BtnPickMedium">
             <TextBlock>
                 <TextBlock DockPanel.Dock="Bottom" FontSize="25" FontFamily="Segoe UI Black">Medium</TextBlock>
             </TextBlock>
         </Button>
-        <Button Height="50">
+        <Button Height="50" Click="SelectSmall" Name="BtnPickSmall">
             <DockPanel>
                 <TextBlock DockPanel.Dock="Bottom" FontSize="25" FontFamily="Segoe UI Black">Large</TextBlock>
             </DockPanel>

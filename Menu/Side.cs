@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -11,6 +12,8 @@ namespace DinoDiner.Menu
 
     public abstract class Side : IMenuItem, IOrderItem
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Gets and sets the price
         /// </summary>

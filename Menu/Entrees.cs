@@ -4,16 +4,18 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
 
         public abstract class Entree : IMenuItem, IOrderItem
         {
-            /// <summary>
-            /// Gets and sets the price
-            /// </summary>
-            public virtual double Price { get; protected set; }
+        public event PropertyChangedEventHandler PropertyChanged;
+        /// <summary>
+        /// Gets and sets the price
+        /// </summary>
+        public virtual double Price { get; protected set; }
 
             /// <summary>
             /// Gets and sets the calories

@@ -4,12 +4,15 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
        
     public abstract class Drink : IMenuItem, IOrderItem
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Gets and sets the price
         /// </summary>
