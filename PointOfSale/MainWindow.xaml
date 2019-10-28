@@ -16,9 +16,19 @@
             DockPanel.Dock="Right"
             Width="200"
             Background="LightSteelBlue"/>
+        <Grid DockPanel.Dock="Bottom" Height="30">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1" Click="SelectDone">Go Back</Button>
+        </Grid>
         <Frame Name="OrderUI"
                LoadCompleted="OnLoadCompleted"
                DataContextChanged="OnDataContextChanged"
-               Source="MenuCategorySelection.xaml" ></Frame>
+               Source="MenuCategorySelection.xaml"
+               NavigationUIVisibility="Hidden"
+               ></Frame>
     </DockPanel>
 </Window>

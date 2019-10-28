@@ -45,6 +45,17 @@ namespace PointOfSale
                 Entree = entree;
             }
         }
+
+        private void SelectAddPrehistoricPBJ(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                PrehistoricPBJ pbj = new PrehistoricPBJ();
+                order.Add(pbj);
+                NavigationService.Navigate(new PrehistoricPBJCustomization(pbj));
+            }
+            
+        }
         
     }
 }
