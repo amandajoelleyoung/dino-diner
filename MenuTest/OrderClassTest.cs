@@ -15,9 +15,9 @@ namespace MenuTest
         public void OrderShouldBeCorrect()
         {
             Order order = new Order();
-            order.Items.Add(new Fryceritops());
-            order.Items.Add(new SteakosaurusBurger());
-            order.Items.Add(new Water());
+            order.Add(new Fryceritops());
+            order.Add(new SteakosaurusBurger());
+            order.Add(new Water());
             Assert.Equal(6.80, order.TotalCost, 2);
         }
     }

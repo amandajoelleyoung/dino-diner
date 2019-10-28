@@ -31,7 +31,7 @@
                 <TextBlock DockPanel.Dock="Bottom" FontFamily="Segoe UI Black" FontSize="15">Dino-Nuggets</TextBlock>
             </TextBlock>
         </Button>
-        <Button>
+        <Button Click="SelectAddPrehistoricPBJ">
             <Button.Background>
                 <ImageBrush ImageSource="Images/DinoDiner-03.png"></ImageBrush>
             </Button.Background>
