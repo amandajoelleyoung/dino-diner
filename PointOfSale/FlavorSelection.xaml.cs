@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -23,9 +24,65 @@ namespace PointOfSale
     /// </summary>
     public partial class FlavorSelection : Page
     {
+        public Sodasaurus Sodasaurus { get; set; }
         public FlavorSelection()
         {
             InitializeComponent();
+        }
+
+        public FlavorSelection(Sodasaurus soda)
+        {
+            InitializeComponent();
+            Sodasaurus = soda;
+        }
+
+        private void SelectFlavor(SodasaurusFlavor flavor)
+        {
+            if (DataContext is Order order)
+            {
+                if (DataContext is Drink drink)
+                {
+                    if (DataContext is Sodasaurus soda)
+                    {
+                        soda.Flavor = flavor;
+                    }
+                }
+            }
+        }
+
+        protected void SelectCherry(object sender, RoutedEventArgs args)
+        {
+            SelectFlavor(SodasaurusFlavor.Cherry);
+        }
+
+        protected void SelectChocolate(object sender, RoutedEventArgs args)
+        {
+            SelectFlavor(SodasaurusFlavor.Chocolate);
+        }
+
+        protected void SelectCola(object sender, RoutedEventArgs args)
+        {
+            SelectFlavor(SodasaurusFlavor.Cola);
+        }
+
+        protected void SelectLime(object sender, RoutedEventArgs args)
+        {
+            SelectFlavor(SodasaurusFlavor.Lime);
+        }
+
+        protected void SelectOrange(object sender, RoutedEventArgs args)
+        {
+            SelectFlavor(SodasaurusFlavor.Orange);
+        }
+
+        protected void SelectRootBeer(object sender, RoutedEventArgs args)
+        {
+            SelectFlavor(SodasaurusFlavor.RootBeer);
+        }
+
+        protected void SelectVanilla(object sender, RoutedEventArgs args)
+        {
+            SelectFlavor(SodasaurusFlavor.Cherry);
         }
     }
 }

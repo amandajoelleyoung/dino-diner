@@ -46,5 +46,41 @@ namespace PointOfSale
             }
         }
         
+        protected void AddBrontowurst(object sender, RoutedEventArgs args)
+        {
+            SelectEntree(new Brontowurst());
+        }
+
+        protected void AddDinoNuggets(object sender, RoutedEventArgs args)
+        {
+
+        }
+
+        protected void AddPrehistoricPBJ(object sender, RoutedEventArgs args)
+        {
+
+        }
+
+        protected void AddPterodactylWings(object sender, RoutedEventArgs args)
+        {
+
+        }
+
+        protected void AddSteakosaurusBurger(object sender, RoutedEventArgs args)
+        {
+
+        }
+
+
+        protected void AddTRexBurger(object sender, RoutedEventArgs args)
+        {
+
+        }
+
+
+        protected void AddVelociwrap(object sender, RoutedEventArgs args)
+        {
+
+        }
     }
 }

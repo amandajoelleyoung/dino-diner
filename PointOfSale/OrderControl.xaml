@@ -21,6 +21,7 @@
                  ItemsSource="{Binding Path=Items, UpdateSourceTrigger=PropertyChanged}"
                  IsSynchronizedWithCurrentItem="True"
                  SelectionChanged="OnSelectionChanged"
+                 
                  >
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -30,7 +31,7 @@
                                 <ColumnDefinition/>
                                 <ColumnDefinition Width="20"/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock Text="{Binding Path=Description}"/>
+                            <TextBlock Text="{Binding Path=Description}" Width="170"/>
                             <Button Click="OnRemoveItem"
                                     Background="Red"
                                     Foreground="White"

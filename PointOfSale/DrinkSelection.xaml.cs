@@ -75,9 +75,6 @@ namespace PointOfSale
                 BtnSelectFlavor.IsEnabled = true;
                 BtnSelectLemon.IsEnabled = true;
                 BtnSelectSweet.IsEnabled = true;
-                BtnPickSmall.IsEnabled = false;
-                BtnPickMedium.IsEnabled = false;
-                BtnPickLarge.IsEnabled = false;
             }
         }
 

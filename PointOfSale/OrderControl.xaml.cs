@@ -44,7 +44,7 @@ namespace PointOfSale
             }
         }
         /*
-        public void OnDataContextchanged(object sender, DependencyPropertyChangedEventArgs args)
+        public void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs args)
         {
             MountItemListener();
         }
