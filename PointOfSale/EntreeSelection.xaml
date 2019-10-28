@@ -15,7 +15,7 @@
                 <Setter Property="Height" Value="140"></Setter>
             </Style>
         </WrapPanel.Resources>
-        <Button>
+        <Button Click="AddBrontowurst">
             <Button.Background>
                 <ImageBrush ImageSource="Images/DinoDiner-01.png"></ImageBrush>
             </Button.Background>
@@ -23,7 +23,7 @@
                 <TextBlock DockPanel.Dock="Bottom" FontFamily="Segoe UI Black" FontSize="15">Brontowurst</TextBlock>
             </TextBlock>
         </Button>
-        <Button>
+        <Button Click="AddDinoNuggets">
             <Button.Background>
                 <ImageBrush ImageSource="Images/DinoDiner-02.png"></ImageBrush>
             </Button.Background>
@@ -31,7 +31,7 @@
                 <TextBlock DockPanel.Dock="Bottom" FontFamily="Segoe UI Black" FontSize="15">Dino-Nuggets</TextBlock>
             </TextBlock>
         </Button>
-        <Button Click="SelectAddPrehistoricPBJ">
+        <Button Click="AddPrehistoricPBJ">
             <Button.Background>
                 <ImageBrush ImageSource="Images/DinoDiner-03.png"></ImageBrush>
             </Button.Background>
@@ -39,7 +39,7 @@
                 <TextBlock DockPanel.Dock="Bottom" FontFamily="Segoe UI Black" FontSize="15">Prehistoric PB&amp;J</TextBlock>
             </DockPanel>
         </Button>
-        <Button>
+        <Button Click="AddPterodactylWings">
             <Button.Background>
                 <ImageBrush ImageSource="Images/DinoDiner-04.png"></ImageBrush>
             </Button.Background>
@@ -47,7 +47,7 @@
                 <TextBlock DockPanel.Dock="Bottom" FontFamily="Segoe UI Black" FontSize="15">Pterodactyl Wings</TextBlock>
             </DockPanel>
         </Button>
-        <Button>
+        <Button Click="AddSteakosaurusBurger">
             <Button.Background>
                 <ImageBrush ImageSource="Images/DinoDiner-05.png"></ImageBrush>
             </Button.Background>
@@ -55,7 +55,7 @@
                 <TextBlock DockPanel.Dock="Bottom" FontFamily="Segoe UI Black" FontSize="15">Steakosaurus Burger</TextBlock>
             </DockPanel>
         </Button>
-        <Button>
+        <Button Click="AddTRexBurger">
             <Button.Background>
                 <ImageBrush ImageSource="Images/DinoDiner-06.png"></ImageBrush>
             </Button.Background>
@@ -63,7 +63,7 @@
                 <TextBlock DockPanel.Dock="Bottom" FontFamily="Segoe UI Black" FontSize="15">T-Rex King Burger</TextBlock>
             </DockPanel>
         </Button>
-        <Button>
+        <Button Click="AddVelociwrap">
             <Button.Background>
                 <ImageBrush ImageSource="Images/DinoDiner-07.png"></ImageBrush>
             </Button.Background>

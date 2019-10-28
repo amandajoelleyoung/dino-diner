@@ -24,7 +24,7 @@ namespace PointOfSale
     /// </summary>
     public partial class EntreeSelection : Page
     {
-        public Entree Entree { get; set; }
+        
 
         public EntreeSelection()
         {
@@ -34,9 +34,9 @@ namespace PointOfSale
         public EntreeSelection(Entree entree)
         {
             InitializeComponent();
-            Entree = entree;
+            
         }
-
+        /*
         private void SelectEntree(Entree entree)
         {
             if (DataContext is Order order)
@@ -45,8 +45,30 @@ namespace PointOfSale
                 Entree = entree;
             }
         }
+        */
 
-        private void SelectAddPrehistoricPBJ(object sender, RoutedEventArgs args)
+
+        private void AddBrontowurst(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                Brontowurst bw = new Brontowurst();
+                order.Add(bw);
+                //NavigationService.Navigate(new PrehistoricPBJCustomization(pbj));
+            }
+        }
+
+        private void AddDinoNuggets(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                DinoNuggets dn = new DinoNuggets();
+                order.Add(dn);
+                //NavigationService.Navigate(new PrehistoricPBJCustomization(dn));
+            }
+        }
+
+        private void AddPrehistoricPBJ(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
             {
@@ -54,44 +76,49 @@ namespace PointOfSale
                 order.Add(pbj);
                 NavigationService.Navigate(new PrehistoricPBJCustomization(pbj));
             }
-            
-        }
-        
-        protected void AddBrontowurst(object sender, RoutedEventArgs args)
-        {
-            SelectEntree(new Brontowurst());
-        }
-
-        protected void AddDinoNuggets(object sender, RoutedEventArgs args)
-        {
 
         }
 
-        protected void AddPrehistoricPBJ(object sender, RoutedEventArgs args)
+        private void AddPterodactylWings(object sender, RoutedEventArgs args)
         {
-
+            if (DataContext is Order order)
+            {
+                PterodactylWings pw = new PterodactylWings();
+                order.Add(pw);
+                //NavigationService.Navigate(new PrehistoricPBJCustomization(pw));
+            }
         }
 
-        protected void AddPterodactylWings(object sender, RoutedEventArgs args)
+        private void AddSteakosaurusBurger(object sender, RoutedEventArgs args)
         {
-
-        }
-
-        protected void AddSteakosaurusBurger(object sender, RoutedEventArgs args)
-        {
-
-        }
-
-
-        protected void AddTRexBurger(object sender, RoutedEventArgs args)
-        {
-
+            if (DataContext is Order order)
+            {
+                SteakosaurusBurger sb = new SteakosaurusBurger();
+                order.Add(sb);
+                //NavigationService.Navigate(new PrehistoricPBJCustomization(sb));
+            }
         }
 
 
-        protected void AddVelociwrap(object sender, RoutedEventArgs args)
+        private void AddTRexBurger(object sender, RoutedEventArgs args)
         {
+            if (DataContext is Order order)
+            {
+                TRexKingBurger trex = new TRexKingBurger();
+                order.Add(trex);
+                //NavigationService.Navigate(new PrehistoricPBJCustomization(trex));
+            }
+        }
 
+
+        private void AddVelociwrap(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                VelociWrap vw = new VelociWrap();
+                order.Add(vw);
+                //NavigationService.Navigate(new PrehistoricPBJCustomization(vw));
+            }
         }
     }
 }
