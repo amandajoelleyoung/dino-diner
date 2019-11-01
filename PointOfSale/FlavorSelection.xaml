@@ -15,7 +15,7 @@
                 <Setter Property="Height" Value="140"></Setter>
             </Style>
         </WrapPanel.Resources>
-        <Button>
+        <Button Click="SelectCherry">
             <Button.Background>
                 <ImageBrush ImageSource="Images/Cherry.png"></ImageBrush>
             </Button.Background>
@@ -23,7 +23,7 @@
                 <TextBlock DockPanel.Dock="Bottom" FontFamily="Segoe UI Black" FontSize="15">Cherry</TextBlock>
             </TextBlock>
         </Button>
-        <Button>
+        <Button Click="SelectChocolate">
             <Button.Background>
                 <ImageBrush ImageSource="Images/Chocolate.png"></ImageBrush>
             </Button.Background>
@@ -31,7 +31,7 @@
                 <TextBlock DockPanel.Dock="Bottom" FontFamily="Segoe UI Black" FontSize="15">Chocolate</TextBlock>
             </TextBlock>
         </Button>
-        <Button>
+        <Button Click="SelectCola">
             <Button.Background>
                 <ImageBrush ImageSource="Images/Cola.png"></ImageBrush>
             </Button.Background>
@@ -39,7 +39,7 @@
                 <TextBlock DockPanel.Dock="Bottom" FontFamily="Segoe UI Black" FontSize="15">Cola</TextBlock>
             </DockPanel>
         </Button>
-        <Button>
+        <Button Click="SelectLime">
             <Button.Background>
                 <ImageBrush ImageSource="Images/Lime.png"></ImageBrush>
             </Button.Background>
@@ -47,7 +47,7 @@
                 <TextBlock DockPanel.Dock="Bottom" FontFamily="Segoe UI Black" FontSize="15">Lime</TextBlock>
             </DockPanel>
         </Button>
-        <Button>
+        <Button Click="SelectOrange">
             <Button.Background>
                 <ImageBrush ImageSource="Images/OrangeSlice.png"></ImageBrush>
             </Button.Background>
@@ -55,7 +55,7 @@
                 <TextBlock DockPanel.Dock="Bottom" FontFamily="Segoe UI Black" FontSize="15">Orange</TextBlock>
             </DockPanel>
         </Button>
-        <Button>
+        <Button Click="SelectRootBeer">
             <Button.Background>
                 <ImageBrush ImageSource="Images/RootBeer.png"></ImageBrush>
             </Button.Background>
@@ -63,7 +63,7 @@
                 <TextBlock DockPanel.Dock="Bottom" FontFamily="Segoe UI Black" FontSize="15">Root Beer</TextBlock>
             </DockPanel>
         </Button>
-        <Button>
+        <Button Click="SelectVanilla">
             <Button.Background>
                 <ImageBrush ImageSource="Images/Vanilla.png"></ImageBrush>
             </Button.Background>

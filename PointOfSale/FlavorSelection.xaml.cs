@@ -24,8 +24,8 @@ namespace PointOfSale
     /// </summary>
     public partial class FlavorSelection : Page
     {
-        public Sodasaurus Sodasaurus { get; set; }
-        public FlavorSelection()
+        private Sodasaurus sodasaurus;
+        private FlavorSelection()
         {
             InitializeComponent();
         }
@@ -33,21 +33,12 @@ namespace PointOfSale
         public FlavorSelection(Sodasaurus soda)
         {
             InitializeComponent();
-            Sodasaurus = soda;
+            this.sodasaurus = soda;
         }
 
         private void SelectFlavor(SodasaurusFlavor flavor)
         {
-            if (DataContext is Order order)
-            {
-                if (DataContext is Drink drink)
-                {
-                    if (DataContext is Sodasaurus soda)
-                    {
-                        soda.Flavor = flavor;
-                    }
-                }
-            }
+            this.sodasaurus.Flavor = flavor;
         }
 
         protected void SelectCherry(object sender, RoutedEventArgs args)

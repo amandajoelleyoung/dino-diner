@@ -48,13 +48,13 @@
         <Border Grid.Row="2">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <TextBox Text="Subtotal Cost:"/>
-                <TextBox Text="{}"/>
+                <TextBox Text=""/>
             </StackPanel>
         </Border>
         <Border Grid.Row="3">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <TextBox Text="Sales Tax:"/>
-                <TextBox Text="$___"/>
+                <TextBox Text="{Binding Path=SalesTaxCost, StringFormat=n2}"/>
             </StackPanel>
         </Border>
         <Border Grid.Row="4">

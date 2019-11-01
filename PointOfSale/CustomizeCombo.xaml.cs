@@ -28,11 +28,6 @@ namespace PointOfSale
             InitializeComponent();
         }
 
-        private void SelectFlavor(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new FlavorSelection());
-        }
-
         private void SelectDrink(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new DrinkSelection());
