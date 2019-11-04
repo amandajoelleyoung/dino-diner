@@ -1,7 +1,4 @@
-﻿/* CIS 400
- * Amanda Young
- */
- using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,23 +16,13 @@ using System.Windows.Shapes;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for CustomizeCombo.xaml
+    /// Interaction logic for VelociwrapCustomization.xaml
     /// </summary>
-    public partial class CustomizeCombo : Page
+    public partial class VelociwrapCustomization : Page
     {
-        public CustomizeCombo()
+        public VelociwrapCustomization()
         {
             InitializeComponent();
-        }
-
-        private void SelectDrink(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new DrinkSelection());
-        }
-
-        private void SelectSide(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new SideSelection());
         }
     }
 }

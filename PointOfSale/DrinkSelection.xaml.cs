@@ -36,10 +36,13 @@ namespace PointOfSale
             InitializeComponent();
             Drink = drink;
         }
-
+        
         private void SelectFlavor(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new FlavorSelection());
+            if (Drink is Sodasaurus soda)
+            {
+                NavigationService.Navigate(new FlavorSelection(soda));
+            }
         }
 
         private void SelectDrink(Drink drink)
@@ -90,7 +93,9 @@ namespace PointOfSale
 
         protected void AddSodasaurus(object sender, RoutedEventArgs args)
         {
-            SelectDrink(new Sodasaurus());
+            Sodasaurus soda = new Sodasaurus();
+            SelectDrink(soda);
+            NavigationService.Navigate(new FlavorSelection(soda));
         }
 
         protected void AddWater(object sender, RoutedEventArgs args)

@@ -56,8 +56,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BrontowurstCustomization.xaml.cs">
+      <DependentUpon>BrontowurstCustomization.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CustomizeCombo.xaml.cs">
       <DependentUpon>CustomizeCombo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DinonuggetsCustomization.xaml.cs">
+      <DependentUpon>DinonuggetsCustomization.xaml</DependentUpon>
     </Compile>
     <Compile Include="DrinkSelection.xaml.cs">
       <DependentUpon>DrinkSelection.xaml</DependentUpon>
@@ -77,11 +83,28 @@
     <Compile Include="SizeSelection.xaml.cs">
       <DependentUpon>SizeSelection.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SteakosaurusCustomization.xaml.cs">
+      <DependentUpon>SteakosaurusCustomization.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TRexBurgerCustomization.xaml.cs">
+      <DependentUpon>TRexBurgerCustomization.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VelociwrapCustomization.xaml.cs">
+      <DependentUpon>VelociwrapCustomization.xaml</DependentUpon>
+    </Compile>
+    <Page Include="BrontowurstCustomization.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ComboSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CustomizeCombo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DinonuggetsCustomization.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -132,6 +155,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SizeSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SteakosaurusCustomization.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TRexBurgerCustomization.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VelociwrapCustomization.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

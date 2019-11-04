@@ -28,7 +28,6 @@ namespace PointOfSale
         public OrderControl()
         {
             InitializeComponent();
-            
         }
 
         private void OnSelectionChanged(object sender, SelectionChangedEventArgs args)
