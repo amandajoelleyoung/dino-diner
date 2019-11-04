@@ -54,6 +54,7 @@
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="CustomizeCombo.xaml.cs">
       <DependentUpon>CustomizeCombo.xaml</DependentUpon>
@@ -156,6 +157,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Milestones\1-create-order-pages.workbook" />
+    <None Include="Milestones\2-user-interaction-part-I.workbook" />
+    <None Include="Milestones\3-user-interaction-part-II.workbook" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -163,42 +167,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\DinoDiner-01.png" />
-    <Resource Include="Images\DinoDiner-02.png" />
-    <Resource Include="Images\DinoDiner-03.png" />
-    <Resource Include="Images\DinoDiner-04.png" />
-    <Resource Include="Images\DinoDiner-05.png" />
-    <Resource Include="Images\DinoDiner-06.png" />
-    <Resource Include="Images\DinoDiner-07.png" />
-    <Resource Include="Images\DinoDiner-08.png" />
-    <Resource Include="Images\DinoDiner-09.png" />
-    <Resource Include="Images\DinoDiner-10.png" />
-    <Resource Include="Images\DinoDiner-11.png" />
-    <Resource Include="Images\DinoDiner-12.png" />
-    <Resource Include="Images\DinoDiner-13.png" />
-    <Resource Include="Images\DinoDiner-14.png" />
-    <Resource Include="Images\DinoDiner-15.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Cherry.png" />
-    <Resource Include="Images\Lemon.png" />
-    <Resource Include="Images\Sugar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Chocolate.png" />
-    <Resource Include="Images\Cola.png" />
-    <Resource Include="Images\Lime.png" />
-    <Resource Include="Images\OrangeSlice.png" />
-    <Resource Include="Images\RootBeer.png" />
-    <Resource Include="Images\Vanilla.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Menu\Menu.csproj">
-      <Project>{2f5f801d-c838-4c96-a2be-a40c4dffb719}</Project>
-      <Name>Menu</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
