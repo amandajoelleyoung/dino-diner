@@ -16,20 +16,62 @@ namespace DinoDiner.Menu
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
+        private Entree entree;
         /// <summary>
         /// Gets or sets any specified entree
         /// </summary>
-        public Entree Entree { get; set; }
+        public Entree Entree
+        {
+            get
+            {
+                return entree;
+            }
+            set
+            {
+                entree = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Special"));
+            }
+        }
 
+        private Drink drink;
         /// <summary>
         /// Gets or sets any specified drink
         /// </summary>
-        public Drink Drink { get; set; }
+        public Drink Drink
+        {
+            get { return drink; }
+            set
+            {
+                drink = value;
+                drink.PropertyChanged += (object sender, PropertyChangedEventArgs args) =>
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Special"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                };
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Special"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+            }
+        }
 
+        private Side side;
         /// <summary>
         /// Gets or sets any specified side
         /// </summary>
-        public Side Side { get; set; }
+        public Side Side
+        {
+            get { return side; }
+            set
+            {
+                side = value;
+                side.PropertyChanged += (object sender, PropertyChangedEventArgs args) =>
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Special"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                };
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Special"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+            }
+        }
 
         private Size size = Size.Small;
         /// <summary>

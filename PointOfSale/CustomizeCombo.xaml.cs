@@ -25,6 +25,7 @@ namespace PointOfSale
     public partial class CustomizeCombo : Page
     {
         private CretaceousCombo combo;
+
         private CustomizeCombo()
         {
             InitializeComponent();
@@ -43,7 +44,7 @@ namespace PointOfSale
 
         private void SelectDrink(object sender, RoutedEventArgs e)
         {
-            if (DataContext is Order order) NavigationService.Navigate(new DrinkSelection(combo.Drink));
+            if (DataContext is Order order) NavigationService.Navigate(new DrinkSelection(combo));
         }
 
         private void SelectSide(object sender, RoutedEventArgs e)
