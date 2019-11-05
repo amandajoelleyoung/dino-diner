@@ -36,14 +36,35 @@ namespace PointOfSale
             this.combo = combo;
         }
 
+        private void SelectSize(DinoDiner.Menu.Size size)
+        {
+            combo.Size = size;
+        }
+
         private void SelectDrink(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new DrinkSelection(combo.Drink));
+            if (DataContext is Order order) NavigationService.Navigate(new DrinkSelection(combo.Drink));
         }
 
         private void SelectSide(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new SideSelection(combo.Side));
+            if (DataContext is Order order) NavigationService.Navigate(new SideSelection(combo.Side));
+        }
+
+
+        protected void SelectLarge(object sender, RoutedEventArgs args)
+        {
+            SelectSize(DinoDiner.Menu.Size.Large);
+        }
+
+        protected void SelectMedium(object sender, RoutedEventArgs args)
+        {
+            SelectSize(DinoDiner.Menu.Size.Medium);
+        }
+
+        protected void SelectSmall(object sender, RoutedEventArgs args)
+        {
+            SelectSize(DinoDiner.Menu.Size.Small);
         }
     }
 }

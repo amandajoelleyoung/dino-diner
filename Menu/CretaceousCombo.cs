@@ -95,7 +95,7 @@ namespace DinoDiner.Menu
                 List<string> specials = new List<string>();
                 specials.AddRange(Entree.Special);
                 specials.Add(Side.ToString());
-                specials.AddRange(Side.Special);
+                //specials.AddRange(Side.Special);
                 specials.Add(Drink.ToString());
                 specials.AddRange(Drink.Special);
                 return specials.ToArray();
@@ -125,7 +125,12 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Does not allow user to input blank parameters
         /// </summary>
-        private CretaceousCombo() { }
+        public CretaceousCombo()
+        {
+            this.Entree = new Brontowurst();
+            this.Side = new Fryceritops();
+            this.Drink = new Sodasaurus();
+        }
 
         /// <summary>
         /// Allows user to input entree only and defaults drink to Sodasaurus
