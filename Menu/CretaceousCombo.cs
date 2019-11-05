@@ -12,7 +12,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Cretaceous Combo class, maintains entree, drink, and side in a combo
     /// </summary>
-    public class CretaceousCombo : IMenuItem, IOrderItem
+    public class CretaceousCombo : IMenuItem, IOrderItem, INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -45,6 +45,9 @@ namespace DinoDiner.Menu
                 this.size = value;
                 this.Drink.Size = value;
                 this.Side.Size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Description"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Special"));
             }
         }
 

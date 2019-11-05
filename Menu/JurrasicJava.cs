@@ -43,6 +43,7 @@ namespace DinoDiner.Menu
             {
                 List<string> special = new List<string>();
                 if (cream) special.Add("Add Room for Cream");
+                if (this.Ice) special.Add("Add Ice");
                 return special.ToArray();
             }
         }
@@ -151,6 +152,7 @@ namespace DinoDiner.Menu
         {
             this.Ice = true;
             NotifyOfPropertyChange("Ice");
+            NotifyOfPropertyChange("Special");
         }
 
         /// <summary>

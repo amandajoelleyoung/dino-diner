@@ -72,6 +72,9 @@ namespace DinoDiner.Menu
             set
             {
                 sugar = value;
+                NotifyOfPropertyChange("Special");
+                NotifyOfPropertyChange("Description");
+                NotifyOfPropertyChange("Calories");
             }
         }
 
@@ -190,6 +193,7 @@ namespace DinoDiner.Menu
         {
             this.Ice = false;
             NotifyOfPropertyChange("Ice");
+            NotifyOfPropertyChange("Special");
         }
     }
 }
