@@ -54,7 +54,7 @@ namespace PointOfSale
             {
                 Brontowurst bw = new Brontowurst();
                 order.Add(bw);
-                //NavigationService.Navigate(new PrehistoricPBJCustomization(pbj));
+                NavigationService.Navigate(new BrontowurstCustomization(bw));
             }
         }
 
@@ -64,7 +64,7 @@ namespace PointOfSale
             {
                 DinoNuggets dn = new DinoNuggets();
                 order.Add(dn);
-                //NavigationService.Navigate(new PrehistoricPBJCustomization(dn));
+                NavigationService.Navigate(new DinonuggetsCustomization(dn));
             }
         }
 
@@ -85,7 +85,6 @@ namespace PointOfSale
             {
                 PterodactylWings pw = new PterodactylWings();
                 order.Add(pw);
-                //NavigationService.Navigate(new PrehistoricPBJCustomization(pw));
             }
         }
 
@@ -95,7 +94,7 @@ namespace PointOfSale
             {
                 SteakosaurusBurger sb = new SteakosaurusBurger();
                 order.Add(sb);
-                //NavigationService.Navigate(new PrehistoricPBJCustomization(sb));
+                NavigationService.Navigate(new SteakosaurusCustomization(sb));
             }
         }
 
@@ -106,7 +105,7 @@ namespace PointOfSale
             {
                 TRexKingBurger trex = new TRexKingBurger();
                 order.Add(trex);
-                //NavigationService.Navigate(new PrehistoricPBJCustomization(trex));
+                NavigationService.Navigate(new TRexBurgerCustomization(trex));
             }
         }
 
@@ -117,7 +116,7 @@ namespace PointOfSale
             {
                 VelociWrap vw = new VelociWrap();
                 order.Add(vw);
-                //NavigationService.Navigate(new PrehistoricPBJCustomization(vw));
+                NavigationService.Navigate(new VelociwrapCustomization(vw));
             }
         }
     }

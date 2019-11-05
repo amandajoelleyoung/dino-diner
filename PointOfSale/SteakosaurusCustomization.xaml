@@ -9,6 +9,30 @@
       Title="SteakosaurusCustomization">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button Click="SelectHoldBun" Grid.Row="0">
+            Hold Bun
+        </Button>
+        <Button Click="SelectHoldKetchup" Grid.Row="0" Grid.Column="1">
+            Hold Ketchup
+        </Button>
+        <Button Click="SelectHoldMustard" Grid.Row="0" Grid.Column="3">
+            Hold Mustard
+        </Button>
+        <Button Click="SelectHoldPickle" Grid.Row="1">
+            Hold Pickles
+        </Button>
+        <Button Click="SelectDone" Grid.Row="2" Grid.Column="3">
+            Done
+        </Button>
     </Grid>
 </Page>

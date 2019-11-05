@@ -15,7 +15,7 @@
                 <Setter Property="Height" Value="140"></Setter>
             </Style>
         </WrapPanel.Resources>
-        <Button Click="SelectDrinkSideCombo">
+        <Button Click="SelectBrontowurstCombo">
             <Button.Background>
                 <ImageBrush ImageSource="Images/DinoDiner-01.png"></ImageBrush>
             </Button.Background>
@@ -23,7 +23,7 @@
                 <TextBlock DockPanel.Dock="Bottom" FontFamily="Segoe UI Black" FontSize="14">Brontowurst Combo</TextBlock>
             </TextBlock>
         </Button>
-        <Button Click="SelectDrinkSideCombo">
+        <Button Click="SelectDinoNuggetsCombo">
             <Button.Background>
                 <ImageBrush ImageSource="Images/DinoDiner-02.png"></ImageBrush>
             </Button.Background>
@@ -31,7 +31,7 @@
                 <TextBlock DockPanel.Dock="Bottom" FontFamily="Segoe UI Black" FontSize="14">Dino-Nuggets Combo</TextBlock>
             </TextBlock>
         </Button>
-        <Button Click="SelectDrinkSideCombo">
+        <Button Click="SelectPrehistoricPBJCombo">
             <Button.Background>
                 <ImageBrush ImageSource="Images/DinoDiner-03.png"></ImageBrush>
             </Button.Background>
@@ -39,7 +39,7 @@
                 <TextBlock DockPanel.Dock="Bottom" FontFamily="Segoe UI Black" FontSize="14">Prehistoric PB&amp;J Combo</TextBlock>
             </DockPanel>
         </Button>
-        <Button Click="SelectDrinkSideCombo">
+        <Button Click="SelectPterodactylWingsCombo">
             <Button.Background>
                 <ImageBrush ImageSource="Images/DinoDiner-04.png"></ImageBrush>
             </Button.Background>
@@ -47,7 +47,7 @@
                 <TextBlock DockPanel.Dock="Bottom" FontFamily="Segoe UI Black" FontSize="13">Pterodactyl Wings Combo</TextBlock>
             </DockPanel>
         </Button>
-        <Button Click="SelectDrinkSideCombo">
+        <Button Click="SelectSteakosaurusBurgerCombo">
             <Button.Background>
                 <ImageBrush ImageSource="Images/DinoDiner-05.png"></ImageBrush>
             </Button.Background>
@@ -55,7 +55,7 @@
                 <TextBlock DockPanel.Dock="Bottom" FontFamily="Segoe UI Black" FontSize="12">Steakosaurus Burger Combo</TextBlock>
             </DockPanel>
         </Button>
-        <Button Click="SelectDrinkSideCombo">
+        <Button Click="SelectTRexKingBurgerCombo">
             <Button.Background>
                 <ImageBrush ImageSource="Images/DinoDiner-06.png"></ImageBrush>
             </Button.Background>
@@ -63,7 +63,7 @@
                 <TextBlock DockPanel.Dock="Bottom" FontFamily="Segoe UI Black" FontSize="13">T-Rex King Burger Combo</TextBlock>
             </DockPanel>
         </Button>
-        <Button Click="SelectDrinkSideCombo">
+        <Button Click="SelectVelociwrapCombo">
             <Button.Background>
                 <ImageBrush ImageSource="Images/DinoDiner-07.png"></ImageBrush>
             </Button.Background>

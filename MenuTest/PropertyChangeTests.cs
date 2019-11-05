@@ -7,7 +7,7 @@ using Xunit;
 
 namespace MenuTest
 {
-    class MockOrderItem : IOrderItem, INotifyPropertyChanged
+    public class MockOrderItem : IOrderItem, INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

@@ -9,6 +9,19 @@
       Title="DinonuggetsCustomization">
 
     <Grid>
-        
-    </Grid>
+        <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+        <Button Click="SelectAddNugget" Grid.Row="0">
+            Add Nugget
+        </Button>
+        <Button Click="SelectDone" Grid.Row="1" Grid.Column="1">
+                Done
+            </Button>
+        </Grid>
 </Page>

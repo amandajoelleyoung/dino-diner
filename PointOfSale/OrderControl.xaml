@@ -54,7 +54,7 @@
         <Border Grid.Row="3">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <TextBox Text="Sales Tax:"/>
-                <TextBox Text="{Binding Path=SalesTaxCost, StringFormat=n2}"/>
+                <!--TextBox Text="{Binding Path=SalesTaxCost, StringFormat=n2}"/-->
             </StackPanel>
         </Border>
         <Border Grid.Row="4">
