@@ -46,7 +46,7 @@ namespace PointOfSale
             if (DataContext is Order order) NavigationService.Navigate(new DrinkSelection(combo.Drink));
         }
 
-        private void SelectSide(object sender, RoutedEventArgs e)
+        private void SelectSide(object sender, RoutedEventArgs e) 
         {
             if (DataContext is Order order) NavigationService.Navigate(new SideSelection(combo.Side));
         }
