@@ -47,8 +47,8 @@
         </ListBox>
         <Border Grid.Row="2">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBox Text="Subtotal Cost:"/>
-                <TextBox Text=""/>
+                <TextBlock Text="Subtotal Cost: $"/>
+                <TextBlock Text="{Binding Path=SubtotalCost, StringFormat=n2}"/>
             </StackPanel>
         </Border>
         <Border Grid.Row="3">

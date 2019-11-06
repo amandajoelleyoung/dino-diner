@@ -24,17 +24,28 @@ namespace PointOfSale
     /// </summary>
     public partial class DrinkSelection : Page
     {
-        public Drink Drink { get; set; }
+        private Drink Drink { get; set; }
+        private CretaceousCombo Combo { get; set; }
 
         public DrinkSelection()
         {
             InitializeComponent();
+            ConfigureButtons();
         }
 
         public DrinkSelection(Drink drink)
         {
             InitializeComponent();
             Drink = drink;
+            ConfigureButtons();
+        }
+
+        public DrinkSelection(CretaceousCombo combo)
+        {
+            InitializeComponent();
+            Combo = combo;
+            Drink = combo.Drink;
+            ConfigureButtons();
         }
         
         private void SelectFlavor(object sender, RoutedEventArgs e)
@@ -47,22 +58,17 @@ namespace PointOfSale
 
         private void SelectDrink(Drink drink)
         {
-            if (DataContext is Order order)
+            if(Combo != null)
+            {
+                Combo.Drink = drink;
+                Drink = drink;
+            }
+            else if (DataContext is Order order)
             {
                 order.Add(drink);
                 Drink = drink;
-                BtnSelectJurassicJava.IsEnabled = false;
-                BtnSelectSodaSaurus.IsEnabled = false;
-                BtnSelectTyrannotea.IsEnabled = false;
-                BtnSelectWater.IsEnabled = false;
-                BtnSelectDecaf.IsEnabled = false;
-                BtnSelectFlavor.IsEnabled = false;
-                BtnSelectLemon.IsEnabled = false;
-                BtnSelectSweet.IsEnabled = false;
-                BtnPickSmall.IsEnabled = true;
-                BtnPickMedium.IsEnabled = true;
-                BtnPickLarge.IsEnabled = true;
             }
+            ConfigureButtons();
         }
 
         private void SelectSize(DinoDiner.Menu.Size size)
@@ -144,6 +150,72 @@ namespace PointOfSale
         protected void SelectSmall(object sender, RoutedEventArgs args)
         {
             SelectSize(DinoDiner.Menu.Size.Small);
+        }
+
+        private void ConfigureButtons()
+        {
+            if (Drink != null && Combo == null) {
+                BtnSelectJurassicJava.IsEnabled = false;
+                BtnSelectSodaSaurus.IsEnabled = false;
+                BtnSelectTyrannotea.IsEnabled = false;
+                BtnSelectWater.IsEnabled = false;
+            }
+            else
+            {
+                BtnSelectJurassicJava.IsEnabled = true;
+                BtnSelectSodaSaurus.IsEnabled = true;
+                BtnSelectTyrannotea.IsEnabled = true;
+                BtnSelectWater.IsEnabled = true;
+            }
+
+            if(Drink is Sodasaurus)
+            {
+                BtnSelectFlavor.IsEnabled = true;
+            }
+            else
+            {
+                BtnSelectFlavor.IsEnabled = false;
+            }
+
+            if (Drink is JurassicJava)
+            {
+                BtnSelectDecaf.IsEnabled = true;
+            }
+            else
+            {
+                BtnSelectDecaf.IsEnabled = false;
+            }
+
+            if(Drink is Tyrannotea)
+            {
+                BtnSelectSweet.IsEnabled = true;
+            }
+            else
+            {
+                BtnSelectSweet.IsEnabled = false;
+            }
+
+            if(Drink is Water || Drink is Tyrannotea)
+            {
+                BtnSelectLemon.IsEnabled = true;
+            }
+            else
+            { 
+                BtnSelectLemon.IsEnabled = false;
+            }
+
+            if (Drink != null)
+            {
+                BtnPickSmall.IsEnabled = true;
+                BtnPickMedium.IsEnabled = true;
+                BtnPickLarge.IsEnabled = true;
+            }
+            else
+            {
+                BtnPickSmall.IsEnabled = false;
+                BtnPickMedium.IsEnabled = false;
+                BtnPickLarge.IsEnabled = false;
+            }
         }
     }
 }
