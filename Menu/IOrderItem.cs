@@ -10,7 +10,6 @@ namespace DinoDiner.Menu
 {
     public interface IOrderItem : INotifyPropertyChanged
     {
-        event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// Returns the price of the item

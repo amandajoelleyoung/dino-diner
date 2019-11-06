@@ -60,10 +60,10 @@ namespace PointOfSale
                 BtnAddMeteorMacAndCheese.IsEnabled = false;
                 BtnAddMezzorellaSticks.IsEnabled = false;
                 BtnAddTriceritots.IsEnabled = false;
-                BtnPickSmall.IsEnabled = true;
-                BtnPickMedium.IsEnabled = true;
-                BtnPickLarge.IsEnabled = true;
             }
+            BtnPickSmall.IsEnabled = true;
+            BtnPickMedium.IsEnabled = true;
+            BtnPickLarge.IsEnabled = true; 
         }
 
         private void SelectSize(DinoDiner.Menu.Size size)

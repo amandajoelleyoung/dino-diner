@@ -15,7 +15,7 @@
             x:Name="OrderControl"
             DockPanel.Dock="Right"
             Width="200"
-            Background="LightSteelBlue"/>
+            Background="White"/>
         <Grid DockPanel.Dock="Bottom" Height="30">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
