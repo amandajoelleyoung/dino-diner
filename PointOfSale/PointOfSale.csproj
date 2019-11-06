@@ -95,8 +95,8 @@
     <Compile Include="SideSelection.xaml.cs">
       <DependentUpon>SideSelection.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SizeSelection.xaml.cs">
-      <DependentUpon>SizeSelection.xaml</DependentUpon>
+    <Compile Include="PageSandbox.xaml.cs">
+      <DependentUpon>PageSandbox.xaml</DependentUpon>
     </Compile>
     <Compile Include="SteakosaurusCustomization.xaml.cs">
       <DependentUpon>SteakosaurusCustomization.xaml</DependentUpon>
@@ -169,7 +169,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SizeSelection.xaml">
+    <Page Include="PageSandbox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

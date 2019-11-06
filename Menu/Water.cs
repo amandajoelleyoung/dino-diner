@@ -47,6 +47,23 @@ namespace DinoDiner.Menu
             }
         }
 
+        private bool ice = true;
+        /// <summary>
+        /// Returns whether there is ice or not.
+        /// </summary>
+        public override bool Ice
+        {
+            get
+            {
+                return ice;
+            }
+            set
+            {
+                ice = value;
+                NotifyOfPropertyChange("Special");
+            }
+        }
+
         /// <summary>
         /// The list of ingredients included in Sodasaurus.
         /// </summary>

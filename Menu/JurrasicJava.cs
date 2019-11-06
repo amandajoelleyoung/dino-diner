@@ -65,6 +65,23 @@ namespace DinoDiner.Menu
             }
         }
 
+        private bool ice = false;
+        /// <summary>
+        /// Returns whether there is ice or not.
+        /// </summary>
+        public override bool Ice
+        {
+            get
+            {
+                return ice;
+            }
+            set
+            {
+                ice = value;
+                NotifyOfPropertyChange("Special");
+            }
+        }
+
 
         /// <summary>
         /// The list of ingredients included in Sodasaurus.
@@ -136,15 +153,6 @@ namespace DinoDiner.Menu
             else return $"{this.size} Jurassic Java";
         }
 
-        /// <summary>
-        /// Holds ice.
-        /// </summary>
-        public void AddIce()
-        {
-            this.Ice = true;
-            NotifyOfPropertyChange("Ice");
-            NotifyOfPropertyChange("Special");
-        }
 
         /// <summary>
         /// Leaves room for cream.

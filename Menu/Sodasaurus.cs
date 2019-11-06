@@ -112,6 +112,11 @@ namespace DinoDiner.Menu
             {
                 return ice;
             }
+            set
+            {
+                ice = value;
+                NotifyOfPropertyChange("Special");
+            }
         }
 
         /// <summary>
@@ -131,13 +136,6 @@ namespace DinoDiner.Menu
             return $"{this.size} {this.flavor} Sodasaurus";
         }
 
-        /// <summary>
-        /// Holds ice.
-        /// </summary>
-        public void HoldIce()
-        {
-            this.ice = false;
-            NotifyOfPropertyChange("Special");
-        }
+        
     }
 }

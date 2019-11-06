@@ -164,6 +164,52 @@ namespace PointOfSale
             }
         }
 
+        protected void AddRoomForCream(object sender, RoutedEventArgs args)
+        {
+            if (Combo != null)
+            {
+                if (Combo.Drink is JurassicJava java)
+                {
+                    java.LeaveRoomForCream();
+                }
+            }
+            if (Drink is JurassicJava j)
+            {
+                j.LeaveRoomForCream();
+            }
+        }
+
+        protected void AddRemoveIce(object sender, RoutedEventArgs agrs)
+        {
+            if (Combo != null)
+            {
+                if (Combo.Drink.Ice)
+                {
+                    Combo.Drink.Ice = false;
+                    Drink.Ice = false;
+                }
+                else
+                {
+                    Combo.Drink.Ice = true;
+                    Drink.Ice = true;
+                }
+            }
+            else if (DataContext is Order order)
+            {
+                if (Drink != null)
+                {
+                    if (Drink.Ice)
+                    {
+                        Drink.Ice = false;
+                    }
+                    else
+                    {
+                        Drink.Ice = true;
+                    }
+                }
+            }
+        }
+
         protected void SelectLarge(object sender, RoutedEventArgs args)
         {
             SelectSize(DinoDiner.Menu.Size.Large);
@@ -197,38 +243,40 @@ namespace PointOfSale
 
             if(Drink is Sodasaurus)
             {
-                BtnSelectFlavor.IsEnabled = true;
+                BtnSelectFlavor.Visibility = Visibility.Visible;
             }
             else
             {
-                BtnSelectFlavor.IsEnabled = false;
+                BtnSelectFlavor.Visibility = Visibility.Collapsed;
             }
 
             if (Drink is JurassicJava)
             {
-                BtnSelectDecaf.IsEnabled = true;
+                BtnSelectDecaf.Visibility = Visibility.Visible;
+                BtnSelectRoomForCream.Visibility = Visibility.Visible;
             }
             else
             {
-                BtnSelectDecaf.IsEnabled = false;
+                BtnSelectDecaf.Visibility = Visibility.Collapsed;
+                BtnSelectRoomForCream.Visibility = Visibility.Collapsed;
             }
 
             if(Drink is Tyrannotea)
             {
-                BtnSelectSweet.IsEnabled = true;
+                BtnSelectSweet.Visibility = Visibility.Visible;
             }
             else
             {
-                BtnSelectSweet.IsEnabled = false;
+                BtnSelectSweet.Visibility = Visibility.Collapsed;
             }
 
             if(Drink is Water || Drink is Tyrannotea)
             {
-                BtnSelectLemon.IsEnabled = true;
+                BtnSelectLemon.Visibility = Visibility.Visible;
             }
             else
-            { 
-                BtnSelectLemon.IsEnabled = false;
+            {
+                BtnSelectLemon.Visibility = Visibility.Collapsed;
             }
             
             if (Drink != null)

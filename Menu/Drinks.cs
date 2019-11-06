@@ -49,7 +49,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// States whether drink has ice or not.
         /// </summary>
-        public virtual bool Ice { get; protected set; }
+        public virtual bool Ice { get; set; }
 
         /// <summary>
         /// Gets the description of the item
