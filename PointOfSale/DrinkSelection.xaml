@@ -79,7 +79,7 @@
                 <TextBlock DockPanel.Dock="Bottom" FontSize="18" FontFamily="Segoe UI Black">Sweet</TextBlock>
             </DockPanel>
         </Button>
-        <Button Height="50" Click="SelectLarge" Name="BtnPickLarge">
+        <Button Height="50" Click="SelectSmall" Name="BtnPickSmall">
             <TextBlock>
                 <TextBlock DockPanel.Dock="Bottom" FontSize="25" FontFamily="Segoe UI Black">Small</TextBlock>
             </TextBlock>
@@ -89,7 +89,7 @@
                 <TextBlock DockPanel.Dock="Bottom" FontSize="25" FontFamily="Segoe UI Black">Medium</TextBlock>
             </TextBlock>
         </Button>
-        <Button Height="50" Click="SelectSmall" Name="BtnPickSmall">
+        <Button Height="50" Click="SelectLarge" Name="BtnPickLarge">
             <DockPanel>
                 <TextBlock DockPanel.Dock="Bottom" FontSize="25" FontFamily="Segoe UI Black">Large</TextBlock>
             </DockPanel>

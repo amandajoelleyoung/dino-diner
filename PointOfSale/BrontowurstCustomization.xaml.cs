@@ -25,6 +25,7 @@ namespace PointOfSale
     public partial class BrontowurstCustomization : Page
     {
         private Brontowurst brontowurst;
+        private CretaceousCombo Combo { get; set; }
         private BrontowurstCustomization()
         {
             InitializeComponent();
@@ -36,8 +37,25 @@ namespace PointOfSale
             brontowurst = bw;
         }
 
+        public BrontowurstCustomization(CretaceousCombo combo)
+        {
+            InitializeComponent();
+            Combo = combo;
+            if (combo.Entree is Brontowurst brontow)
+            {
+                brontowurst = brontow;
+            }
+        }
+
         private void SelectHoldBun(object sender, RoutedEventArgs args)
         {
+            if (Combo != null)
+            {
+                if (Combo.Entree is Brontowurst bw)
+                {
+                    bw.HoldBun();
+                }
+            }
             brontowurst.HoldBun();
         }
 
@@ -53,6 +71,10 @@ namespace PointOfSale
 
         private void SelectDone(object sender, RoutedEventArgs args)
         {
+            if (Combo != null)
+            {
+                NavigationService.Navigate(new CustomizeCombo(Combo));
+            }
             if (NavigationService.CanGoBack) NavigationService.GoBack();
             else NavigationService.Navigate(new MenuCategorySelection());
         }

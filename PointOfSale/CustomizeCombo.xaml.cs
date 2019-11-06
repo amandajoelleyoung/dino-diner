@@ -49,7 +49,7 @@ namespace PointOfSale
 
         private void SelectSide(object sender, RoutedEventArgs e) 
         {
-            if (DataContext is Order order) NavigationService.Navigate(new SideSelection(combo.Side));
+            if (DataContext is Order order) NavigationService.Navigate(new SideSelection(combo));
         }
 
 

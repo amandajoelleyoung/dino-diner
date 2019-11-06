@@ -53,20 +53,19 @@
         </Border>
         <Border Grid.Row="3">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBox Text="Sales Tax:"/>
-                <!--TextBox Text="{Binding Path=SalesTaxCost, StringFormat=n2}"/-->
+                <TextBlock Text="Sales Tax: $"/>
+                <TextBlock Text="{Binding Path=SalesTaxCost, StringFormat=n2}"/>
             </StackPanel>
         </Border>
         <Border Grid.Row="4">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBox Text="Total Cost:"/>
-                <TextBox Text="$___"/>
+                <TextBlock Text="Total Cost: $"/>
+                <TextBlock Text="{Binding Path=TotalCost, StringFormat=n2}"/>
             </StackPanel>
         </Border>
         <Border Grid.Row="5">
             <StackPanel Orientation="Horizontal">
                 <TextBox Text="buttons"/>
-                
             </StackPanel>
         </Border>
     </Grid>

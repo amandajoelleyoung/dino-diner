@@ -73,18 +73,20 @@ namespace PointOfSale
 
         private void SelectSize(DinoDiner.Menu.Size size)
         {
+            if (Combo != null)
+            {
+                Combo.Drink.Size = size;
+                Drink.Size = size;
+            }
             if (Drink != null)
             {
                 Drink.Size = size;
-                BtnSelectJurassicJava.IsEnabled = true;
-                BtnSelectSodaSaurus.IsEnabled = true;
-                BtnSelectTyrannotea.IsEnabled = true;
-                BtnSelectWater.IsEnabled = true;
-                BtnSelectDecaf.IsEnabled = true;
-                BtnSelectFlavor.IsEnabled = true;
-                BtnSelectLemon.IsEnabled = true;
-                BtnSelectSweet.IsEnabled = true;
             }
+            ConfigureButtons();
+            BtnSelectJurassicJava.IsEnabled = true;
+            BtnSelectSodaSaurus.IsEnabled = true;
+            BtnSelectTyrannotea.IsEnabled = true;
+            BtnSelectWater.IsEnabled = true;
         }
 
         protected void AddJurassicJava(object sender, RoutedEventArgs args)
@@ -111,22 +113,47 @@ namespace PointOfSale
 
         protected void AddDecaf(object sender, RoutedEventArgs args)
         {
-            if (Drink is JurassicJava java)
+            if (Combo != null)
             {
-                java.MakeDecaf();
+                if (Combo.Drink is JurassicJava java)
+                {
+                    java.MakeDecaf();
+                }
+            }
+            if (Drink is JurassicJava j)
+            {
+                j.MakeDecaf();
             }
         }
 
         protected void AddSweet(object sender, RoutedEventArgs args)
         {
-            if (Drink is Tyrannotea tea)
+            if (Combo != null)
             {
-                tea.AddSugar();
+                if (Combo.Drink is Tyrannotea tea)
+                {
+                    tea.AddSugar();
+                }
+            }
+            if (Drink is Tyrannotea t)
+            {
+                t.AddSugar();
             }
         }
 
         protected void AddLemon(object sender, RoutedEventArgs args)
         {
+            if (Combo != null)
+            {
+                if (Combo.Drink is Water w)
+                {
+                    w.AddLemon();
+                }
+                if (Combo.Drink is Tyrannotea t)
+                {
+                    t.AddLemon();
+                }
+            }
             if (Drink is Water water)
             {
                 water.AddLemon();
@@ -203,7 +230,7 @@ namespace PointOfSale
             { 
                 BtnSelectLemon.IsEnabled = false;
             }
-
+            
             if (Drink != null)
             {
                 BtnPickSmall.IsEnabled = true;

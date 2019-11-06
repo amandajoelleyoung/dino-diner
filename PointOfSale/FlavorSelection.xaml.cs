@@ -73,7 +73,7 @@ namespace PointOfSale
 
         protected void SelectVanilla(object sender, RoutedEventArgs args)
         {
-            SelectFlavor(SodasaurusFlavor.Cherry);
+            SelectFlavor(SodasaurusFlavor.Vanilla);
         }
     }
 }

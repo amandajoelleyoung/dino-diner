@@ -25,6 +25,7 @@ namespace PointOfSale
     public partial class SideSelection : Page
     {
         public Side Side { get; set; }
+        public CretaceousCombo Combo { get; set; }
 
         public SideSelection()
         {
@@ -37,9 +38,21 @@ namespace PointOfSale
             Side = side;
         }
 
+        public SideSelection(CretaceousCombo combo)
+        {
+            InitializeComponent();
+            Combo = combo;
+            Side = combo.Side;
+        }
+
         private void SelectSide(Side side)
         {
-            if (DataContext is Order order)
+            if (Combo != null)
+            {
+                Combo.Side = side;
+                Side = side;
+            }
+            else if (DataContext is Order order)
             {
                 order.Add(side);
                 Side = side;
@@ -55,6 +68,11 @@ namespace PointOfSale
 
         private void SelectSize(DinoDiner.Menu.Size size)
         {
+            if (Combo != null)
+            {
+                Combo.Side.Size = size;
+                Side.Size = size;
+            }
             if (Side != null)
             {
                 Side.Size = size;
@@ -62,9 +80,6 @@ namespace PointOfSale
                 BtnAddMeteorMacAndCheese.IsEnabled = true;
                 BtnAddMezzorellaSticks.IsEnabled = true;
                 BtnAddTriceritots.IsEnabled = true;
-                BtnPickSmall.IsEnabled = false;
-                BtnPickMedium.IsEnabled = false;
-                BtnPickLarge.IsEnabled = false;
             }
         }
 

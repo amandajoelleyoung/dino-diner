@@ -172,6 +172,7 @@ namespace DinoDiner.Menu
         {
             this.decaf = true;
             NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Description");
         }
     }
 }
