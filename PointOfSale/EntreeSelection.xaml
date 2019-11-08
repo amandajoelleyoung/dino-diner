@@ -8,68 +8,120 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="EntreeSelection">
 
-    <WrapPanel>
-        <WrapPanel.Resources>
-            <Style TargetType="Button">
-                <Setter Property="Width" Value="180"></Setter>
-                <Setter Property="Height" Value="140"></Setter>
-            </Style>
-        </WrapPanel.Resources>
-        <Button Click="AddBrontowurst">
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" 
+                   Grid.ColumnSpan="3" 
+                   Background="White"
+                   TextAlignment="Center"
+                   FontSize="20">
+            Entree Selection
+        </TextBlock>
+        <Button Grid.Column="0" 
+                Grid.Row="1"
+                Margin="10"
+                FontSize="20"
+                Width="160"
+                Click="AddBrontowurst">
             <Button.Background>
-                <ImageBrush ImageSource="Images/DinoDiner-01.png"></ImageBrush>
+                <ImageBrush ImageSource="Images/DinoDiner-01.png" 
+                            Opacity=".3"/>
             </Button.Background>
-            <TextBlock Height="135">
-                <TextBlock DockPanel.Dock="Bottom" FontFamily="Segoe UI Black" FontSize="15">Brontowurst</TextBlock>
-            </TextBlock>
+            Brontowurst
         </Button>
-        <Button Click="AddDinoNuggets">
+        <Button Grid.Column="1" 
+                Grid.Row="1"
+                Margin="10"
+                FontSize="20"
+                Width="160"
+                Click="AddDinoNuggets"
+                >
             <Button.Background>
-                <ImageBrush ImageSource="Images/DinoDiner-02.png"></ImageBrush>
+                <ImageBrush ImageSource="Images/DinoDiner-02.png" 
+                            Opacity=".3"/>
             </Button.Background>
-            <TextBlock Height="135">
-                <TextBlock DockPanel.Dock="Bottom" FontFamily="Segoe UI Black" FontSize="15">Dino-Nuggets</TextBlock>
-            </TextBlock>
+            Dino-Nuggets
         </Button>
-        <Button Click="AddPrehistoricPBJ">
+        <Button Grid.Column="2" 
+                Grid.Row="1"
+                Margin="10"
+                FontSize="20"
+                Width="160"
+                Click="AddPrehistoricPBJ"
+                >
             <Button.Background>
-                <ImageBrush ImageSource="Images/DinoDiner-03.png"></ImageBrush>
+                <ImageBrush ImageSource="Images/DinoDiner-03.png" 
+                            Opacity=".3"/>
             </Button.Background>
-            <DockPanel Height="135">
-                <TextBlock DockPanel.Dock="Bottom" FontFamily="Segoe UI Black" FontSize="15">Prehistoric PB&amp;J</TextBlock>
-            </DockPanel>
+            Prehistoric PB&amp;J
         </Button>
-        <Button Click="AddPterodactylWings">
+        <Button Grid.Column="0" 
+                Grid.Row="2"
+                Margin="10"
+                FontSize="20"
+                Width="160"
+                Click="AddPterodactylWings"
+                >
             <Button.Background>
-                <ImageBrush ImageSource="Images/DinoDiner-04.png"></ImageBrush>
+                <ImageBrush ImageSource="Images/DinoDiner-04.png" 
+                            Opacity=".3"/>
             </Button.Background>
-            <DockPanel Height="135">
-                <TextBlock DockPanel.Dock="Bottom" FontFamily="Segoe UI Black" FontSize="15">Pterodactyl Wings</TextBlock>
-            </DockPanel>
+            <TextBlock Text="Pterodactyl Wings" 
+                       TextWrapping="Wrap" 
+                       TextAlignment="Center"/>
         </Button>
-        <Button Click="AddSteakosaurusBurger">
+        <Button Grid.Column="1" 
+                Grid.Row="2"
+                Margin="10"
+                FontSize="20"
+                Width="160"
+                Click="AddSteakosaurusBurger"
+                >
             <Button.Background>
-                <ImageBrush ImageSource="Images/DinoDiner-05.png"></ImageBrush>
+                <ImageBrush ImageSource="Images/DinoDiner-05.png" 
+                            Opacity=".3"/>
             </Button.Background>
-            <DockPanel Height="135">
-                <TextBlock DockPanel.Dock="Bottom" FontFamily="Segoe UI Black" FontSize="15">Steakosaurus Burger</TextBlock>
-            </DockPanel>
+            <TextBlock Text="Steakosaurus Burger" 
+                       TextWrapping="Wrap" 
+                       TextAlignment="Center"/>
         </Button>
-        <Button Click="AddTRexBurger">
+        <Button Grid.Column="3" 
+                Grid.Row="2"
+                Margin="10"
+                FontSize="20"
+                Width="160"
+                Click="AddTRexBurger"
+                >
             <Button.Background>
-                <ImageBrush ImageSource="Images/DinoDiner-06.png"></ImageBrush>
+                <ImageBrush ImageSource="Images/DinoDiner-06.png" 
+                            Opacity=".3"/>
             </Button.Background>
-            <DockPanel Height="135">
-                <TextBlock DockPanel.Dock="Bottom" FontFamily="Segoe UI Black" FontSize="15">T-Rex King Burger</TextBlock>
-            </DockPanel>
+            <TextBlock Text="T-Rex King Burger" 
+                       TextWrapping="Wrap" 
+                       TextAlignment="Center"/>
         </Button>
-        <Button Click="AddVelociwrap">
+        <Button Grid.Column="0" 
+                Grid.Row="3"
+                Margin="10"
+                FontSize="20"
+                Width="160"
+                Click="AddVelociwrap"
+                >
             <Button.Background>
-                <ImageBrush ImageSource="Images/DinoDiner-07.png"></ImageBrush>
+                <ImageBrush ImageSource="Images/DinoDiner-07.png" 
+                            Opacity=".3"/>
             </Button.Background>
-            <DockPanel Height="135">
-                <TextBlock DockPanel.Dock="Bottom" FontFamily="Segoe UI Black" FontSize="15">Veloci-wrap</TextBlock>
-            </DockPanel>
+            Veloci-Wrap
         </Button>
-    </WrapPanel>
+    </Grid>
 </Page>

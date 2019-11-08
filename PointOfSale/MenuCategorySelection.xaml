@@ -14,28 +14,48 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Click="SelectCombo" Grid.Row="0" Grid.Column="0">
-            <DockPanel Height="200">
-                <TextBlock FontFamily="Segoe UI Black" FontSize="27">Combos</TextBlock>
-            </DockPanel>
+        <TextBlock Grid.Row="0" 
+                   Grid.ColumnSpan="3" 
+                   Background="White"
+                   TextAlignment="Center"
+                   FontSize="20">
+            Welcome to Dino-Diner!
+        </TextBlock>
+        <Button Click="SelectCombo" 
+                Grid.Row="1" 
+                Grid.Column="0"
+                Height="120"
+                Width="240"
+                FontSize="40">
+            Combos
         </Button>
-        <Button Click="SelectEntree" Grid.Row="0" Grid.Column="1">
-            <DockPanel Height="200">
-                <TextBlock FontFamily="Segoe UI Black" FontSize="27">Entrees</TextBlock>
-            </DockPanel>
+        <Button Click="SelectEntree" 
+                Grid.Row="1" 
+                Grid.Column="1"
+                Height="120"
+                Width="240"
+                FontSize="40">
+            Entrees
         </Button>
-        <Button Click="SelectDrink" Grid.Row="1" Grid.Column="0">
-            <DockPanel Height="200">
-                <TextBlock FontFamily="Segoe UI Black" FontSize="27">Drinks</TextBlock>
-            </DockPanel>
+        <Button Click="SelectDrink" 
+                Grid.Row="2" 
+                Grid.Column="0"
+                Height="120"
+                Width="240"
+                FontSize="40">
+            Drinks
         </Button>
-        <Button Click="SelectSide" Grid.Row="1" Grid.Column="1">
-            <DockPanel Height="200">
-                <TextBlock FontFamily="Segoe UI Black" FontSize="27">Sides</TextBlock>
-            </DockPanel>
+        <Button Click="SelectSide" 
+                Grid.Row="2" 
+                Grid.Column="1"
+                Height="120"
+                Width="240"
+                FontSize="40">
+            Sides
         </Button>
     </Grid>
 </Page>

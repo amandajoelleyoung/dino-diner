@@ -25,48 +25,58 @@
                    Background="White"
                    TextAlignment="Center"
                    FontSize="20">
-            Side Selection
+            Entree Selection
         </TextBlock>
         <Button Grid.Column="0" 
                 Grid.Row="1"
                 Margin="10"
                 FontSize="20"
-                Width="140"
-                Name="BtnAddFryceritops" 
-                Click="AddFryceritops"
+                Width="160"
+                Click="AddBrontowurst">
+            <Button.Background>
+                <ImageBrush ImageSource="Images/DinoDiner-01.png" 
+                            Opacity=".3"/>
+            </Button.Background>
+            Brontowurst
+        </Button>
+        <Button Grid.Column="1" 
+                Grid.Row="1"
+                Margin="10"
+                FontSize="20"
+                Width="160"
+                Click="AddDinoNuggets"
                 >
             <Button.Background>
-                <ImageBrush ImageSource="Images/DinoDiner-08.png" Opacity=".3"></ImageBrush>
+                <ImageBrush ImageSource="Images/DinoDiner-02.png" 
+                            Opacity=".3"/>
             </Button.Background>
-            Fryceritops
+            Dino-Nuggets
+        </Button>
+        <Button Grid.Column="2" 
+                Grid.Row="1"
+                Margin="10"
+                FontSize="20"
+                Width="160"
+                Click="AddPrehistoricPBJ"
+                >
+            <Button.Background>
+                <ImageBrush ImageSource="Images/DinoDiner-03.png" 
+                            Opacity=".3"/>
+            </Button.Background>
+            Prehistoric PB&amp;J
         </Button>
         <Button Grid.Column="0" 
                 Grid.Row="2"
                 Margin="10"
                 FontSize="20"
-                Width="140"
-                Name="BtnAddMeteorMacAndCheese" 
-                Click="AddMeteorMacAndCheese"
+                Width="160"
+                Click="AddPterodactylWings"
                 >
             <Button.Background>
-                <ImageBrush ImageSource="Images/DinoDiner-09.png" Opacity=".3"></ImageBrush>
+                <ImageBrush ImageSource="Images/DinoDiner-04.png" 
+                            Opacity=".3"/>
             </Button.Background>
-            <TextBlock Text="Meteor Mac And Cheese" 
-                       TextWrapping="Wrap" 
-                       TextAlignment="Center"/>
-        </Button>
-        <Button Grid.Column="1" 
-                Grid.Row="1"
-                Margin="10"
-                FontSize="20"
-                Width="150"
-                Name="BtnAddMezzorellaSticks" 
-                Click="AddMezzorellaSticks"
-                >
-            <Button.Background>
-                <ImageBrush ImageSource="Images/DinoDiner-10.png" Opacity=".3"></ImageBrush>
-            </Button.Background>
-            <TextBlock Text="Mezzorella Sticks" 
+            <TextBlock Text="Pterodactyl Wings" 
                        TextWrapping="Wrap" 
                        TextAlignment="Center"/>
         </Button>
@@ -74,42 +84,44 @@
                 Grid.Row="2"
                 Margin="10"
                 FontSize="20"
-                Width="140"
-                Name="BtnAddTriceritots" 
-                Click="AddTriceritots"
+                Width="160"
+                Click="AddSteakosaurusBurger"
                 >
             <Button.Background>
-                <ImageBrush ImageSource="Images/DinoDiner-11.png" Opacity=".3"></ImageBrush>
+                <ImageBrush ImageSource="Images/DinoDiner-05.png" 
+                            Opacity=".3"/>
             </Button.Background>
-            Tryceritots
+            <TextBlock Text="Steakosaurus Burger" 
+                       TextWrapping="Wrap" 
+                       TextAlignment="Center"/>
         </Button>
-        <Button Grid.Column="2"
-                Grid.Row="1"
-                Margin="25"
-                Width="170"
-                FontSize="30"
-                Click="SelectSmall" 
-                Name="BtnPickSmall"
-                >
-            Small
-        </Button>
-        <Button Grid.Column="2"
+        <Button Grid.Column="3" 
                 Grid.Row="2"
-                Margin="25"
-                Width="170"
-                FontSize="30"
-                Click="SelectMedium" 
-                Name="BtnPickMedium">
-            Medium
+                Margin="10"
+                FontSize="20"
+                Width="160"
+                Click="AddTRexBurger"
+                >
+            <Button.Background>
+                <ImageBrush ImageSource="Images/DinoDiner-06.png" 
+                            Opacity=".3"/>
+            </Button.Background>
+            <TextBlock Text="T-Rex King Burger" 
+                       TextWrapping="Wrap" 
+                       TextAlignment="Center"/>
         </Button>
-        <Button Grid.Column="2"
+        <Button Grid.Column="0" 
                 Grid.Row="3"
-                Margin="25"
-                Width="170"
-                FontSize="30"
-                Click="SelectLarge" 
-                Name="BtnPickLarge">
-            Large
+                Margin="10"
+                FontSize="20"
+                Width="160"
+                Click="AddVelociwrap"
+                >
+            <Button.Background>
+                <ImageBrush ImageSource="Images/DinoDiner-07.png" 
+                            Opacity=".3"/>
+            </Button.Background>
+            Veloci-Wrap
         </Button>
     </Grid>
     -->

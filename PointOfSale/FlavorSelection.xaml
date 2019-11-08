@@ -8,68 +8,114 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="FlavorSelection">
 
-    <WrapPanel>
-        <WrapPanel.Resources>
-            <Style TargetType="Button">
-                <Setter Property="Width" Value="180"></Setter>
-                <Setter Property="Height" Value="140"></Setter>
-            </Style>
-        </WrapPanel.Resources>
-        <Button Click="SelectCherry">
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" 
+                   Grid.ColumnSpan="3" 
+                   Background="White"
+                   TextAlignment="Center"
+                   FontSize="20">
+            Sodasaurus Flavor Selection
+        </TextBlock>
+        <Button Grid.Column="0" 
+                Grid.Row="1"
+                Margin="10"
+                FontSize="20"
+                Width="140"
+                Click="SelectCherry">
             <Button.Background>
-                <ImageBrush ImageSource="Images/Cherry.png"></ImageBrush>
+                <ImageBrush ImageSource="Images/Cherry.png" 
+                            Opacity=".3"/>
             </Button.Background>
-            <TextBlock Height="135">
-                <TextBlock DockPanel.Dock="Bottom" FontFamily="Segoe UI Black" FontSize="15">Cherry</TextBlock>
-            </TextBlock>
+            Cherry
         </Button>
-        <Button Click="SelectChocolate">
+        <Button Grid.Column="1" 
+                Grid.Row="1"
+                Margin="10"
+                FontSize="20"
+                Width="140"
+                Click="SelectChocolate"
+                >
             <Button.Background>
-                <ImageBrush ImageSource="Images/Chocolate.png"></ImageBrush>
+                <ImageBrush ImageSource="Images/Chocolate.png" 
+                            Opacity=".3"/>
             </Button.Background>
-            <TextBlock Height="135">
-                <TextBlock DockPanel.Dock="Bottom" FontFamily="Segoe UI Black" FontSize="15">Chocolate</TextBlock>
-            </TextBlock>
+            Chocolate
         </Button>
-        <Button Click="SelectCola">
+        <Button Grid.Column="2" 
+                Grid.Row="1"
+                Margin="10"
+                FontSize="20"
+                Width="150"
+                Click="SelectCola"
+                >
             <Button.Background>
-                <ImageBrush ImageSource="Images/Cola.png"></ImageBrush>
+                <ImageBrush ImageSource="Images/Cola.png" 
+                            Opacity=".3"/>
             </Button.Background>
-            <DockPanel Height="135">
-                <TextBlock DockPanel.Dock="Bottom" FontFamily="Segoe UI Black" FontSize="15">Cola</TextBlock>
-            </DockPanel>
+            Cola
         </Button>
-        <Button Click="SelectLime">
+        <Button Grid.Column="0" 
+                Grid.Row="2"
+                Margin="10"
+                FontSize="20"
+                Width="140"
+                Click="SelectLime"
+                >
             <Button.Background>
-                <ImageBrush ImageSource="Images/Lime.png"></ImageBrush>
+                <ImageBrush ImageSource="Images/Lime.png" 
+                            Opacity=".3"/>
             </Button.Background>
-            <DockPanel Height="135">
-                <TextBlock DockPanel.Dock="Bottom" FontFamily="Segoe UI Black" FontSize="15">Lime</TextBlock>
-            </DockPanel>
+            Lime
         </Button>
-        <Button Click="SelectOrange">
+        <Button Grid.Column="1" 
+                Grid.Row="2"
+                Margin="10"
+                FontSize="20"
+                Width="140"
+                Click="SelectOrange"
+                >
             <Button.Background>
-                <ImageBrush ImageSource="Images/OrangeSlice.png"></ImageBrush>
+                <ImageBrush ImageSource="Images/OrangeSlice.png" 
+                            Opacity=".3"/>
             </Button.Background>
-            <DockPanel Height="135">
-                <TextBlock DockPanel.Dock="Bottom" FontFamily="Segoe UI Black" FontSize="15">Orange</TextBlock>
-            </DockPanel>
+            Orange
         </Button>
-        <Button Click="SelectRootBeer">
+        <Button Grid.Column="3" 
+                Grid.Row="2"
+                Margin="10"
+                FontSize="20"
+                Width="140"
+                Click="SelectRootBeer"
+                >
             <Button.Background>
-                <ImageBrush ImageSource="Images/RootBeer.png"></ImageBrush>
+                <ImageBrush ImageSource="Images/RootBeer.png" 
+                            Opacity=".3"/>
             </Button.Background>
-            <DockPanel Height="135">
-                <TextBlock DockPanel.Dock="Bottom" FontFamily="Segoe UI Black" FontSize="15">Root Beer</TextBlock>
-            </DockPanel>
+            Root Beer
         </Button>
-        <Button Click="SelectVanilla">
+        <Button Grid.Column="0" 
+                Grid.Row="3"
+                Margin="10"
+                FontSize="20"
+                Width="140"
+                Click="SelectVanilla"
+                >
             <Button.Background>
-                <ImageBrush ImageSource="Images/Vanilla.png"></ImageBrush>
+                <ImageBrush ImageSource="Images/Vanilla.png" 
+                            Opacity=".3"/>
             </Button.Background>
-            <DockPanel Height="135">
-                <TextBlock DockPanel.Dock="Bottom" FontFamily="Segoe UI Black" FontSize="15">Vanilla</TextBlock>
-            </DockPanel>
+            Vanilla
         </Button>
-    </WrapPanel>
+    </Grid>
 </Page>
