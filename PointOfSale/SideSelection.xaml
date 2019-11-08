@@ -8,59 +8,108 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="SideSelection">
 
-    <WrapPanel>
-        <WrapPanel.Resources>
-            <Style TargetType="Button">
-                <Setter Property="Width" Value="220"></Setter>
-                <Setter Property="Height" Value="150"></Setter>
-            </Style>
-        </WrapPanel.Resources>
-        <Button Name="BtnAddFryceritops" Click="AddFryceritops">
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" 
+                   Grid.ColumnSpan="3" 
+                   Background="White"
+                   TextAlignment="Center"
+                   FontSize="20">
+            Side Selection
+        </TextBlock>
+        <Button Grid.Column="0" 
+                Grid.Row="1"
+                Margin="10"
+                FontSize="20"
+                Width="140"
+                Name="BtnAddFryceritops" 
+                Click="AddFryceritops"
+                >
             <Button.Background>
-                <ImageBrush ImageSource="Images/DinoDiner-08.png"></ImageBrush>
+                <ImageBrush ImageSource="Images/DinoDiner-08.png" Opacity=".3"></ImageBrush>
             </Button.Background>
-            <TextBlock Height="220">
-                <TextBlock DockPanel.Dock="Bottom" FontSize="18" FontFamily="Segoe UI Black">Fryceritops</TextBlock>
-            </TextBlock>
+            Fryceritops
         </Button>
-        <Button Name="BtnAddMeteorMacAndCheese" Click="AddMeteorMacAndCheese">
+        <Button Grid.Column="0" 
+                Grid.Row="2"
+                Margin="10"
+                FontSize="20"
+                Width="140"
+                Name="BtnAddMeteorMacAndCheese" 
+                Click="AddMeteorMacAndCheese"
+                >
             <Button.Background>
-                <ImageBrush ImageSource="Images/DinoDiner-09.png"></ImageBrush>
+                <ImageBrush ImageSource="Images/DinoDiner-09.png" Opacity=".3"></ImageBrush>
             </Button.Background>
-            <TextBlock Height="220">
-                <TextBlock DockPanel.Dock="Bottom" FontSize="18" FontFamily="Segoe UI Black">Meteor Mac and Cheese</TextBlock>
-            </TextBlock>
+            <TextBlock Text="Meteor Mac And Cheese" 
+                       TextWrapping="Wrap" 
+                       TextAlignment="Center"/>
         </Button>
-        <Button Name="BtnAddMezzorellaSticks" Click="AddMezzorellaSticks">
+        <Button Grid.Column="1" 
+                Grid.Row="1"
+                Margin="10"
+                FontSize="20"
+                Width="150"
+                Name="BtnAddMezzorellaSticks" 
+                Click="AddMezzorellaSticks"
+                >
             <Button.Background>
-                <ImageBrush ImageSource="Images/DinoDiner-10.png"></ImageBrush>
+                <ImageBrush ImageSource="Images/DinoDiner-10.png" Opacity=".3"></ImageBrush>
             </Button.Background>
-            <DockPanel Height="220">
-                <TextBlock DockPanel.Dock="Bottom" FontSize="18" FontFamily="Segoe UI Black">Mezzorella Sticks</TextBlock>
-            </DockPanel>
+            <TextBlock Text="Mezzorella Sticks" 
+                       TextWrapping="Wrap" 
+                       TextAlignment="Center"/>
         </Button>
-        <Button Name="BtnAddTriceritots" Click="AddTriceritots">
+        <Button Grid.Column="1" 
+                Grid.Row="2"
+                Margin="10"
+                FontSize="20"
+                Width="140"
+                Name="BtnAddTriceritots" 
+                Click="AddTriceritots"
+                >
             <Button.Background>
-                <ImageBrush ImageSource="Images/DinoDiner-11.png" ></ImageBrush>
+                <ImageBrush ImageSource="Images/DinoDiner-11.png" Opacity=".3"></ImageBrush>
             </Button.Background>
-            <DockPanel Height="220">
-                <TextBlock DockPanel.Dock="Bottom" FontSize="18" FontFamily="Segoe UI Black">Triceri-tots</TextBlock>
-            </DockPanel>
+            Tryceritots
         </Button>
-        <Button Height="50" Width="150" Name="BtnPickSmall" IsEnabled="False" Click="SelectSmall">
-            <TextBlock>
-                <TextBlock DockPanel.Dock="Bottom" FontSize="25" FontFamily="Segoe UI Black">Small</TextBlock>
-            </TextBlock>
+        <Button Grid.Column="2"
+                Grid.Row="1"
+                Height="70"
+                Width="170"
+                FontSize="30"
+                Click="SelectSmall" 
+                Name="BtnPickSmall"
+                >
+            Small
         </Button>
-        <Button Height="50" Width="150" Name="BtnPickMedium" IsEnabled="False" Click="SelectMedium">
-            <TextBlock>
-                <TextBlock DockPanel.Dock="Bottom" FontSize="25" FontFamily="Segoe UI Black">Medium</TextBlock>
-            </TextBlock>
+        <Button Grid.Column="2"
+                Grid.Row="2"
+                Height="70"
+                Width="170"
+                FontSize="30"
+                Click="SelectMedium" 
+                Name="BtnPickMedium">
+            Medium
         </Button>
-        <Button Height="50" Width="150" Name="BtnPickLarge" IsEnabled="False" Click="SelectLarge">
-            <DockPanel>
-                <TextBlock DockPanel.Dock="Bottom" FontSize="25" FontFamily="Segoe UI Black">Large</TextBlock>
-            </DockPanel>
+        <Button Grid.Column="2"
+                Grid.Row="3"
+                Height="70"
+                Width="170"
+                FontSize="30"
+                Click="SelectLarge" 
+                Name="BtnPickLarge">
+            Large
         </Button>
-    </WrapPanel>
+    </Grid>
 </Page>
