@@ -75,7 +75,7 @@ namespace PointOfSale
             {
                 NavigationService.Navigate(new CustomizeCombo(Combo));
             }
-            if (NavigationService.CanGoBack) NavigationService.GoBack();
+            else if (NavigationService.CanGoBack) NavigationService.GoBack();
             else NavigationService.Navigate(new MenuCategorySelection());
         }
     }

@@ -68,6 +68,7 @@ namespace DinoDiner.Menu
                 {
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Special"));
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Description"));
                 };
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Special"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
