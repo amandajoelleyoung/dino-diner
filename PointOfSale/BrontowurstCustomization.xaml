@@ -10,6 +10,7 @@
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
@@ -19,16 +20,42 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button Click="SelectHoldBun" Grid.Row="1">
+        <TextBlock Grid.Row="0" 
+                   Grid.ColumnSpan="3" 
+                   Background="White"
+                   TextAlignment="Center"
+                   FontSize="20">
+            Brontowurst Customization
+        </TextBlock>
+        <Button Click="SelectHoldBun" 
+                Grid.Row="2"
+                Height="80"
+                Width="180"
+                FontSize="25">
             Hold Bun
         </Button>
-        <Button Click="SelectHoldOnion" Grid.Row="1" Grid.Column="1">
+        <Button Click="SelectHoldOnion" 
+                Grid.Row="2" 
+                Grid.Column="1"
+                Height="80"
+                Width="180"
+                FontSize="25">
             Hold Onion
         </Button>
-        <Button Click="SelectHoldPeppers" Grid.Row="1" Grid.Column="2">
+        <Button Click="SelectHoldPeppers" 
+                Grid.Row="2" 
+                Grid.Column="2"
+                Height="80"
+                Width="180"
+                FontSize="25">
             Hold Pepper
         </Button>
-        <Button Click="SelectDone" Grid.Row="2" Grid.Column="3">
+        <Button Click="SelectDone" 
+                Grid.Row="3" 
+                Grid.Column="3"
+                Height="60"
+                Width="130"
+                FontSize="18">
             Done
         </Button>
 

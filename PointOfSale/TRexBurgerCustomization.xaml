@@ -10,6 +10,7 @@
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
@@ -19,31 +20,81 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button Click="SelectHoldBun" Grid.Row="0">
+        <TextBlock Grid.Row="0" 
+                   Grid.ColumnSpan="3" 
+                   Background="White"
+                   TextAlignment="Center"
+                   FontSize="20">
+           T-Rex King Burger Customization
+        </TextBlock>
+        <Button Click="SelectHoldBun" 
+                Grid.Row="1"
+                Height="80"
+                Width="180"
+                FontSize="25">
             Hold Bun
         </Button>
-        <Button Click="SelectHoldKetchup" Grid.Row="0" Grid.Column="1">
+        <Button Click="SelectHoldKetchup" 
+                Grid.Row="1" 
+                Grid.Column="1"
+                Height="80"
+                Width="180"
+                FontSize="25">
             Hold Ketchup
         </Button>
-        <Button Click="SelectHoldMustard" Grid.Row="0" Grid.Column="3">
+        <Button Click="SelectHoldMustard" 
+                Grid.Row="1" 
+                Grid.Column="3"
+                Height="80"
+                Width="180"
+                FontSize="25">
             Hold Mustard
         </Button>
-        <Button Click="SelectHoldPickle" Grid.Row="1">
+        <Button Click="SelectHoldPickle" 
+                Grid.Row="2"
+                Height="80"
+                Width="180"
+                FontSize="25">
             Hold Pickles
         </Button>
-        <Button Click="SelectHoldMayo" Grid.Row="1" Grid.Column="1">
+        <Button Click="SelectHoldMayo" 
+                Grid.Row="2" 
+                Grid.Column="1"
+                Height="80"
+                Width="180"
+                FontSize="25">
             Hold Mayo
         </Button>
-        <Button Click="SelectHoldLettuce" Grid.Row="1" Grid.Column="2">
+        <Button Click="SelectHoldLettuce" 
+                Grid.Row="2" 
+                Grid.Column="2"
+                Height="80"
+                Width="180"
+                FontSize="25">
             Hold Lettuce
         </Button>
-        <Button Click="SelectHoldOnion" Grid.Row="2" Grid.Column="0">
+        <Button Click="SelectHoldOnion" 
+                Grid.Row="3" 
+                Grid.Column="0"
+                Height="80"
+                Width="180"
+                FontSize="25">
             Hold Onion
         </Button>
-        <Button Click="SelectHoldTomato" Grid.Row="2" Grid.Column="1">
+        <Button Click="SelectHoldTomato" 
+                Grid.Row="3" 
+                Grid.Column="1"
+                Height="80"
+                Width="180"
+                FontSize="25">
             Hold Tomato
         </Button>
-        <Button Click="SelectDone" Grid.Row="2" Grid.Column="3">
+        <Button Click="SelectDone" 
+                Grid.Row="3" 
+                Grid.Column="3"
+                Height="50"
+                Width="120"
+                FontSize="18">
             Done
         </Button>
     </Grid>

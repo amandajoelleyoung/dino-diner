@@ -10,6 +10,7 @@
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
@@ -19,13 +20,34 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button Click="SelectHoldPeanutButter" Grid.Row="1">
+        <TextBlock Grid.Row="0" 
+                   Grid.ColumnSpan="3" 
+                   Background="White"
+                   TextAlignment="Center"
+                   FontSize="20">
+            Prehistoric PB&amp;J Customization
+        </TextBlock>
+        <Button Click="SelectHoldPeanutButter" 
+                Grid.Row="2"
+                Height="80"
+                Width="180"
+                FontSize="20">
             Hold Peanut Butter
         </Button>
-        <Button Click="SelectHoldJelly" Grid.Row="1" Grid.Column="1">
+        <Button Click="SelectHoldJelly" 
+                Grid.Row="2" 
+                Grid.Column="1"
+                Height="80"
+                Width="180"
+                FontSize="20">
             Hold Jelly
         </Button>
-        <Button Click="SelectDone" Grid.Row="2" Grid.Column="3">
+        <Button Click="SelectDone" 
+                Grid.Row="3" 
+                Grid.Column="3"
+                Height="50"
+                Width="120"
+                FontSize="18">
             Done
         </Button>
         
