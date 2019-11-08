@@ -8,44 +8,50 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="CustomizeCombo">
 
-    <WrapPanel>
-        <WrapPanel.Resources>
-            <Style TargetType="Button">
-                <Setter Property="Width" Value="250"></Setter>
-                <Setter Property="Height" Value="250"></Setter>
-            </Style>
-        </WrapPanel.Resources>
-        <Button Click="SelectDrink">
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" 
+                   Grid.ColumnSpan="3" 
+                   Background="White"
+                   TextAlignment="Center"
+                   FontSize="20">
+            Combo Customization
+        </TextBlock>
+        <Button Grid.Column="0" 
+                Grid.Row="1"
+                FontSize="50"
+                Width="280"
+                Height="280"
+                Click="SelectDrink">
             <Button.Background>
-                <ImageBrush ImageSource="Images/DinoDiner-13.png"></ImageBrush>
+                <ImageBrush ImageSource="Images/DinoDiner-13.png" 
+                            Opacity=".3"/>
             </Button.Background>
-            <TextBlock Height="280">
-                <TextBlock DockPanel.Dock="Bottom" FontSize="40" FontFamily="Segoe UI Black">Drinks</TextBlock>
-            </TextBlock>
+            <TextBlock Text="Drinks" 
+                       TextWrapping="Wrap" 
+                       TextAlignment="Center"/>
         </Button>
-        <Button Click="SelectSide">
+        <Button Grid.Column="1" 
+                Grid.Row="1"
+                FontSize="50"
+                Width="280"
+                Height="280"
+                Click="SelectSide">
             <Button.Background>
-                <ImageBrush ImageSource="Images/DinoDiner-08.png"></ImageBrush>
+                <ImageBrush ImageSource="Images/DinoDiner-08.png" 
+                            Opacity=".3"/>
             </Button.Background>
-            <TextBlock Height="280">
-                <TextBlock DockPanel.Dock="Bottom" FontSize="40" FontFamily="Segoe UI Black">Sides</TextBlock>
-            </TextBlock>
+            <TextBlock Text="Sides" 
+                       TextWrapping="Wrap" 
+                       TextAlignment="Center"/>
         </Button>
-        
-        <Button Height="50" Width="150">
-            <TextBlock>
-                <TextBlock DockPanel.Dock="Bottom" FontSize="25" FontFamily="Segoe UI Black">Small</TextBlock>
-            </TextBlock>
-        </Button>
-        <Button Height="50" Width="150">
-            <TextBlock>
-                <TextBlock DockPanel.Dock="Bottom" FontSize="25" FontFamily="Segoe UI Black">Medium</TextBlock>
-            </TextBlock>
-        </Button>
-        <Button Height="50" Width="150">
-            <DockPanel>
-                <TextBlock DockPanel.Dock="Bottom" FontSize="25" FontFamily="Segoe UI Black">Large</TextBlock>
-            </DockPanel>
-        </Button>
-    </WrapPanel>
+    </Grid>
 </Page>
