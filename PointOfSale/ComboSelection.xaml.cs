@@ -38,7 +38,7 @@ namespace PointOfSale
                 combo.Entree = new Brontowurst();
                 order.Add(combo);
                 NavigationService.Navigate(new BrontowurstCustomization(combo));
-                NavigationService.Navigate(new CustomizeCombo(combo));
+                //NavigationService.Navigate(new CustomizeCombo(combo));
             }
         }
 
