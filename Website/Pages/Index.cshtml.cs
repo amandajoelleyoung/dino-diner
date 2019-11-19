@@ -9,6 +9,10 @@ namespace Website.Pages
 {
     public class IndexModel : PageModel
     {
+        public string ImagePath
+        {
+            get { return "Images/DinoDiner-29.png"; }
+        }
         public void OnGet()
         {
 
