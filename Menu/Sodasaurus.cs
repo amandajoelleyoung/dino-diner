@@ -136,6 +136,11 @@ namespace DinoDiner.Menu
             return $"{this.size} {this.flavor} Sodasaurus";
         }
 
+        public void HoldIce()
+        {
+            this.ice = false;
+            NotifyOfPropertyChange("Special");
+        }
         
     }
 }

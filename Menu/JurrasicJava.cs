@@ -173,5 +173,11 @@ namespace DinoDiner.Menu
             NotifyOfPropertyChange("Special");
             NotifyOfPropertyChange("Description");
         }
+
+        public void AddIce()
+        {
+            this.ice = true;
+            NotifyOfPropertyChange("Special");
+        }
     }
 }
