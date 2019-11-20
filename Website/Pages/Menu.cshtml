@@ -4,5 +4,64 @@
     ViewData["Title"] = "Menu";
 }
 
-<h2>Menu</h2>
+<h1>Menu</h1>
 
+<h2>Combos</h2>
+<div>
+    @foreach (var item in Model.Menu.AvailableCombos)
+    {
+        <div class="menu-item">
+            <div><b>@item.ToString()</b>  $@item.Price</div>
+            <div><i>@item.Calories calories</i></div>
+            @foreach (var ingredient in item.Ingredients)
+            {
+                <div>@ingredient.ToString()</div>
+            }
+        </div>
+    }
+</div>
+
+<h2>Entrees</h2>
+<div>
+    @foreach (var item in Model.Menu.AvailableEntrees)
+    {
+        <div class="menu-item">
+            <div><b>@item.ToString()</b>  $@item.Price</div>
+            <div><i>@item.Calories calories</i></div>
+            @foreach (var ingredient in item.Ingredients)
+            {
+                <div>@ingredient.ToString()</div>
+            }
+        </div>
+    }
+</div>
+
+<h2>Sides</h2>
+<div>
+    @foreach (var item in Model.Menu.AvailableSides)
+    {
+        <div class="menu-item">
+            <div><b>@item.ToString()</b>  $@item.Price</div>
+            <div><i>@item.Calories calories</i></div>
+            @foreach (var ingredient in item.Ingredients)
+            {
+                <div>@ingredient.ToString()</div>
+            }
+        </div>
+    }
+</div>
+
+<h2>Drinks</h2>
+<div>
+    @foreach (var item in Model.Menu.AvailableDrinks)
+    {
+        <div class="menu-item">
+            <div><b>@item.ToString()</b>  $@item.Price</div>
+            <div><i>@item.Calories calories</i></div>
+            @foreach (var ingredient in item.Ingredients)
+            {
+                <div>@ingredient.ToString()</div>
+            }
+        </div>
+    }
+</div>
