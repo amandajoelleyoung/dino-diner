@@ -5,63 +5,90 @@
 }
 
 <h1>Menu</h1>
-
-<h2>Combos</h2>
-<div>
-    @foreach (var item in Model.Menu.AvailableCombos)
-    {
-        <div class="menu-item">
-            <div><b>@item.ToString()</b>  $@item.Price</div>
-            <div><i>@item.Calories calories</i></div>
-            @foreach (var ingredient in item.Ingredients)
+<div class="container">
+    <div class="results">
+        <h2>Combos</h2>
+        <div>
+            @foreach (var item in Model.Menu.AvailableCombos)
             {
-                <div>@ingredient.ToString()</div>
+                <div class="menu-item">
+                    <div><b>@item.ToString()</b>  $@item.Price</div>
+                    <div><i>@item.Calories calories</i></div>
+                    @foreach (var ingredient in item.Ingredients)
+                    {
+                        <div>@ingredient.ToString()</div>
+                    }
+                </div>
             }
         </div>
-    }
-</div>
 
-<h2>Entrees</h2>
-<div>
-    @foreach (var item in Model.Menu.AvailableEntrees)
-    {
-        <div class="menu-item">
-            <div><b>@item.ToString()</b>  $@item.Price</div>
-            <div><i>@item.Calories calories</i></div>
-            @foreach (var ingredient in item.Ingredients)
+        <h2>Entrees</h2>
+        <div>
+            @foreach (var item in Model.Menu.AvailableEntrees)
             {
-                <div>@ingredient.ToString()</div>
+                <div class="menu-item">
+                    <div><b>@item.ToString()</b>  $@item.Price</div>
+                    <div><i>@item.Calories calories</i></div>
+                    @foreach (var ingredient in item.Ingredients)
+                    {
+                        <div>@ingredient.ToString()</div>
+                    }
+                </div>
             }
         </div>
-    }
-</div>
 
-<h2>Sides</h2>
-<div>
-    @foreach (var item in Model.Menu.AvailableSides)
-    {
-        <div class="menu-item">
-            <div><b>@item.ToString()</b>  $@item.Price</div>
-            <div><i>@item.Calories calories</i></div>
-            @foreach (var ingredient in item.Ingredients)
+        <h2>Sides</h2>
+        <div>
+            @foreach (var item in Model.Menu.AvailableSides)
             {
-                <div>@ingredient.ToString()</div>
+                <div class="menu-item">
+                    <div><b>@item.ToString()</b>  $@item.Price</div>
+                    <div><i>@item.Calories calories</i></div>
+                    @foreach (var ingredient in item.Ingredients)
+                    {
+                        <div>@ingredient.ToString()</div>
+                    }
+                </div>
             }
         </div>
-    }
-</div>
 
-<h2>Drinks</h2>
-<div>
-    @foreach (var item in Model.Menu.AvailableDrinks)
-    {
-        <div class="menu-item">
-            <div><b>@item.ToString()</b>  $@item.Price</div>
-            <div><i>@item.Calories calories</i></div>
-            @foreach (var ingredient in item.Ingredients)
+        <h2>Drinks</h2>
+        <div>
+            @foreach (var item in Model.Menu.AvailableDrinks)
             {
-                <div>@ingredient.ToString()</div>
+                <div class="menu-item">
+                    <div><b>@item.ToString()</b>  $@item.Price</div>
+                    <div><i>@item.Calories calories</i></div>
+                    @foreach (var ingredient in item.Ingredients)
+                    {
+                        <div>@ingredient.ToString()</div>
+                    }
+                </div>
             }
         </div>
-    }
+    </div>
+
+    <form method="post">
+        <h4>Search</h4>
+        <input type="text" name="search" value="@Model.search" />
+        <input type="submit" value="Search and Filter" />
+
+        <label>
+            <input type="checkbox" value="combo" name="menutype" checked="@Model.menutype.Contains("combo")"/>
+            Combos
+        </label>
+        <label>
+            <input type="checkbox" value="entree" name="menutype" checked="@Model.menutype.Contains("entree")"/>
+            Entrees
+        </label>
+        <label>
+            <input type="checkbox" value="side" name="menutype" checked="@Model.menutype.Contains("side")"/>
+            Sides
+        </label>
+        <label>
+            <input type="checkbox" value="drink" name="menutype" checked="@Model.menutype.Contains("drink")"/>
+            Drinks
+        </label>
+    </form>
+
 </div>
