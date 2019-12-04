@@ -15,3 +15,21 @@ body {
 .menu-item {
     margin: 10px;
 }
+
+.container1 {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+}
+
+.results {
+    margin-right: 400px;
+}
+
+form {
+    background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    min-width: 300px;
+}

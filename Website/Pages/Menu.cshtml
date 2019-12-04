@@ -5,7 +5,7 @@
 }
 
 <h1>Menu</h1>
-<div class="container">
+<div class="container1">
     <div class="results">
         <h2>Combos</h2>
         <div>
@@ -73,21 +73,94 @@
         <input type="text" name="search" value="@Model.search" />
         <input type="submit" value="Search and Filter" />
 
+        <h4>Menu Category</h4>
         <label>
-            <input type="checkbox" value="combo" name="menutype" checked="@Model.menutype.Contains("combo")"/>
+            <input type="checkbox" value="combo" name="menutype" checked="@Model.menutype.Contains("combo")" />
             Combos
         </label>
         <label>
-            <input type="checkbox" value="entree" name="menutype" checked="@Model.menutype.Contains("entree")"/>
+            <input type="checkbox" value="entree" name="menutype" checked="@Model.menutype.Contains("entree")" />
             Entrees
         </label>
         <label>
-            <input type="checkbox" value="side" name="menutype" checked="@Model.menutype.Contains("side")"/>
+            <input type="checkbox" value="side" name="menutype" checked="@Model.menutype.Contains("side")" />
             Sides
         </label>
         <label>
-            <input type="checkbox" value="drink" name="menutype" checked="@Model.menutype.Contains("drink")"/>
+            <input type="checkbox" value="drink" name="menutype" checked="@Model.menutype.Contains("drink")" />
             Drinks
+        </label>
+
+        <h4>Price</h4>
+        <label>
+            Min
+            <input type="number" min="0" step=".01" name="minprice" value="@Model.minprice" />
+        </label>
+        <label>
+            Max
+            <input type="number" min="0" step=".01" name="maxprice" value="@Model.maxprice" />
+        </label>
+
+        <h4>Excluding Ingredients</h4>
+        <label>
+            <input type="checkbox" value="bun" name="ingredientEx" checked="@Model.ingredientEx.Contains("bun")" />
+            Bread
+        </label>
+        <label>
+            <input type="checkbox" value="meat" name="ingredientEx" checked="@Model.ingredientEx.Contains("meat")" />
+            Meat
+        </label>
+        <label>
+            <input type="checkbox" value="cheese" name="ingredientEx" checked="@Model.ingredientEx.Contains("cheese")" />
+            Cheese
+        </label>
+        <label>
+            <input type="checkbox" value="ketchup" name="ingredientEx" checked="@Model.ingredientEx.Contains("ketchup")" />
+            Ketchup
+        </label>
+        <label>
+            <input type="checkbox" value="mustard" name="ingredientEx" checked="@Model.ingredientEx.Contains("mustard")" />
+            Mustard
+        </label>
+        <label>
+            <input type="checkbox" value="mayo" name="ingredientEx" checked="@Model.ingredientEx.Contains("mayo")" />
+            Mayo
+        </label>
+        <label>
+            <input type="checkbox" value="pickle" name="ingredientEx" checked="@Model.ingredientEx.Contains("pickle")" />
+            Pickle
+        </label>
+        <label>
+            <input type="checkbox" value="lettuce" name="ingredientEx" checked="@Model.ingredientEx.Contains("lettuce")" />
+            Lettuce
+        </label>
+        <label>
+            <input type="checkbox" value="pepper" name="ingredientEx" checked="@Model.ingredientEx.Contains("pepper")" />
+            Peppers
+        </label>
+        <label>
+            <input type="checkbox" value="tomato" name="ingredientEx" checked="@Model.ingredientEx.Contains("tomato")" />
+            Tomato
+        </label>
+        <label>
+            <input type="checkbox" value="onion" name="ingredientEx" checked="@Model.ingredientEx.Contains("onion")" />
+            Onion
+        </label>
+        <label>
+            <input type="checkbox" value="potato" name="ingredientEx" checked="@Model.ingredientEx.Contains("potato")" />
+            Potato
+        </label>
+        <label>
+            <input type="checkbox" value="oil" name="ingredientEx" checked="@Model.ingredientEx.Contains("oil")" />
+            Vegetable Oil
+        </label>
+        <label>
+            <input type="checkbox" value="salt" name="ingredientEx" checked="@Model.ingredientEx.Contains("salt")" />
+            Salt
+        </label>
+        <label>
+            <input type="checkbox" value="sugar" name="ingredientEx" checked="@Model.ingredientEx.Contains("sugar")" />
+            Sugar
         </label>
     </form>
 

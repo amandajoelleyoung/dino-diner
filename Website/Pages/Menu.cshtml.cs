@@ -17,18 +17,48 @@ namespace Website.Pages
         public string search { get; set; }
 
         [BindProperty]
-        public List<string> menutype { get; set; } = new List<string>();
+        public List<string> menutype { get; set; } = new List<string>() { "combo", "entree", "side", "drink" };
+
+        [BindProperty]
+        public float? minprice { get; set; }
+
+        [BindProperty]
+        public float? maxprice { get; set; }
+
+        [BindProperty]
+        public List<string> ingredientEx { get; set; } = new List<string>();
 
         public void OnGet()
         {
-
+            
         }
 
         public void OnPost()
         {
+            Menu.AddAllMenuItems();
             if (search != null)
             {
-               
+                Menu.SearchByName(search);
+            }
+
+            if (menutype != null)
+            {
+                Menu.SearchByType(menutype);
+            }
+
+            if (minprice != null)
+            {
+                Menu.SearchByMinPrice(minprice);
+            }
+
+            if (maxprice != null)
+            {
+                Menu.SearchByMaxPrice(maxprice);
+            }
+
+            if (ingredientEx != null)
+            {
+                Menu.ExcludeIngredients(ingredientEx);
             }
         }
     }
